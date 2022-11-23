@@ -16,7 +16,7 @@ namespace _20521587_TH03_Music_Online
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new fMusic());
         }
     }
 }
