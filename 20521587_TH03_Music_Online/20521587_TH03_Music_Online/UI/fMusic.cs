@@ -1,4 +1,6 @@
-﻿using Guna.UI2.WinForms;
+﻿using _20521587_TH03_Music_Online.UI;
+using _20521587_TH03_Music_Online.DAL;
+using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,15 +10,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Resources;
+using System.Reflection;
 
 namespace _20521587_TH03_Music_Online
 {
     public partial class fMusic : Form
     {
+        ResourceManager rm = new ResourceManager("_20521587_TH03_Music_Online.Properties.Resources",
+            Assembly.GetExecutingAssembly());
+        ListSongDAL ldal = new ListSongDAL();
+        DataTable songData = new DataTable();
         public int volumn =1;
         public fMusic()
         {
             InitializeComponent();
+            load_ListSong();
+
         }
 
         private void mome_Image(object sender)
@@ -32,9 +42,22 @@ namespace _20521587_TH03_Music_Online
             guna2Button5.BringToFront();
             b.SendToBack();
             //pictureBox1.Location = new Point(1,1);
-
         }
+        private void load_ListSong()
+        {
+            songData = ldal.Select();
 
+            ucSong[] ListSong = new ucSong[2];
+            for (int i = 0; i < 2; i++)
+            {
+                ListSong[i] = new ucSong();
+                ListSong[i].tenBh = songData.Rows[i][1].ToString();
+                ListSong[i].caSi = songData.Rows[i][3].ToString();
+                ListSong[i].image = (Image)rm.GetObject(songData.Rows[i][0].ToString());
+                flowLayoutPanel1.Controls.Add(ListSong[i]);
+            }
+            flowLayoutPanel1.Refresh();
+        }
         private void gunaGradient2Panel1_Paint(object sender, PaintEventArgs e)
         {
 
@@ -81,5 +104,6 @@ namespace _20521587_TH03_Music_Online
                 volumn = 1;
             }
         }
+
     }
 }

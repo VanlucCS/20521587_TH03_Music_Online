@@ -43,6 +43,7 @@
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
     <Reference Include="System.Management" />
@@ -57,15 +58,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="fMusic.cs">
+    <Compile Include="DAL\ListSongDAL.cs" />
+    <Compile Include="UI\fMusic.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fMusic.Designer.cs">
+    <Compile Include="UI\fMusic.Designer.cs">
       <DependentUpon>fMusic.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="fMusic.resx">
+    <Compile Include="UI\test.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\test.Designer.cs">
+      <DependentUpon>test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ucSong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\ucSong.Designer.cs">
+      <DependentUpon>ucSong.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="UI\fMusic.resx">
       <DependentUpon>fMusic.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -78,6 +92,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UI\ucSong.resx">
+      <DependentUpon>ucSong.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -141,6 +158,33 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\headphones.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pause-button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pause.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Z23N.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Nt6v.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\output-onlinegiftools.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\output-onlinegiftools %281%29.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="BLL\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BH01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BH02.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
