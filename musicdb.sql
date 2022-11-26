@@ -16,8 +16,9 @@ CREATE TABLE THONGTIN(
 );
 
 
-INSERT INTO THONGTIN VALUES('BH01',N'Tết Nhà Mình',N'Huỳnh Hiền Năng',N'Hòa Minzy',n'Nhạc trẻ',N'Việt Nam','00:03:55');
-INSERT INTO THONGTIN VALUES('BH02',N'Cứ Yêu Đi',N'Nguyễn Hoàng Tôn',N'Sĩ Thanh, Chillies, Đức Phúc',n'Nhạc trẻ',N'Việt Nam','00:04:45');
+INSERT INTO THONGTIN VALUES('BH01',N'Tết Nhà Mình',N'Huỳnh Hiền Năng',N'Hòa Minzy',N'Nhạc trẻ',N'Việt Nam','00:03:55');
+INSERT INTO THONGTIN VALUES('BH02',N'Ai cần ai',N'Hứa Kim Tuyền',N'Bảo Anh',N'Nhạc trẻ',N'Việt Nam','00:03:24');
+delete from THONGTIN where MABH ='BH02'
 
 CREATE TABLE DANHGIA(
 	MABH		char(4),
