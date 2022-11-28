@@ -37,26 +37,26 @@ namespace _20521587_TH03_Music_Online.UI
             this.pbDisLike = new System.Windows.Forms.PictureBox();
             this.pbLike = new System.Windows.Forms.PictureBox();
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.pictureBox19 = new System.Windows.Forms.PictureBox();
-            this.pictureBox17 = new System.Windows.Forms.PictureBox();
-            this.pictureBox18 = new System.Windows.Forms.PictureBox();
-            this.pictureBox16 = new System.Windows.Forms.PictureBox();
-            this.pictureBox15 = new System.Windows.Forms.PictureBox();
+            this.pbstart5 = new System.Windows.Forms.PictureBox();
+            this.pbstart4 = new System.Windows.Forms.PictureBox();
+            this.pbstart3 = new System.Windows.Forms.PictureBox();
+            this.pbstart2 = new System.Windows.Forms.PictureBox();
+            this.pbstart1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbDisLike)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLike)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbstart5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbstart4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbstart3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbstart2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbstart1)).BeginInit();
             this.SuspendLayout();
             // 
             // lbName
             // 
             this.lbName.BackColor = System.Drawing.Color.Transparent;
             this.lbName.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbName.Location = new System.Drawing.Point(131, 26);
+            this.lbName.Location = new System.Drawing.Point(131, 18);
             this.lbName.Name = "lbName";
             this.lbName.Size = new System.Drawing.Size(60, 23);
             this.lbName.TabIndex = 1;
@@ -67,17 +67,17 @@ namespace _20521587_TH03_Music_Online.UI
             this.lbTimeCommand.BackColor = System.Drawing.Color.Transparent;
             this.lbTimeCommand.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTimeCommand.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.lbTimeCommand.Location = new System.Drawing.Point(227, 26);
+            this.lbTimeCommand.Location = new System.Drawing.Point(227, 18);
             this.lbTimeCommand.Name = "lbTimeCommand";
-            this.lbTimeCommand.Size = new System.Drawing.Size(60, 23);
+            this.lbTimeCommand.Size = new System.Drawing.Size(100, 23);
             this.lbTimeCommand.TabIndex = 3;
-            this.lbTimeCommand.Text = "Văn Lực";
+            this.lbTimeCommand.Text = "10 phút trước";
             // 
             // guna2HtmlLabel1
             // 
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(160, 95);
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(160, 87);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
             this.guna2HtmlLabel1.Size = new System.Drawing.Size(12, 23);
             this.guna2HtmlLabel1.TabIndex = 6;
@@ -87,7 +87,7 @@ namespace _20521587_TH03_Music_Online.UI
             // 
             this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel2.Location = new System.Drawing.Point(206, 93);
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(206, 85);
             this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
             this.guna2HtmlLabel2.Size = new System.Drawing.Size(12, 23);
             this.guna2HtmlLabel2.TabIndex = 7;
@@ -109,22 +109,23 @@ namespace _20521587_TH03_Music_Online.UI
             this.tbCommand.ForeColor = System.Drawing.Color.Black;
             this.tbCommand.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbCommand.HoverState.Parent = this.tbCommand;
-            this.tbCommand.Location = new System.Drawing.Point(124, 52);
+            this.tbCommand.Location = new System.Drawing.Point(131, 43);
             this.tbCommand.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tbCommand.Name = "tbCommand";
             this.tbCommand.PasswordChar = '\0';
             this.tbCommand.PlaceholderForeColor = System.Drawing.Color.Black;
             this.tbCommand.PlaceholderText = "";
+            this.tbCommand.ReadOnly = true;
             this.tbCommand.SelectedText = "";
             this.tbCommand.SelectionStart = 10;
             this.tbCommand.ShadowDecoration.Parent = this.tbCommand;
-            this.tbCommand.Size = new System.Drawing.Size(598, 34);
+            this.tbCommand.Size = new System.Drawing.Size(563, 34);
             this.tbCommand.TabIndex = 8;
             // 
             // pbDisLike
             // 
             this.pbDisLike.Image = global::_20521587_TH03_Music_Online.Properties.Resources.dislike__1_;
-            this.pbDisLike.Location = new System.Drawing.Point(179, 96);
+            this.pbDisLike.Location = new System.Drawing.Point(179, 88);
             this.pbDisLike.Name = "pbDisLike";
             this.pbDisLike.Size = new System.Drawing.Size(20, 20);
             this.pbDisLike.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -134,7 +135,7 @@ namespace _20521587_TH03_Music_Online.UI
             // pbLike
             // 
             this.pbLike.Image = global::_20521587_TH03_Music_Online.Properties.Resources.like__2_;
-            this.pbLike.Location = new System.Drawing.Point(133, 96);
+            this.pbLike.Location = new System.Drawing.Point(133, 88);
             this.pbLike.Name = "pbLike";
             this.pbLike.Size = new System.Drawing.Size(20, 20);
             this.pbLike.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -144,7 +145,7 @@ namespace _20521587_TH03_Music_Online.UI
             // guna2CirclePictureBox1
             // 
             this.guna2CirclePictureBox1.Image = global::_20521587_TH03_Music_Online.Properties.Resources.cs231;
-            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(24, 17);
+            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(24, 9);
             this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
             this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.guna2CirclePictureBox1.ShadowDecoration.Parent = this.guna2CirclePictureBox1;
@@ -153,66 +154,66 @@ namespace _20521587_TH03_Music_Online.UI
             this.guna2CirclePictureBox1.TabIndex = 0;
             this.guna2CirclePictureBox1.TabStop = false;
             // 
-            // pictureBox19
+            // pbstart5
             // 
-            this.pictureBox19.Image = global::_20521587_TH03_Music_Online.Properties.Resources.star__4_;
-            this.pictureBox19.Location = new System.Drawing.Point(374, 93);
-            this.pictureBox19.Name = "pictureBox19";
-            this.pictureBox19.Size = new System.Drawing.Size(25, 25);
-            this.pictureBox19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox19.TabIndex = 56;
-            this.pictureBox19.TabStop = false;
+            this.pbstart5.Image = global::_20521587_TH03_Music_Online.Properties.Resources.star__2_;
+            this.pbstart5.Location = new System.Drawing.Point(371, 90);
+            this.pbstart5.Name = "pbstart5";
+            this.pbstart5.Size = new System.Drawing.Size(20, 20);
+            this.pbstart5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbstart5.TabIndex = 74;
+            this.pbstart5.TabStop = false;
             // 
-            // pictureBox17
+            // pbstart4
             // 
-            this.pictureBox17.Image = global::_20521587_TH03_Music_Online.Properties.Resources.star__2_;
-            this.pictureBox17.Location = new System.Drawing.Point(338, 93);
-            this.pictureBox17.Name = "pictureBox17";
-            this.pictureBox17.Size = new System.Drawing.Size(25, 25);
-            this.pictureBox17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox17.TabIndex = 55;
-            this.pictureBox17.TabStop = false;
+            this.pbstart4.Image = global::_20521587_TH03_Music_Online.Properties.Resources.star__4_;
+            this.pbstart4.Location = new System.Drawing.Point(339, 90);
+            this.pbstart4.Name = "pbstart4";
+            this.pbstart4.Size = new System.Drawing.Size(20, 20);
+            this.pbstart4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbstart4.TabIndex = 73;
+            this.pbstart4.TabStop = false;
             // 
-            // pictureBox18
+            // pbstart3
             // 
-            this.pictureBox18.Image = global::_20521587_TH03_Music_Online.Properties.Resources.star__2_;
-            this.pictureBox18.Location = new System.Drawing.Point(302, 93);
-            this.pictureBox18.Name = "pictureBox18";
-            this.pictureBox18.Size = new System.Drawing.Size(25, 25);
-            this.pictureBox18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox18.TabIndex = 54;
-            this.pictureBox18.TabStop = false;
+            this.pbstart3.Image = global::_20521587_TH03_Music_Online.Properties.Resources.star__4_;
+            this.pbstart3.Location = new System.Drawing.Point(307, 90);
+            this.pbstart3.Name = "pbstart3";
+            this.pbstart3.Size = new System.Drawing.Size(20, 20);
+            this.pbstart3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbstart3.TabIndex = 72;
+            this.pbstart3.TabStop = false;
             // 
-            // pictureBox16
+            // pbstart2
             // 
-            this.pictureBox16.Image = global::_20521587_TH03_Music_Online.Properties.Resources.star__2_;
-            this.pictureBox16.Location = new System.Drawing.Point(266, 93);
-            this.pictureBox16.Name = "pictureBox16";
-            this.pictureBox16.Size = new System.Drawing.Size(25, 25);
-            this.pictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox16.TabIndex = 53;
-            this.pictureBox16.TabStop = false;
+            this.pbstart2.Image = global::_20521587_TH03_Music_Online.Properties.Resources.star__4_;
+            this.pbstart2.Location = new System.Drawing.Point(275, 90);
+            this.pbstart2.Name = "pbstart2";
+            this.pbstart2.Size = new System.Drawing.Size(20, 20);
+            this.pbstart2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbstart2.TabIndex = 71;
+            this.pbstart2.TabStop = false;
             // 
-            // pictureBox15
+            // pbstart1
             // 
-            this.pictureBox15.Image = global::_20521587_TH03_Music_Online.Properties.Resources.star__2_;
-            this.pictureBox15.Location = new System.Drawing.Point(230, 93);
-            this.pictureBox15.Name = "pictureBox15";
-            this.pictureBox15.Size = new System.Drawing.Size(25, 25);
-            this.pictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox15.TabIndex = 52;
-            this.pictureBox15.TabStop = false;
+            this.pbstart1.Image = global::_20521587_TH03_Music_Online.Properties.Resources.star__4_;
+            this.pbstart1.Location = new System.Drawing.Point(243, 90);
+            this.pbstart1.Name = "pbstart1";
+            this.pbstart1.Size = new System.Drawing.Size(20, 20);
+            this.pbstart1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbstart1.TabIndex = 70;
+            this.pbstart1.TabStop = false;
             // 
             // ucReviews
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.pictureBox19);
-            this.Controls.Add(this.pictureBox17);
-            this.Controls.Add(this.pictureBox18);
-            this.Controls.Add(this.pictureBox16);
-            this.Controls.Add(this.pictureBox15);
+            this.Controls.Add(this.pbstart5);
+            this.Controls.Add(this.pbstart4);
+            this.Controls.Add(this.pbstart3);
+            this.Controls.Add(this.pbstart2);
+            this.Controls.Add(this.pbstart1);
             this.Controls.Add(this.tbCommand);
             this.Controls.Add(this.guna2HtmlLabel2);
             this.Controls.Add(this.guna2HtmlLabel1);
@@ -222,16 +223,16 @@ namespace _20521587_TH03_Music_Online.UI
             this.Controls.Add(this.lbName);
             this.Controls.Add(this.guna2CirclePictureBox1);
             this.Name = "ucReviews";
-            this.Size = new System.Drawing.Size(726, 130);
+            this.Size = new System.Drawing.Size(726, 122);
             this.Load += new System.EventHandler(this.ucReviews_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbDisLike)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLike)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbstart5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbstart4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbstart3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbstart2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbstart1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -247,10 +248,10 @@ namespace _20521587_TH03_Music_Online.UI
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
         private Guna.UI2.WinForms.Guna2TextBox tbCommand;
-        private System.Windows.Forms.PictureBox pictureBox19;
-        private System.Windows.Forms.PictureBox pictureBox17;
-        private System.Windows.Forms.PictureBox pictureBox18;
-        private System.Windows.Forms.PictureBox pictureBox16;
-        private System.Windows.Forms.PictureBox pictureBox15;
+        private System.Windows.Forms.PictureBox pbstart5;
+        private System.Windows.Forms.PictureBox pbstart4;
+        private System.Windows.Forms.PictureBox pbstart3;
+        private System.Windows.Forms.PictureBox pbstart2;
+        private System.Windows.Forms.PictureBox pbstart1;
     }
 }

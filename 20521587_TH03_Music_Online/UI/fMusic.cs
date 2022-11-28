@@ -21,6 +21,7 @@ namespace _20521587_TH03_Music_Online
         ResourceManager rm = new ResourceManager("_20521587_TH03_Music_Online.Properties.Resources",
             Assembly.GetExecutingAssembly());
         ListSongDAL ldal = new ListSongDAL();
+        ReviewsDAL rdal = new ReviewsDAL();
         DataTable listSongData = new DataTable();
         public string Playing = "BH01";
         public bool stage = false;
@@ -37,7 +38,6 @@ namespace _20521587_TH03_Music_Online
             media.URL = "./" + Playing + ".mp3";
             media.Ctlcontrols.play();
             timer1.Start();
-            flowLayoutPanel2.Controls.Add(addReviewButton());
             //tabControl1.
         }
 
@@ -45,7 +45,14 @@ namespace _20521587_TH03_Music_Online
         {
 
             Guna2Button b = (Guna2Button)sender;
-            pictureBox1.Location = new Point(b.Location.X + 145, b.Location.Y - 44);
+            try
+            {
+                pictureBox1.Location = new Point(b.Location.X + 145, b.Location.Y - 44);
+
+            }
+            catch (Exception)
+            {
+            }
             pictureBox1.BringToFront();
             guna2Button1.BringToFront();
             guna2Button2.BringToFront();
@@ -127,6 +134,11 @@ namespace _20521587_TH03_Music_Online
             media.Ctlcontrols.play();
             timer1.Start();
             preSong.BackColor = Color.FromArgb(192, 255, 255);
+            load_reivew();
+            flowLayoutPanel2.Controls.Add(addReviewButton());
+
+            guna2Button1_Click_1(guna2Button1,null);
+
 
 
             //TimeSpan Time = TimeSpan.FromMinutes(media.currentMedia.duration);
@@ -134,7 +146,28 @@ namespace _20521587_TH03_Music_Online
             //lbmediaend.Text = Time.ToString().Substring(0, 5);
             //return null;
         }
+        private void load_reivew()
+        {
+            ReviewsDAL rdal = new ReviewsDAL();
 
+            DataTable dt = new DataTable();
+            dt = rdal.Select();
+            flowLayoutPanel2.Size = new Size(735,130*(dt.Rows.Count+2));
+            foreach(DataRow dr in dt.Rows)
+            {
+                if(dr[0].ToString()==Playing)
+                {
+                    ucReviews rv = new ucReviews();
+                    rv.ten = dr[2].ToString();
+                    rv.danhGia = dr[3].ToString();
+                    rv.rate = int.Parse(dr[4].ToString());
+                    rv.like = int.Parse(dr[6].ToString());
+                    rv.unLike = int.Parse(dr[7].ToString());
+                    rv.thoiGian = DateTime.Parse(dr[5].ToString());
+                    flowLayoutPanel2.Controls.Add(rv);
+                }
+            }
+        }
         private void gunaGradient2Panel1_Paint(object sender, PaintEventArgs e)
         {
 
@@ -339,8 +372,35 @@ namespace _20521587_TH03_Music_Online
         }
         private Button addReviewButton()
         {
-            Button bt = new Button() { Width = 100, Height = 40, Text = "Thêm Đánh Giá", BackColor = Color.Blue };
+            Button bt = new Button() { Width = 730, Height = 25, Text = "Thêm Đánh Giá" };
+            bt.Click += new EventHandler(addReview);
+
             return bt;
+        }
+        private void update_review(object sender, EventArgs e)
+        {
+                // bấm thêm review tự gọi hàm này 
+        }
+        private void addReview(object sender, EventArgs e)
+        {
+            
+            DataTable dt = rdal.Select();
+            ucAddReview f = new ucAddReview();
+            f.maBh = Playing;
+            f.soDg = dt.Rows.Count+1;
+            f.ten = "Văn Lực";
+            f.insertClick += update_review;
+            foreach (Control i in flowLayoutPanel2.Controls)
+            {
+                if (i.GetType() == typeof(Button))
+                {
+                    flowLayoutPanel2.Controls.Remove(i);
+                    break;
+                }
+            }    
+            flowLayoutPanel2.Controls.Add(f);
+            flowLayoutPanel2.Controls.Add(addReviewButton());
+
         }
 
     }

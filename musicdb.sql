@@ -20,13 +20,19 @@ INSERT INTO THONGTIN VALUES('BH01',N'Tết Nhà Mình',N'Huỳnh Hiền Năng',N
 INSERT INTO THONGTIN VALUES('BH02',N'Ai cần ai',N'Hứa Kim Tuyền',N'Bảo Anh',N'Nhạc trẻ',N'Việt Nam','00:03:24');
 delete from THONGTIN where MABH ='BH02'
 
+
+
 CREATE TABLE DANHGIA(
 	MABH		char(4),
 	TEN			nvarchar(50),
-	DANHGIA		nvarchar(30),
-	rate
+	DANHGIA		nvarchar(100),
+	rate		int,
 	THOIGIAN	smalldatetime,	
+	THICH		int,
+	KOTHICH		int,
 );
+
+
 
 CREATE TABLE PLAYLIST(
 	MAPL		int,

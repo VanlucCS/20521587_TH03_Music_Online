@@ -58,7 +58,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\ReviewBLL.cs" />
     <Compile Include="DAL\ListSongDAL.cs" />
+    <Compile Include="DAL\ReviewsDAL.cs" />
     <Compile Include="UI\fMusic.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -195,9 +197,7 @@
   <ItemGroup>
     <None Include="Resources\output-onlinegiftools %281%29.gif" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="BLL\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\BH01.png" />
   </ItemGroup>
