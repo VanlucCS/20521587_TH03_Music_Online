@@ -31,22 +31,22 @@ namespace _20521587_TH03_Music_Online.UI
         {
             this.lbSongName = new System.Windows.Forms.Label();
             this.lbSinger = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.lbMahb = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lbSongName
             // 
             this.lbSongName.AutoSize = true;
-            this.lbSongName.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSongName.Location = new System.Drawing.Point(219, 24);
+            this.lbSongName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSongName.Location = new System.Drawing.Point(221, 24);
             this.lbSongName.Name = "lbSongName";
-            this.lbSongName.Size = new System.Drawing.Size(89, 19);
+            this.lbSongName.Size = new System.Drawing.Size(94, 21);
             this.lbSongName.TabIndex = 1;
             this.lbSongName.Text = "Tên bài hát";
             // 
@@ -54,20 +54,11 @@ namespace _20521587_TH03_Music_Online.UI
             // 
             this.lbSinger.AutoSize = true;
             this.lbSinger.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSinger.Location = new System.Drawing.Point(219, 66);
+            this.lbSinger.Location = new System.Drawing.Point(221, 66);
             this.lbSinger.Name = "lbSinger";
             this.lbSinger.Size = new System.Drawing.Size(77, 19);
             this.lbSinger.TabIndex = 2;
             this.lbSinger.Text = "Tên Ca Sĩ";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(103, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(110, 110);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
             // 
             // label1
             // 
@@ -78,17 +69,6 @@ namespace _20521587_TH03_Music_Online.UI
             this.label1.Size = new System.Drawing.Size(66, 19);
             this.label1.TabIndex = 4;
             this.label1.Text = "Thể loại";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::_20521587_TH03_Music_Online.Properties.Resources.play__1_;
-            this.pictureBox2.Location = new System.Drawing.Point(29, 37);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(40, 40);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 5;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // label2
             // 
@@ -112,10 +92,31 @@ namespace _20521587_TH03_Music_Online.UI
             this.lbMahb.Visible = false;
             this.lbMahb.Click += new System.EventHandler(this.lbMahb_Click);
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::_20521587_TH03_Music_Online.Properties.Resources.play_button__1_;
+            this.pictureBox2.Location = new System.Drawing.Point(29, 37);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 5;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(103, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(110, 110);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
+            // 
             // ucSong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.lbMahb);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox2);
@@ -125,8 +126,8 @@ namespace _20521587_TH03_Music_Online.UI
             this.Controls.Add(this.lbSongName);
             this.Name = "ucSong";
             this.Size = new System.Drawing.Size(730, 118);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -22,7 +22,7 @@ namespace _20521587_TH03_Music_Online.UI
         {
             InitializeComponent();
             this.pictureBox2.Click += new EventHandler(lbMahb_Click);
-            
+            _isPlaying = false;
         }
         private string _tenBh;
         private Image _image;
@@ -30,6 +30,16 @@ namespace _20521587_TH03_Music_Online.UI
         private string _theLoai;
         private string _time;
         private string _maBh;
+        private Image _playButton;
+        private bool _isPlaying ;
+
+        [Category("custom Props")]
+
+        public bool isPlaying
+        {
+            get { return _isPlaying ; }
+            set { _isPlaying  = value; }
+        }
 
         public string maBh
         {
@@ -54,11 +64,15 @@ namespace _20521587_TH03_Music_Online.UI
             get { return _time; }
             set { _time = value; label2.Text = value; }
         }
-
         public event EventHandler playButtonClick
         {
             add { pictureBox2.Click += value; }
             remove { pictureBox2.Click -= value; }
+        }
+        public Image playButton
+        {
+            get { return _playButton; }
+            set { _playButton = value; pictureBox2.Image = value; }
         }
 
         public event EventHandler mabhClick
@@ -82,7 +96,6 @@ namespace _20521587_TH03_Music_Online.UI
         {
             Ucclick(this, new EventArgs());
         }
-
         private void lbMahb_Click(object sender, EventArgs e)
         {
         }

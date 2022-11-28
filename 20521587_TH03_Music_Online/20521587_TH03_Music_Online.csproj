@@ -205,5 +205,74 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pause-button %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\volume %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mute %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\volume %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\high-volume.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\medium-volume.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\no-sound %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\repeat %285%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\repeat_6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\repeat_7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shuffle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\soundviz.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ezgif.com-gif-maker.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\music %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\itunes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\speaker.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\writer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\microphone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\repeat8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\repeat9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\repeat11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\repeat12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\repeat13.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

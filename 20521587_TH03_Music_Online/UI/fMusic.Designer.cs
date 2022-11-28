@@ -32,17 +32,15 @@ namespace _20521587_TH03_Music_Online
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fMusic));
             this.gunaGradient2Panel1 = new Guna.UI.WinForms.GunaGradient2Panel();
-            this.gunaMetroTrackBar1 = new Guna.UI.WinForms.GunaMetroTrackBar();
+            this.tbVolumn = new Guna.UI.WinForms.GunaMetroTrackBar();
             this.gunaGradient2Panel2 = new Guna.UI.WinForms.GunaGradient2Panel();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.guna2CirclePictureBox6 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.guna2CirclePictureBox4 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.guna2CirclePictureBox3 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.btplay = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.cbtshuffer = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.cbtloop = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.lbmediaend = new Guna.UI.WinForms.GunaLabel();
+            this.lbmediaplaying = new Guna.UI.WinForms.GunaLabel();
             this.gunaTrackBar1 = new Guna.UI.WinForms.GunaTrackBar();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.lbsongtitle = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Button5 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
@@ -51,41 +49,69 @@ namespace _20521587_TH03_Music_Online
             this.gunaWinSwitch1 = new Guna.UI.WinForms.GunaWinSwitch();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.gunaGradient2Panel3 = new Guna.UI.WinForms.GunaGradient2Panel();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.media = new AxWMPLib.AxWindowsMediaPlayer();
             this.gunaGradient2Panel4 = new Guna.UI.WinForms.GunaGradient2Panel();
-            this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lbAuthorMain = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lbSingerMain = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lbSongTitleMain = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.gunaLabel6 = new Guna.UI.WinForms.GunaLabel();
+            this.gunaLabel5 = new Guna.UI.WinForms.GunaLabel();
+            this.gunaLabel4 = new Guna.UI.WinForms.GunaLabel();
+            this.gunaLabel3 = new Guna.UI.WinForms.GunaLabel();
+            this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
-            this.media = new AxWMPLib.AxWindowsMediaPlayer();
-            this.gunaLabel3 = new Guna.UI.WinForms.GunaLabel();
-            this.gunaLabel4 = new Guna.UI.WinForms.GunaLabel();
-            this.gunaLabel5 = new Guna.UI.WinForms.GunaLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.lbmediaplaying = new Guna.UI.WinForms.GunaLabel();
-            this.lbmediaend = new Guna.UI.WinForms.GunaLabel();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.guna2CirclePictureBox4 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.guna2CirclePictureBox3 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.btplay = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.pictureBox13 = new System.Windows.Forms.PictureBox();
+            this.pictureBox11 = new System.Windows.Forms.PictureBox();
+            this.pictureBox10 = new System.Windows.Forms.PictureBox();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.pbSongPic = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.pictureBox12 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.gunaGradient2Panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btplay)).BeginInit();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.gunaGradient2Panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.media)).BeginInit();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btplay)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSongPic)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            this.tabControl1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.media)).BeginInit();
             this.SuspendLayout();
             // 
             // gunaGradient2Panel1
@@ -99,109 +125,99 @@ namespace _20521587_TH03_Music_Online
             this.gunaGradient2Panel1.TabIndex = 0;
             this.gunaGradient2Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.gunaGradient2Panel1_Paint);
             // 
-            // gunaMetroTrackBar1
+            // tbVolumn
             // 
-            this.gunaMetroTrackBar1.Location = new System.Drawing.Point(781, 34);
-            this.gunaMetroTrackBar1.Name = "gunaMetroTrackBar1";
-            this.gunaMetroTrackBar1.Size = new System.Drawing.Size(96, 16);
-            this.gunaMetroTrackBar1.TabIndex = 1;
-            this.gunaMetroTrackBar1.TrackColor = System.Drawing.Color.Aqua;
-            this.gunaMetroTrackBar1.TrackHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.gunaMetroTrackBar1.TrackIdleColor = System.Drawing.Color.Plum;
-            this.gunaMetroTrackBar1.TrackPressedColor = System.Drawing.Color.Black;
+            this.tbVolumn.Location = new System.Drawing.Point(794, 60);
+            this.tbVolumn.Name = "tbVolumn";
+            this.tbVolumn.Size = new System.Drawing.Size(83, 16);
+            this.tbVolumn.TabIndex = 1;
+            this.tbVolumn.TrackColor = System.Drawing.Color.Aqua;
+            this.tbVolumn.TrackHoverColor = System.Drawing.Color.Violet;
+            this.tbVolumn.TrackIdleColor = System.Drawing.SystemColors.Control;
+            this.tbVolumn.TrackPressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.tbVolumn.Value = 70;
+            this.tbVolumn.Scroll += new System.Windows.Forms.ScrollEventHandler(this.tbVolumn_Scroll);
             // 
             // gunaGradient2Panel2
             // 
             this.gunaGradient2Panel2.BackColor = System.Drawing.Color.Transparent;
+            this.gunaGradient2Panel2.Controls.Add(this.cbtshuffer);
+            this.gunaGradient2Panel2.Controls.Add(this.cbtloop);
+            this.gunaGradient2Panel2.Controls.Add(this.pictureBox7);
+            this.gunaGradient2Panel2.Controls.Add(this.pictureBox3);
+            this.gunaGradient2Panel2.Controls.Add(this.pictureBox5);
             this.gunaGradient2Panel2.Controls.Add(this.lbmediaend);
             this.gunaGradient2Panel2.Controls.Add(this.lbmediaplaying);
-            this.gunaGradient2Panel2.Controls.Add(this.pictureBox5);
-            this.gunaGradient2Panel2.Controls.Add(this.pictureBox3);
-            this.gunaGradient2Panel2.Controls.Add(this.guna2CirclePictureBox6);
             this.gunaGradient2Panel2.Controls.Add(this.guna2CirclePictureBox4);
             this.gunaGradient2Panel2.Controls.Add(this.guna2CirclePictureBox3);
             this.gunaGradient2Panel2.Controls.Add(this.btplay);
             this.gunaGradient2Panel2.Controls.Add(this.gunaTrackBar1);
-            this.gunaGradient2Panel2.Controls.Add(this.gunaMetroTrackBar1);
+            this.gunaGradient2Panel2.Controls.Add(this.tbVolumn);
             this.gunaGradient2Panel2.Controls.Add(this.gunaGradient2Panel1);
             this.gunaGradient2Panel2.GradientColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.gunaGradient2Panel2.GradientColor2 = System.Drawing.Color.Teal;
-            this.gunaGradient2Panel2.Location = new System.Drawing.Point(232, 517);
+            this.gunaGradient2Panel2.Location = new System.Drawing.Point(234, 621);
             this.gunaGradient2Panel2.Name = "gunaGradient2Panel2";
             this.gunaGradient2Panel2.Size = new System.Drawing.Size(889, 93);
             this.gunaGradient2Panel2.TabIndex = 1;
             // 
-            // pictureBox5
+            // cbtshuffer
             // 
-            this.pictureBox5.Image = global::_20521587_TH03_Music_Online.Properties.Resources.volume;
-            this.pictureBox5.ImageLocation = "";
-            this.pictureBox5.Location = new System.Drawing.Point(741, 26);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(34, 28);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 10;
-            this.pictureBox5.TabStop = false;
-            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click_1);
+            this.cbtshuffer.BackColor = System.Drawing.Color.Transparent;
+            this.cbtshuffer.CheckedState.Parent = this.cbtshuffer;
+            this.cbtshuffer.CustomImages.Parent = this.cbtshuffer;
+            this.cbtshuffer.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.cbtshuffer.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.cbtshuffer.ForeColor = System.Drawing.Color.White;
+            this.cbtshuffer.HoverState.Parent = this.cbtshuffer;
+            this.cbtshuffer.Location = new System.Drawing.Point(349, 53);
+            this.cbtshuffer.Name = "cbtshuffer";
+            this.cbtshuffer.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.cbtshuffer.ShadowDecoration.Parent = this.cbtshuffer;
+            this.cbtshuffer.Size = new System.Drawing.Size(10, 10);
+            this.cbtshuffer.TabIndex = 17;
+            this.cbtshuffer.Visible = false;
             // 
-            // pictureBox3
+            // cbtloop
             // 
-            this.pictureBox3.Image = global::_20521587_TH03_Music_Online.Properties.Resources.repeat__2_;
-            this.pictureBox3.Location = new System.Drawing.Point(565, 20);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(52, 31);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 8;
-            this.pictureBox3.TabStop = false;
+            this.cbtloop.BackColor = System.Drawing.Color.Transparent;
+            this.cbtloop.CheckedState.Parent = this.cbtloop;
+            this.cbtloop.CustomImages.Parent = this.cbtloop;
+            this.cbtloop.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.cbtloop.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.cbtloop.ForeColor = System.Drawing.Color.White;
+            this.cbtloop.HoverState.Parent = this.cbtloop;
+            this.cbtloop.Location = new System.Drawing.Point(586, 53);
+            this.cbtloop.Name = "cbtloop";
+            this.cbtloop.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.cbtloop.ShadowDecoration.Parent = this.cbtloop;
+            this.cbtloop.Size = new System.Drawing.Size(10, 10);
+            this.cbtloop.TabIndex = 16;
+            this.cbtloop.Visible = false;
             // 
-            // guna2CirclePictureBox6
+            // lbmediaend
             // 
-            this.guna2CirclePictureBox6.Image = global::_20521587_TH03_Music_Online.Properties.Resources.repeat__1_;
-            this.guna2CirclePictureBox6.Location = new System.Drawing.Point(329, 16);
-            this.guna2CirclePictureBox6.Name = "guna2CirclePictureBox6";
-            this.guna2CirclePictureBox6.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox6.ShadowDecoration.Parent = this.guna2CirclePictureBox6;
-            this.guna2CirclePictureBox6.Size = new System.Drawing.Size(36, 39);
-            this.guna2CirclePictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2CirclePictureBox6.TabIndex = 7;
-            this.guna2CirclePictureBox6.TabStop = false;
+            this.lbmediaend.AutoSize = true;
+            this.lbmediaend.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbmediaend.ForeColor = System.Drawing.Color.White;
+            this.lbmediaend.Location = new System.Drawing.Point(704, 57);
+            this.lbmediaend.Name = "lbmediaend";
+            this.lbmediaend.Size = new System.Drawing.Size(50, 21);
+            this.lbmediaend.TabIndex = 14;
+            this.lbmediaend.Text = "00:00";
+            this.lbmediaend.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // guna2CirclePictureBox4
+            // lbmediaplaying
             // 
-            this.guna2CirclePictureBox4.Image = global::_20521587_TH03_Music_Online.Properties.Resources.right;
-            this.guna2CirclePictureBox4.Location = new System.Drawing.Point(502, 21);
-            this.guna2CirclePictureBox4.Name = "guna2CirclePictureBox4";
-            this.guna2CirclePictureBox4.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox4.ShadowDecoration.Parent = this.guna2CirclePictureBox4;
-            this.guna2CirclePictureBox4.Size = new System.Drawing.Size(52, 29);
-            this.guna2CirclePictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2CirclePictureBox4.TabIndex = 5;
-            this.guna2CirclePictureBox4.TabStop = false;
-            // 
-            // guna2CirclePictureBox3
-            // 
-            this.guna2CirclePictureBox3.Image = global::_20521587_TH03_Music_Online.Properties.Resources.left;
-            this.guna2CirclePictureBox3.Location = new System.Drawing.Point(376, 21);
-            this.guna2CirclePictureBox3.Name = "guna2CirclePictureBox3";
-            this.guna2CirclePictureBox3.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox3.ShadowDecoration.Parent = this.guna2CirclePictureBox3;
-            this.guna2CirclePictureBox3.Size = new System.Drawing.Size(52, 29);
-            this.guna2CirclePictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2CirclePictureBox3.TabIndex = 4;
-            this.guna2CirclePictureBox3.TabStop = false;
-            // 
-            // btplay
-            // 
-            this.btplay.Image = global::_20521587_TH03_Music_Online.Properties.Resources.pause;
-            this.btplay.Location = new System.Drawing.Point(439, 16);
-            this.btplay.Name = "btplay";
-            this.btplay.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.btplay.ShadowDecoration.Parent = this.btplay;
-            this.btplay.Size = new System.Drawing.Size(52, 39);
-            this.btplay.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btplay.TabIndex = 3;
-            this.btplay.TabStop = false;
-            this.btplay.UseTransparentBackground = true;
-            this.btplay.Click += new System.EventHandler(this.guna2CirclePictureBox2_Click);
+            this.lbmediaplaying.AutoSize = true;
+            this.lbmediaplaying.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbmediaplaying.ForeColor = System.Drawing.Color.White;
+            this.lbmediaplaying.Location = new System.Drawing.Point(155, 58);
+            this.lbmediaplaying.Name = "lbmediaplaying";
+            this.lbmediaplaying.Size = new System.Drawing.Size(50, 21);
+            this.lbmediaplaying.TabIndex = 13;
+            this.lbmediaplaying.Text = "00:00";
+            this.lbmediaplaying.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // gunaTrackBar1
             // 
@@ -209,8 +225,8 @@ namespace _20521587_TH03_Music_Online
             this.gunaTrackBar1.Name = "gunaTrackBar1";
             this.gunaTrackBar1.Size = new System.Drawing.Size(488, 23);
             this.gunaTrackBar1.TabIndex = 2;
-            this.gunaTrackBar1.TrackColor = System.Drawing.Color.Yellow;
-            this.gunaTrackBar1.TrackHoverColor = System.Drawing.Color.Gray;
+            this.gunaTrackBar1.TrackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.gunaTrackBar1.TrackHoverColor = System.Drawing.Color.SpringGreen;
             this.gunaTrackBar1.TrackIdleColor = System.Drawing.Color.Silver;
             this.gunaTrackBar1.TrackPressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.gunaTrackBar1.Value = 0;
@@ -218,22 +234,23 @@ namespace _20521587_TH03_Music_Online
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.pictureBox8);
+            this.panel4.Controls.Add(this.lbsongtitle);
             this.panel4.Controls.Add(this.pictureBox2);
             this.panel4.Location = new System.Drawing.Point(232, 0);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(889, 42);
             this.panel4.TabIndex = 3;
             // 
-            // pictureBox2
+            // lbsongtitle
             // 
-            this.pictureBox2.Image = global::_20521587_TH03_Music_Online.Properties.Resources.close__1_;
-            this.pictureBox2.Location = new System.Drawing.Point(836, 5);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(30, 30);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            this.lbsongtitle.BackColor = System.Drawing.Color.Transparent;
+            this.lbsongtitle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbsongtitle.Location = new System.Drawing.Point(123, 9);
+            this.lbsongtitle.Name = "lbsongtitle";
+            this.lbsongtitle.Size = new System.Drawing.Size(69, 23);
+            this.lbsongtitle.TabIndex = 1;
+            this.lbsongtitle.Text = "Song title ";
             // 
             // guna2Button5
             // 
@@ -245,12 +262,12 @@ namespace _20521587_TH03_Music_Online
             this.guna2Button5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button5.ForeColor = System.Drawing.Color.Black;
             this.guna2Button5.HoverState.Parent = this.guna2Button5;
-            this.guna2Button5.Location = new System.Drawing.Point(46, 426);
+            this.guna2Button5.Location = new System.Drawing.Point(46, 446);
             this.guna2Button5.Name = "guna2Button5";
             this.guna2Button5.ShadowDecoration.Parent = this.guna2Button5;
             this.guna2Button5.Size = new System.Drawing.Size(182, 42);
             this.guna2Button5.TabIndex = 7;
-            this.guna2Button5.Text = "guna2Button5";
+            this.guna2Button5.Text = "3";
             // 
             // guna2Button3
             // 
@@ -262,12 +279,12 @@ namespace _20521587_TH03_Music_Online
             this.guna2Button3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button3.ForeColor = System.Drawing.Color.Black;
             this.guna2Button3.HoverState.Parent = this.guna2Button3;
-            this.guna2Button3.Location = new System.Drawing.Point(46, 365);
+            this.guna2Button3.Location = new System.Drawing.Point(46, 380);
             this.guna2Button3.Name = "guna2Button3";
             this.guna2Button3.ShadowDecoration.Parent = this.guna2Button3;
             this.guna2Button3.Size = new System.Drawing.Size(182, 42);
             this.guna2Button3.TabIndex = 5;
-            this.guna2Button3.Text = "guna2Button3";
+            this.guna2Button3.Text = "f";
             // 
             // guna2Button4
             // 
@@ -279,12 +296,12 @@ namespace _20521587_TH03_Music_Online
             this.guna2Button4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button4.ForeColor = System.Drawing.Color.Black;
             this.guna2Button4.HoverState.Parent = this.guna2Button4;
-            this.guna2Button4.Location = new System.Drawing.Point(46, 304);
+            this.guna2Button4.Location = new System.Drawing.Point(46, 314);
             this.guna2Button4.Name = "guna2Button4";
             this.guna2Button4.ShadowDecoration.Parent = this.guna2Button4;
             this.guna2Button4.Size = new System.Drawing.Size(182, 42);
             this.guna2Button4.TabIndex = 4;
-            this.guna2Button4.Text = "guna2Button4";
+            this.guna2Button4.Text = "k";
             // 
             // guna2Button2
             // 
@@ -296,7 +313,7 @@ namespace _20521587_TH03_Music_Online
             this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button2.ForeColor = System.Drawing.Color.Black;
             this.guna2Button2.HoverState.Parent = this.guna2Button2;
-            this.guna2Button2.Location = new System.Drawing.Point(46, 243);
+            this.guna2Button2.Location = new System.Drawing.Point(46, 248);
             this.guna2Button2.Name = "guna2Button2";
             this.guna2Button2.ShadowDecoration.Parent = this.guna2Button2;
             this.guna2Button2.Size = new System.Drawing.Size(182, 42);
@@ -364,8 +381,207 @@ namespace _20521587_TH03_Music_Online
             this.gunaGradient2Panel3.GradientColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(186)))), ((int)(((byte)(248)))));
             this.gunaGradient2Panel3.Location = new System.Drawing.Point(0, 0);
             this.gunaGradient2Panel3.Name = "gunaGradient2Panel3";
-            this.gunaGradient2Panel3.Size = new System.Drawing.Size(235, 610);
+            this.gunaGradient2Panel3.Size = new System.Drawing.Size(235, 714);
             this.gunaGradient2Panel3.TabIndex = 6;
+            // 
+            // media
+            // 
+            this.media.Enabled = true;
+            this.media.Location = new System.Drawing.Point(27, 555);
+            this.media.Name = "media";
+            this.media.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("media.OcxState")));
+            this.media.Size = new System.Drawing.Size(199, 50);
+            this.media.TabIndex = 10;
+            // 
+            // gunaGradient2Panel4
+            // 
+            this.gunaGradient2Panel4.BackColor = System.Drawing.Color.Transparent;
+            this.gunaGradient2Panel4.GradientColor1 = System.Drawing.Color.Lime;
+            this.gunaGradient2Panel4.GradientColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.gunaGradient2Panel4.Location = new System.Drawing.Point(22, -517);
+            this.gunaGradient2Panel4.Name = "gunaGradient2Panel4";
+            this.gunaGradient2Panel4.Size = new System.Drawing.Size(585, 453);
+            this.gunaGradient2Panel4.TabIndex = 0;
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Alignment = System.Windows.Forms.TabAlignment.Bottom;
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Location = new System.Drawing.Point(234, 41);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(887, 574);
+            this.tabControl1.TabIndex = 7;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.pictureBox13);
+            this.tabPage1.Controls.Add(this.guna2HtmlLabel5);
+            this.tabPage1.Controls.Add(this.pictureBox11);
+            this.tabPage1.Controls.Add(this.pictureBox10);
+            this.tabPage1.Controls.Add(this.pictureBox9);
+            this.tabPage1.Controls.Add(this.lbAuthorMain);
+            this.tabPage1.Controls.Add(this.guna2HtmlLabel3);
+            this.tabPage1.Controls.Add(this.lbSingerMain);
+            this.tabPage1.Controls.Add(this.guna2PictureBox2);
+            this.tabPage1.Controls.Add(this.lbSongTitleMain);
+            this.tabPage1.Controls.Add(this.pbSongPic);
+            this.tabPage1.Location = new System.Drawing.Point(4, 4);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(879, 548);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // guna2HtmlLabel5
+            // 
+            this.guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel5.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel5.Location = new System.Drawing.Point(95, 447);
+            this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
+            this.guna2HtmlLabel5.Size = new System.Drawing.Size(45, 27);
+            this.guna2HtmlLabel5.TabIndex = 10;
+            this.guna2HtmlLabel5.Text = "scrip";
+            // 
+            // lbAuthorMain
+            // 
+            this.lbAuthorMain.BackColor = System.Drawing.Color.Transparent;
+            this.lbAuthorMain.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbAuthorMain.Location = new System.Drawing.Point(460, 195);
+            this.lbAuthorMain.Name = "lbAuthorMain";
+            this.lbAuthorMain.Size = new System.Drawing.Size(54, 23);
+            this.lbAuthorMain.TabIndex = 7;
+            this.lbAuthorMain.Text = "author";
+            // 
+            // guna2HtmlLabel3
+            // 
+            this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel3.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.guna2HtmlLabel3.Location = new System.Drawing.Point(95, 414);
+            this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
+            this.guna2HtmlLabel3.Size = new System.Drawing.Size(100, 27);
+            this.guna2HtmlLabel3.TabIndex = 6;
+            this.guna2HtmlLabel3.Text = "Lời Bài hát:";
+            // 
+            // lbSingerMain
+            // 
+            this.lbSingerMain.BackColor = System.Drawing.Color.Transparent;
+            this.lbSingerMain.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSingerMain.Location = new System.Drawing.Point(460, 280);
+            this.lbSingerMain.Name = "lbSingerMain";
+            this.lbSingerMain.Size = new System.Drawing.Size(57, 27);
+            this.lbSingerMain.TabIndex = 5;
+            this.lbSingerMain.Text = "Singer";
+            // 
+            // lbSongTitleMain
+            // 
+            this.lbSongTitleMain.BackColor = System.Drawing.Color.Transparent;
+            this.lbSongTitleMain.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSongTitleMain.Location = new System.Drawing.Point(461, 97);
+            this.lbSongTitleMain.Name = "lbSongTitleMain";
+            this.lbSongTitleMain.Size = new System.Drawing.Size(89, 27);
+            this.lbSongTitleMain.TabIndex = 3;
+            this.lbSongTitleMain.Text = "Song title ";
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.AutoScroll = true;
+            this.tabPage2.Controls.Add(this.pictureBox12);
+            this.tabPage2.Controls.Add(this.gunaLabel6);
+            this.tabPage2.Controls.Add(this.gunaLabel5);
+            this.tabPage2.Controls.Add(this.gunaLabel4);
+            this.tabPage2.Controls.Add(this.gunaLabel3);
+            this.tabPage2.Controls.Add(this.gunaLabel2);
+            this.tabPage2.Controls.Add(this.flowLayoutPanel1);
+            this.tabPage2.Controls.Add(this.panel1);
+            this.tabPage2.Controls.Add(this.pictureBox4);
+            this.tabPage2.Location = new System.Drawing.Point(4, 4);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(879, 548);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // gunaLabel6
+            // 
+            this.gunaLabel6.AutoSize = true;
+            this.gunaLabel6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.gunaLabel6.Location = new System.Drawing.Point(341, 36);
+            this.gunaLabel6.Name = "gunaLabel6";
+            this.gunaLabel6.Size = new System.Drawing.Size(86, 21);
+            this.gunaLabel6.TabIndex = 13;
+            this.gunaLabel6.Text = "Phát tất cả ";
+            this.gunaLabel6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // gunaLabel5
+            // 
+            this.gunaLabel5.AutoSize = true;
+            this.gunaLabel5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.gunaLabel5.Location = new System.Drawing.Point(640, 93);
+            this.gunaLabel5.Name = "gunaLabel5";
+            this.gunaLabel5.Size = new System.Drawing.Size(83, 21);
+            this.gunaLabel5.TabIndex = 12;
+            this.gunaLabel5.Text = "Thời Gian";
+            this.gunaLabel5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // gunaLabel4
+            // 
+            this.gunaLabel4.AutoSize = true;
+            this.gunaLabel4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.gunaLabel4.Location = new System.Drawing.Point(484, 93);
+            this.gunaLabel4.Name = "gunaLabel4";
+            this.gunaLabel4.Size = new System.Drawing.Size(71, 21);
+            this.gunaLabel4.TabIndex = 11;
+            this.gunaLabel4.Text = "Thể loại";
+            this.gunaLabel4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // gunaLabel3
+            // 
+            this.gunaLabel3.AutoSize = true;
+            this.gunaLabel3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.gunaLabel3.Location = new System.Drawing.Point(148, 93);
+            this.gunaLabel3.Name = "gunaLabel3";
+            this.gunaLabel3.Size = new System.Drawing.Size(63, 21);
+            this.gunaLabel3.TabIndex = 10;
+            this.gunaLabel3.Text = "Bài hát";
+            this.gunaLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // gunaLabel2
+            // 
+            this.gunaLabel2.AutoSize = true;
+            this.gunaLabel2.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.gunaLabel2.Location = new System.Drawing.Point(75, 26);
+            this.gunaLabel2.Name = "gunaLabel2";
+            this.gunaLabel2.Size = new System.Drawing.Size(259, 40);
+            this.gunaLabel2.TabIndex = 3;
+            this.gunaLabel2.Text = "Danh sách bài hát";
+            this.gunaLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(18, 117);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(750, 776);
+            this.flowLayoutPanel1.TabIndex = 1;
+            // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(843, 15);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(12, 881);
+            this.panel1.TabIndex = 0;
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 500;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // pictureBox6
             // 
@@ -387,16 +603,6 @@ namespace _20521587_TH03_Music_Online
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // gunaGradient2Panel4
-            // 
-            this.gunaGradient2Panel4.BackColor = System.Drawing.Color.Transparent;
-            this.gunaGradient2Panel4.GradientColor1 = System.Drawing.Color.Lime;
-            this.gunaGradient2Panel4.GradientColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.gunaGradient2Panel4.Location = new System.Drawing.Point(22, -517);
-            this.gunaGradient2Panel4.Name = "gunaGradient2Panel4";
-            this.gunaGradient2Panel4.Size = new System.Drawing.Size(585, 453);
-            this.gunaGradient2Panel4.TabIndex = 0;
-            // 
             // guna2CirclePictureBox1
             // 
             this.guna2CirclePictureBox1.Image = global::_20521587_TH03_Music_Online.Properties.Resources.cs231;
@@ -409,158 +615,188 @@ namespace _20521587_TH03_Music_Online
             this.guna2CirclePictureBox1.TabIndex = 8;
             this.guna2CirclePictureBox1.TabStop = false;
             // 
+            // pictureBox8
+            // 
+            this.pictureBox8.Image = global::_20521587_TH03_Music_Online.Properties.Resources.itunes;
+            this.pictureBox8.Location = new System.Drawing.Point(66, 3);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(35, 35);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox8.TabIndex = 2;
+            this.pictureBox8.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::_20521587_TH03_Music_Online.Properties.Resources.close__1_;
+            this.pictureBox2.Location = new System.Drawing.Point(836, 5);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Image = global::_20521587_TH03_Music_Online.Properties.Resources.shuffle;
+            this.pictureBox7.Location = new System.Drawing.Point(340, 22);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox7.TabIndex = 15;
+            this.pictureBox7.TabStop = false;
+            this.pictureBox7.Click += new System.EventHandler(this.pictureBox7_Click);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::_20521587_TH03_Music_Online.Properties.Resources.repeat9;
+            this.pictureBox3.Location = new System.Drawing.Point(574, 21);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 8;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = global::_20521587_TH03_Music_Online.Properties.Resources.medium_volume;
+            this.pictureBox5.ImageLocation = "";
+            this.pictureBox5.Location = new System.Drawing.Point(758, 55);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(26, 26);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 10;
+            this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click_1);
+            // 
+            // guna2CirclePictureBox4
+            // 
+            this.guna2CirclePictureBox4.Image = global::_20521587_TH03_Music_Online.Properties.Resources.right;
+            this.guna2CirclePictureBox4.Location = new System.Drawing.Point(510, 23);
+            this.guna2CirclePictureBox4.Name = "guna2CirclePictureBox4";
+            this.guna2CirclePictureBox4.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CirclePictureBox4.ShadowDecoration.Parent = this.guna2CirclePictureBox4;
+            this.guna2CirclePictureBox4.Size = new System.Drawing.Size(52, 29);
+            this.guna2CirclePictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2CirclePictureBox4.TabIndex = 5;
+            this.guna2CirclePictureBox4.TabStop = false;
+            this.guna2CirclePictureBox4.Click += new System.EventHandler(this.guna2CirclePictureBox4_Click);
+            // 
+            // guna2CirclePictureBox3
+            // 
+            this.guna2CirclePictureBox3.Image = global::_20521587_TH03_Music_Online.Properties.Resources.left;
+            this.guna2CirclePictureBox3.Location = new System.Drawing.Point(382, 23);
+            this.guna2CirclePictureBox3.Name = "guna2CirclePictureBox3";
+            this.guna2CirclePictureBox3.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CirclePictureBox3.ShadowDecoration.Parent = this.guna2CirclePictureBox3;
+            this.guna2CirclePictureBox3.Size = new System.Drawing.Size(52, 29);
+            this.guna2CirclePictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2CirclePictureBox3.TabIndex = 4;
+            this.guna2CirclePictureBox3.TabStop = false;
+            // 
+            // btplay
+            // 
+            this.btplay.Image = global::_20521587_TH03_Music_Online.Properties.Resources.pause;
+            this.btplay.Location = new System.Drawing.Point(446, 18);
+            this.btplay.Name = "btplay";
+            this.btplay.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.btplay.ShadowDecoration.Parent = this.btplay;
+            this.btplay.Size = new System.Drawing.Size(52, 39);
+            this.btplay.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btplay.TabIndex = 3;
+            this.btplay.TabStop = false;
+            this.btplay.UseTransparentBackground = true;
+            this.btplay.Click += new System.EventHandler(this.guna2CirclePictureBox2_Click);
+            // 
+            // pictureBox13
+            // 
+            this.pictureBox13.Image = global::_20521587_TH03_Music_Online.Properties.Resources.composing;
+            this.pictureBox13.Location = new System.Drawing.Point(31, 416);
+            this.pictureBox13.Name = "pictureBox13";
+            this.pictureBox13.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox13.TabIndex = 11;
+            this.pictureBox13.TabStop = false;
+            // 
+            // pictureBox11
+            // 
+            this.pictureBox11.Image = global::_20521587_TH03_Music_Online.Properties.Resources.microphone;
+            this.pictureBox11.Location = new System.Drawing.Point(420, 276);
+            this.pictureBox11.Name = "pictureBox11";
+            this.pictureBox11.Size = new System.Drawing.Size(35, 35);
+            this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox11.TabIndex = 9;
+            this.pictureBox11.TabStop = false;
+            // 
+            // pictureBox10
+            // 
+            this.pictureBox10.Image = global::_20521587_TH03_Music_Online.Properties.Resources.writer;
+            this.pictureBox10.Location = new System.Drawing.Point(420, 189);
+            this.pictureBox10.Name = "pictureBox10";
+            this.pictureBox10.Size = new System.Drawing.Size(35, 35);
+            this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox10.TabIndex = 8;
+            this.pictureBox10.TabStop = false;
+            // 
+            // pictureBox9
+            // 
+            this.pictureBox9.Image = global::_20521587_TH03_Music_Online.Properties.Resources.itunes;
+            this.pictureBox9.Location = new System.Drawing.Point(420, 93);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(35, 35);
+            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox9.TabIndex = 3;
+            this.pictureBox9.TabStop = false;
+            // 
+            // guna2PictureBox2
+            // 
+            this.guna2PictureBox2.Image = global::_20521587_TH03_Music_Online.Properties.Resources.speaker;
+            this.guna2PictureBox2.Location = new System.Drawing.Point(730, 31);
+            this.guna2PictureBox2.Name = "guna2PictureBox2";
+            this.guna2PictureBox2.ShadowDecoration.Parent = this.guna2PictureBox2;
+            this.guna2PictureBox2.Size = new System.Drawing.Size(93, 60);
+            this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox2.TabIndex = 4;
+            this.guna2PictureBox2.TabStop = false;
+            // 
+            // pbSongPic
+            // 
+            this.pbSongPic.Image = global::_20521587_TH03_Music_Online.Properties.Resources.BH01;
+            this.pbSongPic.Location = new System.Drawing.Point(78, 93);
+            this.pbSongPic.Name = "pbSongPic";
+            this.pbSongPic.ShadowDecoration.Parent = this.pbSongPic;
+            this.pbSongPic.Size = new System.Drawing.Size(318, 284);
+            this.pbSongPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbSongPic.TabIndex = 0;
+            this.pbSongPic.TabStop = false;
+            // 
+            // pictureBox12
+            // 
+            this.pictureBox12.Image = global::_20521587_TH03_Music_Online.Properties.Resources.play_button__2_;
+            this.pictureBox12.Location = new System.Drawing.Point(433, 31);
+            this.pictureBox12.Name = "pictureBox12";
+            this.pictureBox12.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox12.TabIndex = 14;
+            this.pictureBox12.TabStop = false;
+            this.pictureBox12.Click += new System.EventHandler(this.pictureBox12_Click);
+            // 
             // pictureBox4
             // 
             this.pictureBox4.Image = global::_20521587_TH03_Music_Online.Properties.Resources.headphones;
-            this.pictureBox4.Location = new System.Drawing.Point(18, 15);
+            this.pictureBox4.Location = new System.Drawing.Point(18, 19);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(51, 55);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 9;
             this.pictureBox4.TabStop = false;
             // 
-            // tabControl1
-            // 
-            this.tabControl1.Alignment = System.Windows.Forms.TabAlignment.Bottom;
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(234, 41);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(887, 470);
-            this.tabControl1.TabIndex = 7;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Location = new System.Drawing.Point(4, 4);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(879, 444);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.AutoScroll = true;
-            this.tabPage2.Controls.Add(this.gunaLabel5);
-            this.tabPage2.Controls.Add(this.gunaLabel4);
-            this.tabPage2.Controls.Add(this.gunaLabel3);
-            this.tabPage2.Controls.Add(this.gunaLabel2);
-            this.tabPage2.Controls.Add(this.flowLayoutPanel1);
-            this.tabPage2.Controls.Add(this.panel1);
-            this.tabPage2.Controls.Add(this.pictureBox4);
-            this.tabPage2.Location = new System.Drawing.Point(4, 4);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(879, 444);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(18, 117);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(750, 671);
-            this.flowLayoutPanel1.TabIndex = 1;
-            // 
-            // panel1
-            // 
-            this.panel1.Location = new System.Drawing.Point(821, 15);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(34, 881);
-            this.panel1.TabIndex = 0;
-            // 
-            // gunaLabel2
-            // 
-            this.gunaLabel2.AutoSize = true;
-            this.gunaLabel2.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.gunaLabel2.Location = new System.Drawing.Point(75, 26);
-            this.gunaLabel2.Name = "gunaLabel2";
-            this.gunaLabel2.Size = new System.Drawing.Size(259, 40);
-            this.gunaLabel2.TabIndex = 3;
-            this.gunaLabel2.Text = "Danh sách bài hát";
-            this.gunaLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // media
-            // 
-            this.media.Enabled = true;
-            this.media.Location = new System.Drawing.Point(27, 491);
-            this.media.Name = "media";
-            this.media.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("media.OcxState")));
-            this.media.Size = new System.Drawing.Size(199, 50);
-            this.media.TabIndex = 10;
-            // 
-            // gunaLabel3
-            // 
-            this.gunaLabel3.AutoSize = true;
-            this.gunaLabel3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.gunaLabel3.Location = new System.Drawing.Point(148, 93);
-            this.gunaLabel3.Name = "gunaLabel3";
-            this.gunaLabel3.Size = new System.Drawing.Size(63, 21);
-            this.gunaLabel3.TabIndex = 10;
-            this.gunaLabel3.Text = "Bài hát";
-            this.gunaLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // gunaLabel4
-            // 
-            this.gunaLabel4.AutoSize = true;
-            this.gunaLabel4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.gunaLabel4.Location = new System.Drawing.Point(484, 93);
-            this.gunaLabel4.Name = "gunaLabel4";
-            this.gunaLabel4.Size = new System.Drawing.Size(71, 21);
-            this.gunaLabel4.TabIndex = 11;
-            this.gunaLabel4.Text = "Thể loại";
-            this.gunaLabel4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // gunaLabel5
-            // 
-            this.gunaLabel5.AutoSize = true;
-            this.gunaLabel5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.gunaLabel5.Location = new System.Drawing.Point(619, 93);
-            this.gunaLabel5.Name = "gunaLabel5";
-            this.gunaLabel5.Size = new System.Drawing.Size(83, 21);
-            this.gunaLabel5.TabIndex = 12;
-            this.gunaLabel5.Text = "Thời Gian";
-            this.gunaLabel5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // timer1
-            // 
-            this.timer1.Interval = 500;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // lbmediaplaying
-            // 
-            this.lbmediaplaying.AutoSize = true;
-            this.lbmediaplaying.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbmediaplaying.ForeColor = System.Drawing.Color.White;
-            this.lbmediaplaying.Location = new System.Drawing.Point(155, 58);
-            this.lbmediaplaying.Name = "lbmediaplaying";
-            this.lbmediaplaying.Size = new System.Drawing.Size(50, 21);
-            this.lbmediaplaying.TabIndex = 13;
-            this.lbmediaplaying.Text = "00:00";
-            this.lbmediaplaying.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbmediaend
-            // 
-            this.lbmediaend.AutoSize = true;
-            this.lbmediaend.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbmediaend.ForeColor = System.Drawing.Color.White;
-            this.lbmediaend.Location = new System.Drawing.Point(704, 57);
-            this.lbmediaend.Name = "lbmediaend";
-            this.lbmediaend.Size = new System.Drawing.Size(50, 21);
-            this.lbmediaend.TabIndex = 14;
-            this.lbmediaend.Text = "00:00";
-            this.lbmediaend.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // fMusic
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1123, 610);
+            this.ClientSize = new System.Drawing.Size(1123, 714);
             this.Controls.Add(this.gunaGradient2Panel3);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.gunaGradient2Panel2);
@@ -573,31 +809,42 @@ namespace _20521587_TH03_Music_Online
             this.Load += new System.EventHandler(this.fMusic_Load);
             this.gunaGradient2Panel2.ResumeLayout(false);
             this.gunaGradient2Panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btplay)).EndInit();
             this.panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panel4.PerformLayout();
             this.gunaGradient2Panel3.ResumeLayout(false);
             this.gunaGradient2Panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.media)).EndInit();
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btplay)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSongPic)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            this.tabControl1.ResumeLayout(false);
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.media)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private Guna.UI.WinForms.GunaGradient2Panel gunaGradient2Panel1;
-        private Guna.UI.WinForms.GunaMetroTrackBar gunaMetroTrackBar1;
+        private Guna.UI.WinForms.GunaMetroTrackBar tbVolumn;
         private Guna.UI.WinForms.GunaGradient2Panel gunaGradient2Panel2;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.PictureBox pictureBox2;
@@ -617,8 +864,6 @@ namespace _20521587_TH03_Music_Online
         private Guna.UI.WinForms.GunaGradient2Panel gunaGradient2Panel4;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox6;
-        private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.TabControl tabControl1;
@@ -634,6 +879,25 @@ namespace _20521587_TH03_Music_Online
         private System.Windows.Forms.Timer timer1;
         private Guna.UI.WinForms.GunaLabel lbmediaend;
         private Guna.UI.WinForms.GunaLabel lbmediaplaying;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox pictureBox7;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lbsongtitle;
+        private System.Windows.Forms.PictureBox pictureBox8;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lbSongTitleMain;
+        private Guna.UI2.WinForms.Guna2PictureBox pbSongPic;
+        private System.Windows.Forms.PictureBox pictureBox11;
+        private System.Windows.Forms.PictureBox pictureBox10;
+        private System.Windows.Forms.PictureBox pictureBox9;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lbAuthorMain;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lbSingerMain;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel5;
+        private System.Windows.Forms.PictureBox pictureBox12;
+        private Guna.UI.WinForms.GunaLabel gunaLabel6;
+        private Guna.UI2.WinForms.Guna2CircleButton cbtshuffer;
+        private Guna.UI2.WinForms.Guna2CircleButton cbtloop;
+        private System.Windows.Forms.PictureBox pictureBox13;
     }
 }
 
