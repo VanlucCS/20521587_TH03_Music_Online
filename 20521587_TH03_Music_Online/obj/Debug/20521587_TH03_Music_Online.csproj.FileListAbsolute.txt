@@ -53,3 +53,5 @@ C:\Users\VQ\Documents\GitHub\20521587_TH03_Music_Online\20521587_TH03_Music_Onli
 C:\Users\VQ\Documents\GitHub\20521587_TH03_Music_Online\20521587_TH03_Music_Online\obj\Debug\20521587_TH03_Music_Online.csproj.CopyComplete
 C:\Users\VQ\Documents\GitHub\20521587_TH03_Music_Online\20521587_TH03_Music_Online\obj\Debug\20521587_TH03_Music_Online.exe
 C:\Users\VQ\Documents\GitHub\20521587_TH03_Music_Online\20521587_TH03_Music_Online\obj\Debug\20521587_TH03_Music_Online.pdb
+C:\Users\VQ\Documents\GitHub\20521587_TH03_Music_Online\20521587_TH03_Music_Online\obj\Debug\_20521587_TH03_Music_Online.UI.ucReviews.resources
+C:\Users\VQ\Documents\GitHub\20521587_TH03_Music_Online\20521587_TH03_Music_Online\obj\Debug\_20521587_TH03_Music_Online.UI.ucAddReview.resources

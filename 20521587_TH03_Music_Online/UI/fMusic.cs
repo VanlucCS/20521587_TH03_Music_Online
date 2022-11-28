@@ -37,6 +37,7 @@ namespace _20521587_TH03_Music_Online
             media.URL = "./" + Playing + ".mp3";
             media.Ctlcontrols.play();
             timer1.Start();
+            flowLayoutPanel2.Controls.Add(addReviewButton());
             //tabControl1.
         }
 
@@ -118,6 +119,7 @@ namespace _20521587_TH03_Music_Online
             //MessageBox.Show("bai moi");
             preSong = (ucSong)sender;
             lbsongtitle.Text = preSong.tenBh + "  -  " + preSong.caSi;
+            load_SongIn4(preSong.maBh);
             preSong.isPlaying = true;
             preSong.playButton = _20521587_TH03_Music_Online.Properties.Resources.pause_button__1_;
             Playing = preSong.maBh;
@@ -297,15 +299,49 @@ namespace _20521587_TH03_Music_Online
                 cbtshuffer.Visible = false;
             }
         }
+
         private void load_SongIn4(string mabh)
         {
-            DataRow dr = listSongData.AsEnumerable().SingleOrDefault(r => r.Field<string>("MASP") == mabh);
-
+            DataRow dr = listSongData.AsEnumerable().SingleOrDefault(r => r.Field<string>("MABH") == mabh);
+            richTextBox1.Clear();
             pbSongPic.Image=  (Image)rm.GetObject(mabh);
             lbSongTitleMain.Text = dr[1].ToString();
             lbAuthorMain.Text = dr[2].ToString();
             lbSingerMain.Text = dr[3].ToString();
+            string lyricUrl = @".\"+mabh+".txt";
+            string[] lines = System.IO.File.ReadAllLines(lyricUrl);
+            //MessageBox.Show(lines.Length.ToString());
+            richTextBox1.Size = new Size(500, lines.Length * 24);
+            foreach (string line in lines)
+            {
+                // Use a tab to indent each line of the file.
+                //Console.WriteLine("\t" + line);
+                richTextBox1.AppendText(line+"\n");
+            }
             //lbAuthorMain.Text = dr[2].ToString();
+            guna2HtmlLabel1.Top = richTextBox1.Top + richTextBox1.Height;
+            guna2HtmlLabel2.Top = guna2HtmlLabel1.Top + 40;
+            pictureBox14.Top = guna2HtmlLabel2.Top + 40;
+            flowLayoutPanel2.Top = pictureBox14.Top + 40;
         }
+
+        private void guna2Button5_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void guna2Button3_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void guna2Button4_Click(object sender, EventArgs e)
+        {
+
+        }
+        private Button addReviewButton()
+        {
+            Button bt = new Button() { Width = 100, Height = 40, Text = "Thêm Đánh Giá", BackColor = Color.Blue };
+            return bt;
+        }
+
     }
 }

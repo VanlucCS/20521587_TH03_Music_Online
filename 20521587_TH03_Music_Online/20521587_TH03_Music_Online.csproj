@@ -73,6 +73,18 @@
     <Compile Include="UI\test.Designer.cs">
       <DependentUpon>test.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\ucAddReview.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\ucAddReview.Designer.cs">
+      <DependentUpon>ucAddReview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ucReviews.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\ucReviews.Designer.cs">
+      <DependentUpon>ucReviews.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\ucSong.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -92,6 +104,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UI\ucAddReview.resx">
+      <DependentUpon>ucAddReview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ucReviews.resx">
+      <DependentUpon>ucReviews.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\ucSong.resx">
       <DependentUpon>ucSong.cs</DependentUpon>
     </EmbeddedResource>
@@ -273,6 +291,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\repeat13.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\like %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dislike %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\star %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\star %284%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
