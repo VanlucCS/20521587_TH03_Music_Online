@@ -67,8 +67,8 @@ namespace _20521587_TH03_Music_Online
         {
             listSongData = ldal.Select();
 
-            ucSong[] ListSong = new ucSong[2];
-            for (int i = 0; i < 2; i++)
+            ucSong[] ListSong = new ucSong[listSongData.Rows.Count];
+            for (int i = 0; i < listSongData.Rows.Count; i++)
             {
                 ListSong[i] = new ucSong();
                 ListSong[i].maBh = listSongData.Rows[i][0].ToString();
@@ -126,6 +126,7 @@ namespace _20521587_TH03_Music_Online
             media.Ctlcontrols.stop();
             //MessageBox.Show("bai moi");
             preSong = (ucSong)sender;
+
             lbsongtitle.Text = preSong.tenBh + "  -  " + preSong.caSi;
             load_SongIn4(preSong.maBh);
             preSong.isPlaying = true;
@@ -135,6 +136,7 @@ namespace _20521587_TH03_Music_Online
             media.Ctlcontrols.play();
             timer1.Start();
             preSong.BackColor = Color.FromArgb(192, 255, 255);
+            flowLayoutPanel2.Controls.Clear();
             load_reivew();
             flowLayoutPanel2.Controls.Add(addReviewButton());
 
@@ -283,7 +285,8 @@ namespace _20521587_TH03_Music_Online
                 }
                 else
                     pictureBox5.Image = _20521587_TH03_Music_Online.Properties.Resources.medium_volume;
-
+                if (tbVolumn.Value == 0)
+                    pictureBox5.Image = _20521587_TH03_Music_Online.Properties.Resources.no_sound__1_;
             }
         }
 
@@ -354,6 +357,7 @@ namespace _20521587_TH03_Music_Online
             }
             //lbAuthorMain.Text = dr[2].ToString();
             guna2HtmlLabel1.Top = richTextBox1.Top + richTextBox1.Height;
+            panel2.Top = richTextBox1.Top + richTextBox1.Height;
             guna2HtmlLabel2.Top = guna2HtmlLabel1.Top + 40;
             pictureBox14.Top = guna2HtmlLabel2.Top + 40;
             flowLayoutPanel2.Top = pictureBox14.Top + 40;
@@ -424,7 +428,22 @@ namespace _20521587_TH03_Music_Online
         }
         private void addReview(object sender, EventArgs e)
         {
-
+            DataTable dt = rdal.Select();
+            ucAddReview f = new ucAddReview();
+            f.maBh = Playing;
+            f.soDg = dt.Rows.Count + 1;
+            f.ten = "Văn Lực";
+            f.insertClick += update_review;
+            foreach (Control i in flowLayoutPanel2.Controls)
+            {
+                if (i.GetType() == typeof(Button))
+                {
+                    flowLayoutPanel2.Controls.Remove(i);
+                    break;
+                }
+            }
+            flowLayoutPanel2.Controls.Add(f);
+            flowLayoutPanel2.Controls.Add(addReviewButton());
         }
 
         private void guna2Button6_Click(object sender, EventArgs e)

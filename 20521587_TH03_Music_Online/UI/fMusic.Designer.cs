@@ -104,6 +104,7 @@ namespace _20521587_TH03_Music_Online
             this.pbSongPic = new Guna.UI2.WinForms.Guna2PictureBox();
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.gunaGradient2Panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.gunaGradient2Panel3.SuspendLayout();
@@ -138,6 +139,7 @@ namespace _20521587_TH03_Music_Online
             ((System.ComponentModel.ISupportInitialize)(this.pbSongPic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // gunaGradient2Panel1
@@ -546,11 +548,7 @@ namespace _20521587_TH03_Music_Online
             // tabPage1
             // 
             this.tabPage1.AutoScroll = true;
-            this.tabPage1.Controls.Add(this.pictureBox19);
-            this.tabPage1.Controls.Add(this.pictureBox17);
-            this.tabPage1.Controls.Add(this.pictureBox18);
-            this.tabPage1.Controls.Add(this.pictureBox16);
-            this.tabPage1.Controls.Add(this.pictureBox15);
+            this.tabPage1.Controls.Add(this.panel2);
             this.tabPage1.Controls.Add(this.flowLayoutPanel2);
             this.tabPage1.Controls.Add(this.pictureBox14);
             this.tabPage1.Controls.Add(this.guna2HtmlLabel2);
@@ -908,7 +906,7 @@ namespace _20521587_TH03_Music_Online
             // pictureBox19
             // 
             this.pictureBox19.Image = global::_20521587_TH03_Music_Online.Properties.Resources.star__4_;
-            this.pictureBox19.Location = new System.Drawing.Point(408, 496);
+            this.pictureBox19.Location = new System.Drawing.Point(156, 3);
             this.pictureBox19.Name = "pictureBox19";
             this.pictureBox19.Size = new System.Drawing.Size(30, 30);
             this.pictureBox19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -918,7 +916,7 @@ namespace _20521587_TH03_Music_Online
             // pictureBox17
             // 
             this.pictureBox17.Image = global::_20521587_TH03_Music_Online.Properties.Resources.star__2_;
-            this.pictureBox17.Location = new System.Drawing.Point(372, 496);
+            this.pictureBox17.Location = new System.Drawing.Point(120, 3);
             this.pictureBox17.Name = "pictureBox17";
             this.pictureBox17.Size = new System.Drawing.Size(30, 30);
             this.pictureBox17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -928,7 +926,7 @@ namespace _20521587_TH03_Music_Online
             // pictureBox18
             // 
             this.pictureBox18.Image = global::_20521587_TH03_Music_Online.Properties.Resources.star__2_;
-            this.pictureBox18.Location = new System.Drawing.Point(336, 496);
+            this.pictureBox18.Location = new System.Drawing.Point(84, 3);
             this.pictureBox18.Name = "pictureBox18";
             this.pictureBox18.Size = new System.Drawing.Size(30, 30);
             this.pictureBox18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -938,7 +936,7 @@ namespace _20521587_TH03_Music_Online
             // pictureBox16
             // 
             this.pictureBox16.Image = global::_20521587_TH03_Music_Online.Properties.Resources.star__2_;
-            this.pictureBox16.Location = new System.Drawing.Point(300, 496);
+            this.pictureBox16.Location = new System.Drawing.Point(48, 3);
             this.pictureBox16.Name = "pictureBox16";
             this.pictureBox16.Size = new System.Drawing.Size(30, 30);
             this.pictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -948,7 +946,7 @@ namespace _20521587_TH03_Music_Online
             // pictureBox15
             // 
             this.pictureBox15.Image = global::_20521587_TH03_Music_Online.Properties.Resources.star__2_;
-            this.pictureBox15.Location = new System.Drawing.Point(264, 496);
+            this.pictureBox15.Location = new System.Drawing.Point(12, 3);
             this.pictureBox15.Name = "pictureBox15";
             this.pictureBox15.Size = new System.Drawing.Size(30, 30);
             this.pictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1047,6 +1045,18 @@ namespace _20521587_TH03_Music_Online
             this.pictureBox4.TabIndex = 9;
             this.pictureBox4.TabStop = false;
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.pictureBox16);
+            this.panel2.Controls.Add(this.pictureBox19);
+            this.panel2.Controls.Add(this.pictureBox15);
+            this.panel2.Controls.Add(this.pictureBox17);
+            this.panel2.Controls.Add(this.pictureBox18);
+            this.panel2.Location = new System.Drawing.Point(269, 493);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(194, 36);
+            this.panel2.TabIndex = 73;
+            // 
             // fMusic
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1102,6 +1112,7 @@ namespace _20521587_TH03_Music_Online
             ((System.ComponentModel.ISupportInitialize)(this.pbSongPic)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1180,6 +1191,7 @@ namespace _20521587_TH03_Music_Online
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel4;
         private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox1;
         private Guna.UI2.WinForms.Guna2Button guna2Button6;
+        private System.Windows.Forms.Panel panel2;
     }
 }
 
