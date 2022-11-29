@@ -13,6 +13,7 @@ using System.Windows.Forms;
 using System.Resources;
 using System.Reflection;
 using WMPLib;
+using System.IO;
 
 namespace _20521587_TH03_Music_Online
 {
@@ -368,6 +369,46 @@ namespace _20521587_TH03_Music_Online
         }
         private void guna2Button4_Click(object sender, EventArgs e)
         {
+            tabControl1.SelectedIndex = 2;
+            mome_Image(sender);
+            guna2ComboBox1.Items.Clear();
+            string[] plLines = System.IO.File.ReadAllLines("./PlayListName.txt");
+            foreach (string item in plLines)
+            {
+                guna2ComboBox1.Items.Add(item);
+            }
+            guna2ComboBox1.SelectedIndex = 0;
+            load_PlayList(guna2ComboBox1.Text);
+
+        }
+        private void load_PlayList(string tenpl)
+        {
+            PlaylistDAL pdal = new PlaylistDAL();
+            DataTable dt = new DataTable();
+            dt = pdal.Select();
+            flowLayoutPanel3.Controls.Clear();
+            foreach (DataRow dr in dt.Rows)
+            {
+                if(dr[1].ToString() == tenpl && dr[2].ToString()!= "FFFF")
+                {
+                    DataRow datasong = listSongData.AsEnumerable().SingleOrDefault(r => r.Field<string>("MABH") == dr[2].ToString());
+                    ucSong s = new ucSong();
+                    s = new ucSong();
+                    s.maBh = datasong[0].ToString();
+                    s.tenBh = datasong[1].ToString();
+                    s.caSi = datasong[3].ToString();
+                    s.image = (Image)rm.GetObject(datasong[0].ToString());
+                    s.theLoai = datasong[4].ToString();
+                    s.time = datasong[6].ToString().Substring(3);
+                    s.playButtonClick += play_Click;
+                    s.Ucclick += play_Click2;
+                    flowLayoutPanel3.Controls.Add(s);
+                }
+
+            }
+
+
+
 
         }
         private Button addReviewButton()
@@ -383,25 +424,31 @@ namespace _20521587_TH03_Music_Online
         }
         private void addReview(object sender, EventArgs e)
         {
-            
-            DataTable dt = rdal.Select();
-            ucAddReview f = new ucAddReview();
-            f.maBh = Playing;
-            f.soDg = dt.Rows.Count+1;
-            f.ten = "Văn Lực";
-            f.insertClick += update_review;
-            foreach (Control i in flowLayoutPanel2.Controls)
-            {
-                if (i.GetType() == typeof(Button))
-                {
-                    flowLayoutPanel2.Controls.Remove(i);
-                    break;
-                }
-            }    
-            flowLayoutPanel2.Controls.Add(f);
-            flowLayoutPanel2.Controls.Add(addReviewButton());
 
         }
 
+        private void guna2Button6_Click(object sender, EventArgs e)
+        {
+            fAddPlayList f = new fAddPlayList();
+            f.ShowDialog();
+            // thêm tên play list
+            string line = f.tenPlayList;
+            string[] lines =
+            {
+                    line
+                };
+            string saveurl = "./PlayListName.txt";
+            File.AppendAllLines(saveurl, lines);
+            string[] plLines = System.IO.File.ReadAllLines("./PlayListName.txt");
+            PlaylistDAL pdal = new PlaylistDAL(); 
+            pdal.Insert(plLines.Length, f.tenPlayList,"FFFF");
+
+        }
+
+        private void guna2ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            load_PlayList(guna2ComboBox1.Text);
+
+        }
     }
 }
