@@ -316,5 +316,41 @@
   <ItemGroup>
     <None Include="Resources\star %284%29.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BH04.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BH05.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BH06.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BH07.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BH08.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BH09.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BH10.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BH11.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BH12.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BH13.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BH14.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BH15.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

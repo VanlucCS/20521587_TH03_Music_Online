@@ -66,7 +66,7 @@ namespace _20521587_TH03_Music_Online
         private void load_ListSong()
         {
             listSongData = ldal.Select();
-
+            flowLayoutPanel1.Height = listSongData.Rows.Count * 125;
             ucSong[] ListSong = new ucSong[listSongData.Rows.Count];
             for (int i = 0; i < listSongData.Rows.Count; i++)
             {
@@ -293,10 +293,13 @@ namespace _20521587_TH03_Music_Online
         private void pictureBox12_Click(object sender, EventArgs e)
         {
             IWMPPlaylist fullSong = media.newPlaylist("fullSongd", null);
-            WMPLib.IWMPMedia m1 = media.newMedia("./" + "BH01" + ".mp3");
-            WMPLib.IWMPMedia m2 = media.newMedia("./" + "BH02" + ".mp3");
-            fullSong.appendItem(m1);
-            fullSong.appendItem(m2);
+            //WMPLib.IWMPMedia m1 = media.newMedia("./" + "BH01" + ".mp3");
+            foreach(ucSong i in flowLayoutPanel1.Controls)
+            {
+                WMPLib.IWMPMedia m = media.newMedia("./" + i.maBh + ".mp3");
+                fullSong.appendItem(m);
+            }
+            //fullSong.appendItem(m2);
             //media.playlistCollection.
             media.currentPlaylist = fullSong;
             media.Ctlcontrols.play();

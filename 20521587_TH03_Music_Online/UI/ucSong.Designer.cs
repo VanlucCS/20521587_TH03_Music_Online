@@ -86,9 +86,9 @@ namespace _20521587_TH03_Music_Online.UI
             this.lbMahb.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbMahb.Location = new System.Drawing.Point(338, 94);
             this.lbMahb.Name = "lbMahb";
-            this.lbMahb.Size = new System.Drawing.Size(66, 19);
+            this.lbMahb.Size = new System.Drawing.Size(49, 19);
             this.lbMahb.TabIndex = 7;
-            this.lbMahb.Text = "Thể loại";
+            this.lbMahb.Text = "mabh";
             this.lbMahb.Visible = false;
             this.lbMahb.Click += new System.EventHandler(this.lbMahb_Click);
             // 
