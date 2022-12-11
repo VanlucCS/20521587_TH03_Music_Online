@@ -24,22 +24,28 @@ namespace _20521587_TH03_Music_Online
         ListSongDAL ldal = new ListSongDAL();
         ReviewsDAL rdal = new ReviewsDAL();
         DataTable listSongData = new DataTable();
+        UserDAL udal = new UserDAL();
+        DataTable userdata = new DataTable();
+
+
         public string Playing = "BH01";
         public bool stage = false;
         //public bool soundo
         public bool soundOn = true;
         public int volumn = 1;
         public ucSong preSong;
-
+        public string userName = "Văn Lực";
+        public string userID = "US05";
         //public double heso = 0
         public fMusic()
         {
             InitializeComponent();
             load_ListSong();
+            userdata = udal.Select();
             media.URL = "./" + Playing + ".mp3";
             media.Ctlcontrols.play();
             timer1.Start();
-            //tabControl1.
+            tabControl1.SelectedIndex = 1;
         }
 
         private void mome_Image(object sender)
@@ -137,7 +143,11 @@ namespace _20521587_TH03_Music_Online
             timer1.Start();
             preSong.BackColor = Color.FromArgb(192, 255, 255);
             flowLayoutPanel2.Controls.Clear();
+
+            // load đánh giá của bài hát 
             load_reivew();
+
+            // button thêm đánh giá mới cho bài hát
             flowLayoutPanel2.Controls.Add(addReviewButton());
 
             guna2Button1_Click_1(guna2Button1,null);
@@ -152,8 +162,11 @@ namespace _20521587_TH03_Music_Online
         private void load_reivew()
         {
             ReviewsDAL rdal = new ReviewsDAL();
+            // prop
 
             DataTable dt = new DataTable();
+            float everageRate = 0;
+            int countSongRate = 0;
             dt = rdal.Select();
             flowLayoutPanel2.Size = new Size(735,130*(dt.Rows.Count+2));
             foreach(DataRow dr in dt.Rows)
@@ -164,12 +177,60 @@ namespace _20521587_TH03_Music_Online
                     rv.ten = dr[2].ToString();
                     rv.danhGia = dr[3].ToString();
                     rv.rate = int.Parse(dr[4].ToString());
+                    everageRate += int.Parse(dr[4].ToString());
                     rv.like = int.Parse(dr[6].ToString());
                     rv.unLike = int.Parse(dr[7].ToString());
                     rv.thoiGian = DateTime.Parse(dr[5].ToString());
+                    try
+                    {
+                    DataRow druser = userdata.AsEnumerable().SingleOrDefault(r => r.Field<string>("TEN") == rv.ten);
+                    rv.userImage = (Image)rm.GetObject(druser[0].ToString());
+                    }
+                    catch (Exception)
+                    {
+                    }
                     flowLayoutPanel2.Controls.Add(rv);
+                    countSongRate++;
+                    
                 }
             }
+            if(countSongRate!=0)
+            everageRate = everageRate / countSongRate;
+            //if(everageRate)
+            rate((int)everageRate);
+
+
+        }
+        private void rate(int value )
+        {
+                if (value == 1)
+                    setRate(1, 0, 0, 0, 0);
+                else if (value == 2)
+                    setRate(1, 1, 0, 0, 0);
+                else if (value == 3)
+                    setRate(1, 1, 1, 0, 0);
+                else if (value == 4)
+                    setRate(1, 1, 1, 1, 0);
+                else
+                    setRate(1, 1, 1, 1, 1);
+        }
+        private void setRate(int a, int b, int c, int d, int e)
+        {
+            s1.Image = _20521587_TH03_Music_Online.Properties.Resources.star__2_;
+            s2.Image = _20521587_TH03_Music_Online.Properties.Resources.star__2_;
+            s3.Image = _20521587_TH03_Music_Online.Properties.Resources.star__2_;
+            s4.Image = _20521587_TH03_Music_Online.Properties.Resources.star__2_;
+            s5.Image = _20521587_TH03_Music_Online.Properties.Resources.star__2_;
+            if (a == 0)
+                s1.Image = _20521587_TH03_Music_Online.Properties.Resources.star__4_;
+            if (b == 0)
+                s2.Image = _20521587_TH03_Music_Online.Properties.Resources.star__4_;
+            if (c == 0)
+                s3.Image = _20521587_TH03_Music_Online.Properties.Resources.star__4_;
+            if (d == 0)
+                s4.Image = _20521587_TH03_Music_Online.Properties.Resources.star__4_;
+            if (e == 0)
+                s5.Image = _20521587_TH03_Music_Online.Properties.Resources.star__4_;
         }
         private void gunaGradient2Panel1_Paint(object sender, PaintEventArgs e)
         {
@@ -339,7 +400,7 @@ namespace _20521587_TH03_Music_Online
                 cbtshuffer.Visible = false;
             }
         }
-
+        // load bài hát
         private void load_SongIn4(string mabh)
         {
             DataRow dr = listSongData.AsEnumerable().SingleOrDefault(r => r.Field<string>("MABH") == mabh);
@@ -360,10 +421,11 @@ namespace _20521587_TH03_Music_Online
             }
             //lbAuthorMain.Text = dr[2].ToString();
             guna2HtmlLabel1.Top = richTextBox1.Top + richTextBox1.Height;
-            panel2.Top = richTextBox1.Top + richTextBox1.Height;
+            panel2.Top = richTextBox1.Top + richTextBox1.Height-5;
             guna2HtmlLabel2.Top = guna2HtmlLabel1.Top + 40;
             pictureBox14.Top = guna2HtmlLabel2.Top + 40;
             flowLayoutPanel2.Top = pictureBox14.Top + 40;
+
         }
 
         private void guna2Button5_Click(object sender, EventArgs e)
@@ -378,12 +440,15 @@ namespace _20521587_TH03_Music_Online
         {
             tabControl1.SelectedIndex = 2;
             mome_Image(sender);
+
+
             guna2ComboBox1.Items.Clear();
             string[] plLines = System.IO.File.ReadAllLines("./PlayListName.txt");
             foreach (string item in plLines)
             {
                 guna2ComboBox1.Items.Add(item);
             }
+
             guna2ComboBox1.SelectedIndex = 0;
             load_PlayList(guna2ComboBox1.Text);
 
@@ -394,6 +459,8 @@ namespace _20521587_TH03_Music_Online
             DataTable dt = new DataTable();
             dt = pdal.Select();
             flowLayoutPanel3.Controls.Clear();
+
+            int songCounter = 0;
             foreach (DataRow dr in dt.Rows)
             {
                 if(dr[1].ToString() == tenpl && dr[2].ToString()!= "FFFF")
@@ -410,11 +477,12 @@ namespace _20521587_TH03_Music_Online
                     s.playButtonClick += play_Click;
                     s.Ucclick += play_Click2;
                     flowLayoutPanel3.Controls.Add(s);
+                    songCounter++;
                 }
 
             }
 
-
+            flowLayoutPanel3.Height = songCounter * 125;
 
 
         }
@@ -435,7 +503,8 @@ namespace _20521587_TH03_Music_Online
             ucAddReview f = new ucAddReview();
             f.maBh = Playing;
             f.soDg = dt.Rows.Count + 1;
-            f.ten = "Văn Lực";
+            f.ten = userName;
+            f.userImage = (Image)rm.GetObject(userID);
             f.insertClick += update_review;
             foreach (Control i in flowLayoutPanel2.Controls)
             {
@@ -454,23 +523,213 @@ namespace _20521587_TH03_Music_Online
             fAddPlayList f = new fAddPlayList();
             f.ShowDialog();
             // thêm tên play list
-            string line = f.tenPlayList;
-            string[] lines =
+            
+            if (!f.cancel)
             {
+
+                string line = f.tenPlayList;
+                string[] lines =
+                {
                     line
                 };
-            string saveurl = "./PlayListName.txt";
-            File.AppendAllLines(saveurl, lines);
+                string saveurl = "./PlayListName.txt";
+                File.AppendAllLines(saveurl, lines);
+                string[] p = System.IO.File.ReadAllLines("./PlayListName.txt");
+                PlaylistDAL pdal = new PlaylistDAL();
+                pdal.Insert(p.Length, f.tenPlayList, "FFFF");
+            }
             string[] plLines = System.IO.File.ReadAllLines("./PlayListName.txt");
-            PlaylistDAL pdal = new PlaylistDAL(); 
-            pdal.Insert(plLines.Length, f.tenPlayList,"FFFF");
 
+            guna2ComboBox1.Items.Clear();
+            foreach (string item in plLines)
+            {
+                guna2ComboBox1.Items.Add(item);
+            }
+            guna2ComboBox1.SelectedIndex = 0;
         }
 
         private void guna2ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             load_PlayList(guna2ComboBox1.Text);
 
+        }
+
+        private void pbAddToPlayList_Click(object sender, EventArgs e)
+        {
+            //fAddToPlayList d = new fAddToPlayList();
+            //d.Location = new Point(e.);
+            //d.Show();
+            //fAddToPlayList d = new fAddToPlayList();
+            //d.Location = new Point(pbAddToPlayList.Location.X+220, pbAddToPlayList.Location.Y+110);
+            //d.ShowDialog();
+            ContextMenuStrip toolStrip = new ContextMenuStrip();
+            toolStrip.ItemClicked += ClickItem;
+            toolStrip.Items.Clear();
+            string[] plLines = System.IO.File.ReadAllLines("./PlayListName.txt");
+
+            foreach (string item in plLines)
+            {
+                toolStrip.Items.Add(item);
+            }
+            //toolStrip.Items.Add("Now playing");
+            //foreach (PlayListInfo item in Playlist.Instance.GetAllPlayListMusic())
+            //{
+            //    toolStrip.Items.Add(item.Name_PL);
+            //    Y -= 22;
+            //}
+            toolStrip.LayoutStyle = ToolStripLayoutStyle.VerticalStackWithOverflow;
+            toolStrip.Items.Add("-");
+            toolStrip.Items.Add("New playlist");
+            int Y = 400;
+            
+            toolStrip.Location = new Point(pbAddToPlayList.Location.X + 70, pbAddToPlayList.Location.Y + Y);
+            toolStrip.Show(MousePosition);
+            toolStrip.BringToFront();
+            toolStrip.GripStyle = ToolStripGripStyle.Hidden;
+            toolStrip.Dock = DockStyle.None;
+        }
+        //public class AutoClosingMessageBox
+        //{
+        //    System.Threading.Timer _timeoutTimer;
+        //    string _caption;
+        //    //fMessShow f = new fMessShow();
+
+        //    AutoClosingMessageBox(string text, string caption, int timeout)
+        //    {
+        //        _caption = caption;
+        //        _timeoutTimer = new System.Threading.Timer(OnTimerElapsed,
+        //            null, timeout, System.Threading.Timeout.Infinite);
+        //        using (_timeoutTimer)
+        //            //f.Show();
+        //            /*MessageBox.Show(text, caption)*/;
+        //    }
+        //    public static void Show(string text, string caption, int timeout)
+        //    {
+        //        new AutoClosingMessageBox(text, caption, timeout);
+        //    }
+        //    void OnTimerElapsed(object state)
+        //    {
+        //        IntPtr mbWnd = FindWindow("#32770", _caption); // lpClassName is #32770 for MessageBox
+        //        if (mbWnd != IntPtr.Zero)
+        //            SendMessage(mbWnd, WM_CLOSE, IntPtr.Zero, IntPtr.Zero);
+        //        _timeoutTimer.Dispose();
+        //    }
+        //    const int WM_CLOSE = 0x0010;
+        //    [System.Runtime.InteropServices.DllImport("user32.dll", SetLastError = true)]
+        //    static extern IntPtr FindWindow(string lpClassName, string lpWindowName);
+        //    [System.Runtime.InteropServices.DllImport("user32.dll", CharSet = System.Runtime.InteropServices.CharSet.Auto)]
+        //    static extern IntPtr SendMessage(IntPtr hWnd, UInt32 Msg, IntPtr wParam, IntPtr lParam);
+        //}
+        private void ClickItem(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+            // them vao play list
+            if(e.ClickedItem.Text == "New playlist")
+            {
+
+            }   
+            else
+            {
+                PlaylistDAL pdal = new PlaylistDAL();
+                pdal.Insert(1, e.ClickedItem.Text, Playing);
+
+            }
+
+
+            fMessShow d = new fMessShow();
+            d.Show();
+            // ? 
+            //toolStrip = null;
+        }
+        private void pbAddToPlayList_MouseClick(object sender, MouseEventArgs e)
+        {
+            
+        }
+
+        private void pictureBox15_Click(object sender, EventArgs e)
+        {
+            IWMPPlaylist playlist = media.newPlaylist("Playlist", null);
+            //WMPLib.IWMPMedia m1 = media.newMedia("./" + "BH01" + ".mp3");
+            foreach (ucSong i in flowLayoutPanel3.Controls)
+            {
+                WMPLib.IWMPMedia m = media.newMedia("./" + i.maBh + ".mp3");
+                playlist.appendItem(m);
+            }
+            //fullSong.appendItem(m2);
+            //media.playlistCollection.
+            media.currentPlaylist = playlist;
+            media.Ctlcontrols.play();
+        }
+
+        private void pictureBox16_Click(object sender, EventArgs e)
+        {
+            ContextMenuStrip toolStrip = new ContextMenuStrip();
+            toolStrip.ItemClicked += ClickUserOption;
+            toolStrip.Items.Clear();
+                 toolStrip.LayoutStyle = ToolStripLayoutStyle.VerticalStackWithOverflow;
+            toolStrip.Items.Add("Đổi tải khoản");
+            toolStrip.Items.Add("-");
+            toolStrip.Items.Add("Đổi ảnh nền");
+            toolStrip.Items.Add("-");
+            toolStrip.Items.Add("Thông tin người dùng",_20521587_TH03_Music_Online.Properties.Resources.info);
+            int Y = 400;
+            toolStrip.Location = new Point(pbAddToPlayList.Location.X + 70, pbAddToPlayList.Location.Y + Y);
+            toolStrip.Show(MousePosition);
+            toolStrip.BringToFront();
+            toolStrip.GripStyle = ToolStripGripStyle.Hidden;
+            toolStrip.Dock = DockStyle.None;
+        }
+        private void ClickUserOption(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+            // them vao play list
+            if (e.ClickedItem.Text == "Đổi tải khoản")
+            {
+                fSwichUser fswuer = new fSwichUser();
+                fswuer.ShowDialog();
+                pbuserimage.Image = fswuer.userImage;
+                lbUserName.Text = fswuer.userName;
+                userName= fswuer.userName;
+                userID = fswuer.userID;
+            }
+
+
+            fMessShow d = new fMessShow();
+            d.Show();
+            // ? 
+            //toolStrip = null;
+        }
+        private void LoadTopicSong( string topic)
+        {
+            load_ListSong();
+            //listSongData = ldal.Select();
+            //ucSong[] ListSong = new ucSong[listSongData.Rows.Count];
+            //for (int i = 0; i < listSongData.Rows.Count; i++)
+            //{
+            //    ListSong[i] = new ucSong();
+            //    ListSong[i].maBh = listSongData.Rows[i][0].ToString();
+            //    ListSong[i].tenBh = listSongData.Rows[i][1].ToString();
+            //    ListSong[i].caSi = listSongData.Rows[i][3].ToString();
+            //    ListSong[i].image = (Image)rm.GetObject(listSongData.Rows[i][0].ToString());
+            //    ListSong[i].theLoai = listSongData.Rows[i][4].ToString();
+            //    ListSong[i].time = listSongData.Rows[i][6].ToString().Substring(3);
+            //    ListSong[i].playButtonClick += play_Click;
+            //    ListSong[i].Ucclick += play_Click2;
+            //    flowLayoutPanel1.Controls.Add(ListSong[i]);
+            //}
+            foreach (ucSong song in flowLayoutPanel1.Controls)
+            {
+                if (song.theLoai != topic)
+                {
+                    flowLayoutPanel1.Controls.Remove(song);
+                }    
+            }
+            flowLayoutPanel1.Height = listSongData.Rows.Count * 125;
+            flowLayoutPanel1.Refresh();
+        }
+        private void guna2Button8_Click(object sender, EventArgs e)
+        {
+            LoadTopicSong("Nhạc Trẻ");
         }
     }
 }

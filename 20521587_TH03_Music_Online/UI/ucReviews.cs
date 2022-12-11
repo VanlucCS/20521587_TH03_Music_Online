@@ -4,6 +4,8 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
+using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -12,9 +14,19 @@ namespace _20521587_TH03_Music_Online.UI
 {
     public partial class ucReviews : UserControl
     {
+        ResourceManager rm = new ResourceManager("_20521587_TH03_Music_Online.Properties.Resources",
+            Assembly.GetExecutingAssembly());
         public ucReviews()
         {
             InitializeComponent();
+            //guna2CirclePictureBox1.Image =  (Image)rm.GetObject("Văn Lực"); 
+        }
+        private Image _userImage;
+
+        public Image userImage
+        {
+            get { return _userImage; }
+            set { _userImage = value; guna2CirclePictureBox1.Image = value; }
         }
         private string _maBh;
 

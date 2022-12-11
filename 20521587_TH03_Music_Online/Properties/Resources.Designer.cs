@@ -243,16 +243,6 @@ namespace _20521587_TH03_Music_Online.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap cs231 {
-            get {
-                object obj = ResourceManager.GetObject("cs231", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap dislike__1_ {
             get {
                 object obj = ResourceManager.GetObject("dislike (1)", resourceCulture);
@@ -286,6 +276,16 @@ namespace _20521587_TH03_Music_Online.Properties {
         internal static System.Drawing.Bitmap high_volume {
             get {
                 object obj = ResourceManager.GetObject("high-volume", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap info {
+            get {
+                object obj = ResourceManager.GetObject("info", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -366,6 +366,16 @@ namespace _20521587_TH03_Music_Online.Properties {
         internal static System.Drawing.Bitmap mute__1_ {
             get {
                 object obj = ResourceManager.GetObject("mute__1_", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap nhacviet {
+            get {
+                object obj = ResourceManager.GetObject("nhacviet", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -593,6 +603,16 @@ namespace _20521587_TH03_Music_Online.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap settings {
+            get {
+                object obj = ResourceManager.GetObject("settings", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap shuffle {
             get {
                 object obj = ResourceManager.GetObject("shuffle", resourceCulture);
@@ -636,6 +656,76 @@ namespace _20521587_TH03_Music_Online.Properties {
         internal static System.Drawing.Bitmap star__4_ {
             get {
                 object obj = ResourceManager.GetObject("star (4)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap to_do_list {
+            get {
+                object obj = ResourceManager.GetObject("to-do-list", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap US00 {
+            get {
+                object obj = ResourceManager.GetObject("US00", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap US01 {
+            get {
+                object obj = ResourceManager.GetObject("US01", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap US02 {
+            get {
+                object obj = ResourceManager.GetObject("US02", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap US03 {
+            get {
+                object obj = ResourceManager.GetObject("US03", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap US04 {
+            get {
+                object obj = ResourceManager.GetObject("US04", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap US05 {
+            get {
+                object obj = ResourceManager.GetObject("US05", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

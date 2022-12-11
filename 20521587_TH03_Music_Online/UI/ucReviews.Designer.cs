@@ -77,7 +77,7 @@ namespace _20521587_TH03_Music_Online.UI
             // 
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(160, 87);
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(160, 85);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
             this.guna2HtmlLabel1.Size = new System.Drawing.Size(12, 23);
             this.guna2HtmlLabel1.TabIndex = 6;
@@ -87,7 +87,7 @@ namespace _20521587_TH03_Music_Online.UI
             // 
             this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel2.Location = new System.Drawing.Point(206, 85);
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(216, 85);
             this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
             this.guna2HtmlLabel2.Size = new System.Drawing.Size(12, 23);
             this.guna2HtmlLabel2.TabIndex = 7;
@@ -125,7 +125,7 @@ namespace _20521587_TH03_Music_Online.UI
             // pbDisLike
             // 
             this.pbDisLike.Image = global::_20521587_TH03_Music_Online.Properties.Resources.dislike__1_;
-            this.pbDisLike.Location = new System.Drawing.Point(179, 88);
+            this.pbDisLike.Location = new System.Drawing.Point(189, 86);
             this.pbDisLike.Name = "pbDisLike";
             this.pbDisLike.Size = new System.Drawing.Size(20, 20);
             this.pbDisLike.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -135,7 +135,7 @@ namespace _20521587_TH03_Music_Online.UI
             // pbLike
             // 
             this.pbLike.Image = global::_20521587_TH03_Music_Online.Properties.Resources.like__2_;
-            this.pbLike.Location = new System.Drawing.Point(133, 88);
+            this.pbLike.Location = new System.Drawing.Point(133, 86);
             this.pbLike.Name = "pbLike";
             this.pbLike.Size = new System.Drawing.Size(20, 20);
             this.pbLike.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -144,7 +144,7 @@ namespace _20521587_TH03_Music_Online.UI
             // 
             // guna2CirclePictureBox1
             // 
-            this.guna2CirclePictureBox1.Image = global::_20521587_TH03_Music_Online.Properties.Resources.cs231;
+            this.guna2CirclePictureBox1.Image = global::_20521587_TH03_Music_Online.Properties.Resources.US05;
             this.guna2CirclePictureBox1.Location = new System.Drawing.Point(24, 9);
             this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
             this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
@@ -157,7 +157,7 @@ namespace _20521587_TH03_Music_Online.UI
             // pbstart5
             // 
             this.pbstart5.Image = global::_20521587_TH03_Music_Online.Properties.Resources.star__2_;
-            this.pbstart5.Location = new System.Drawing.Point(371, 90);
+            this.pbstart5.Location = new System.Drawing.Point(378, 87);
             this.pbstart5.Name = "pbstart5";
             this.pbstart5.Size = new System.Drawing.Size(20, 20);
             this.pbstart5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -167,7 +167,7 @@ namespace _20521587_TH03_Music_Online.UI
             // pbstart4
             // 
             this.pbstart4.Image = global::_20521587_TH03_Music_Online.Properties.Resources.star__4_;
-            this.pbstart4.Location = new System.Drawing.Point(339, 90);
+            this.pbstart4.Location = new System.Drawing.Point(346, 87);
             this.pbstart4.Name = "pbstart4";
             this.pbstart4.Size = new System.Drawing.Size(20, 20);
             this.pbstart4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -177,7 +177,7 @@ namespace _20521587_TH03_Music_Online.UI
             // pbstart3
             // 
             this.pbstart3.Image = global::_20521587_TH03_Music_Online.Properties.Resources.star__4_;
-            this.pbstart3.Location = new System.Drawing.Point(307, 90);
+            this.pbstart3.Location = new System.Drawing.Point(314, 87);
             this.pbstart3.Name = "pbstart3";
             this.pbstart3.Size = new System.Drawing.Size(20, 20);
             this.pbstart3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -187,7 +187,7 @@ namespace _20521587_TH03_Music_Online.UI
             // pbstart2
             // 
             this.pbstart2.Image = global::_20521587_TH03_Music_Online.Properties.Resources.star__4_;
-            this.pbstart2.Location = new System.Drawing.Point(275, 90);
+            this.pbstart2.Location = new System.Drawing.Point(282, 87);
             this.pbstart2.Name = "pbstart2";
             this.pbstart2.Size = new System.Drawing.Size(20, 20);
             this.pbstart2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -197,7 +197,7 @@ namespace _20521587_TH03_Music_Online.UI
             // pbstart1
             // 
             this.pbstart1.Image = global::_20521587_TH03_Music_Online.Properties.Resources.star__4_;
-            this.pbstart1.Location = new System.Drawing.Point(243, 90);
+            this.pbstart1.Location = new System.Drawing.Point(250, 87);
             this.pbstart1.Name = "pbstart1";
             this.pbstart1.Size = new System.Drawing.Size(20, 20);
             this.pbstart1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;

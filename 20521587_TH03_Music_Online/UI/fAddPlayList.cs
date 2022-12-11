@@ -17,6 +17,14 @@ namespace _20521587_TH03_Music_Online.UI
             InitializeComponent();
 
         }
+        private bool _cacel = false;
+
+        public bool cancel
+        {
+            get { return _cacel; }
+            set { _cacel = value; }
+        }
+
         private string  _tenPlayList;
 
         public string  tenPlayList
@@ -48,6 +56,12 @@ namespace _20521587_TH03_Music_Online.UI
                 MessageBox.Show("Chưa nhập tên play list");
                 return;
             }
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            cancel = true;
+            this.Close();
         }
     }
 }

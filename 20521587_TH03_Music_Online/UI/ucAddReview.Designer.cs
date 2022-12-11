@@ -153,7 +153,7 @@ namespace _20521587_TH03_Music_Online.UI
             // 
             // guna2CirclePictureBox1
             // 
-            this.guna2CirclePictureBox1.Image = global::_20521587_TH03_Music_Online.Properties.Resources.cs231;
+            this.guna2CirclePictureBox1.Image = global::_20521587_TH03_Music_Online.Properties.Resources.US05;
             this.guna2CirclePictureBox1.Location = new System.Drawing.Point(24, 9);
             this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
             this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;

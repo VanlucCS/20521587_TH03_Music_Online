@@ -40,6 +40,13 @@ namespace _20521587_TH03_Music_Online.UI
             get { return _ten; }
             set { _ten = value; lbName.Text = value; }
         }
+        private Image _userImage;
+
+        public Image userImage
+        {
+            get { return _userImage; }
+            set { _userImage = value; guna2CirclePictureBox1.Image = value; }
+        }
         private string _danhGia;
 
         public string danhGia
