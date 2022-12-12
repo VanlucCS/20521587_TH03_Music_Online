@@ -16,20 +16,20 @@ CREATE TABLE THONGTIN(
 );
 
 
-INSERT INTO THONGTIN VALUES('BH01',N'Tết Nhà Mình',N'Huỳnh Hiền Năng',N'Hòa Minzy',N'Nhạc trẻ',N'Việt Nam','00:03:55');
-INSERT INTO THONGTIN VALUES('BH02',N'Ai cần ai',N'Hứa Kim Tuyền',N'Bảo Anh',N'Nhạc trẻ',N'Việt Nam','00:03:24');
-INSERT INTO THONGTIN VALUES('BH03',N'Cứ Thở Đi',N'Hứa Kim Tuyền',N'Đức Phúc & Juky San',N'Nhạc trẻ',N'Việt Nam','00:03:45');
-INSERT INTO THONGTIN VALUES('BH04',N'Running Out Of Roses',N'Alan Walker & Jamie Miller',N'Alan Walker',N'Electronica/Dance/Pop',N'Âu Mỹ','00:02:16');
+INSERT INTO THONGTIN VALUES('BH01',N'Tết Nhà Mình',N'Huỳnh Hiền Năng',N'Hòa Minzy',N'Nhạc Trẻ',N'Việt Nam','00:03:55');
+INSERT INTO THONGTIN VALUES('BH02',N'Ai cần ai',N'Hứa Kim Tuyền',N'Bảo Anh',N'Nhạc Trẻ',N'Việt Nam','00:03:24');
+INSERT INTO THONGTIN VALUES('BH03',N'Cứ Thở Đi',N'Hứa Kim Tuyền',N'Đức Phúc & Juky San',N'Nhạc Trẻ',N'Việt Nam','00:03:45');
+INSERT INTO THONGTIN VALUES('BH04',N'Running Out Of Roses',N'Alan Walker & Jamie Miller',N'Alan Walker',N'Electronica/Dance',N'Âu Mỹ','00:02:16');
 INSERT INTO THONGTIN VALUES('BH05',N'Made You Look',N'Meghan Trainor',N'Meghan Trainor',N'Pop',N'Âu Mỹ','00:02:17');
 INSERT INTO THONGTIN VALUES('BH06',N'Rolling In The Deep',N'Adele',N'Adele',N'Pop',N'Âu Mỹ','00:03:47');
-INSERT INTO THONGTIN VALUES('BH07',N'Waiting For You',N'Nguyễn Việt Hoàng, Nguyễn Ngọc Hoàng Anh',N'MONO, Onionn',N'Nhạc trẻ',N'Việt Nam','00:04:25');
-INSERT INTO THONGTIN VALUES('BH08',N'Có Đâu Ai Ngờ',N'REDT',N'Thu Cầm',N'Nhạc trẻ',N'Việt Nam','00:03:40');
-INSERT INTO THONGTIN VALUES('BH09',N'Bài Này Không Để Đi Diễn',N'Bùi Công Nam',N'Anh Tú Atus',N'Nhạc trẻ',N'Việt Nam','00:02:59');
-INSERT INTO THONGTIN VALUES('BH10',N'Điều Cha Chưa Nói (Bố Già OST)',N'Trấn Thành',N'Ali Hoàng Dương',N'Nhạc trẻ',N'Việt Nam','00:04:19');
-INSERT INTO THONGTIN VALUES('BH11',N'Em Là Nhất Miền Tây',N'Jin Tuấn Nam',N'Võ Lê Mi, Jin Tuấn Nam',N'Nhạc trẻ',N'Việt Nam','00:03:07');
-INSERT INTO THONGTIN VALUES('BH12',N'Bước Qua Nhau',N'Vũ',N'Vũ',N'Nhạc trẻ',N'Việt Nam','00:04:18');
-INSERT INTO THONGTIN VALUES('BH13',N'Anh Tự Do Nhưng Cô Đơn ',N'Đạt G',N'Trung Quân',N'Nhạc trẻ',N'Việt Nam','00:05:15');
-INSERT INTO THONGTIN VALUES('BH14',N'Cứ Chill Thôi',N'Trần Duy Khang',N'Chillies, Suni Hạ Linh',N'Nhạc trẻ',N'Việt Nam','00:04:30');
+INSERT INTO THONGTIN VALUES('BH07',N'Waiting For You',N'Nguyễn Việt Hoàng, Nguyễn Ngọc Hoàng Anh',N'MONO, Onionn',N'Nhạc Trẻ',N'Việt Nam','00:04:25');
+INSERT INTO THONGTIN VALUES('BH08',N'Có Đâu Ai Ngờ',N'REDT',N'Thu Cầm',N'Nhạc Trẻ',N'Việt Nam','00:03:40');
+INSERT INTO THONGTIN VALUES('BH09',N'Bài Này Không Để Đi Diễn',N'Bùi Công Nam',N'Anh Tú Atus',N'Nhạc Trẻ',N'Việt Nam','00:02:59');
+INSERT INTO THONGTIN VALUES('BH10',N'Điều Cha Chưa Nói (Bố Già OST)',N'Trấn Thành',N'Ali Hoàng Dương',N'Nhạc Trẻ',N'Việt Nam','00:04:19');
+INSERT INTO THONGTIN VALUES('BH11',N'Em Là Nhất Miền Tây',N'Jin Tuấn Nam',N'Võ Lê Mi, Jin Tuấn Nam',N'Nhạc Trẻ',N'Việt Nam','00:03:07');
+INSERT INTO THONGTIN VALUES('BH12',N'Bước Qua Nhau',N'Vũ',N'Vũ',N'Nhạc Trẻ',N'Việt Nam','00:04:18');
+INSERT INTO THONGTIN VALUES('BH13',N'Anh Tự Do Nhưng Cô Đơn ',N'Đạt G',N'Trung Quân',N'Nhạc Trẻ',N'Việt Nam','00:05:15');
+INSERT INTO THONGTIN VALUES('BH14',N'Cứ Chill Thôi',N'Trần Duy Khang',N'Chillies, Suni Hạ Linh',N'Nhạc Trẻ',N'Việt Nam','00:04:30');
 INSERT INTO THONGTIN VALUES('BH15',N'Savage Love',N'Jawsh 685',N'Jason Derulo',N'Electronica/Dance',N'Âu Mỹ','00:02:49');
 
 delete from THONGTIN where MABH ='BH15'
@@ -67,6 +67,8 @@ CREATE TABLE PLAYLIST(
 );
 INSERT INTO PLAYLIST VALUES('1',N'Playlist của lực','BH01','28/11/2022');
 
+drop TABLE USERINFO
+
 CREATE TABLE USERINFO(
 	MAUSER			char(4),
 	TEN				nvarchar(50),
@@ -75,13 +77,16 @@ CREATE TABLE USERINFO(
 	NGAYTAOTK		smalldatetime,
 	--THOIGIANTAO smalldatetime,
 );
+SET DATEFORMAT DMY;
 INSERT INTO USERINFO VALUES('US00',N'Đoán Xem','user','user','28/11/2022');
 INSERT INTO USERINFO VALUES('US01',N'Nguyễn Tuân','nguyetuan','123123','28/11/2022');
 INSERT INTO USERINFO VALUES('US02',N'Thúy Kiều','thuykieu','123123','28/11/2022');
-INSERT INTO USERINFO VALUES('US03',N'Thúy vân','thuyvan','123123','28/11/2022');
-INSERT INTO USERINFO VALUES('US05',N'Nguyễn Du','nguyendu','123123','28/11/2022');
+INSERT INTO USERINFO VALUES('US03',N'Thúy Vân','thuyvan','123123','28/11/2022');
 INSERT INTO USERINFO VALUES('US04',N'Nguyễn Du','nguyendu','123123','28/11/2022');
+INSERT INTO USERINFO VALUES('US05',N'Văn Lực','vanluc','123123','28/11/2022');
 
-
+CREATE TABLE FAVORITESONG(
+	MABH			char(4),
+);
 
 

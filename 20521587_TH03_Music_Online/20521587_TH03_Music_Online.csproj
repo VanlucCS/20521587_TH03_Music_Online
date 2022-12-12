@@ -59,6 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL\ReviewBLL.cs" />
+    <Compile Include="DAL\FvorSongDAL.cs" />
     <Compile Include="DAL\ListSongDAL.cs" />
     <Compile Include="DAL\PlaylistDAL.cs" />
     <Compile Include="DAL\ReviewsDAL.cs" />
@@ -415,6 +416,48 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\nhacviet.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\research.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\research2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image-removebg-preview %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image-removebg-preview %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tim1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tim3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tim4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lovesongicon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\love-song.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

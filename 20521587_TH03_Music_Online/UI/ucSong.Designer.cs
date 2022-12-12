@@ -34,8 +34,11 @@ namespace _20521587_TH03_Music_Online.UI
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lbMahb = new System.Windows.Forms.Label();
+            this.lbquocgia = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -92,6 +95,30 @@ namespace _20521587_TH03_Music_Online.UI
             this.lbMahb.Visible = false;
             this.lbMahb.Click += new System.EventHandler(this.lbMahb_Click);
             // 
+            // lbquocgia
+            // 
+            this.lbquocgia.AutoSize = true;
+            this.lbquocgia.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbquocgia.Location = new System.Drawing.Point(393, 94);
+            this.lbquocgia.Name = "lbquocgia";
+            this.lbquocgia.Size = new System.Drawing.Size(64, 19);
+            this.lbquocgia.TabIndex = 8;
+            this.lbquocgia.Text = "quocgia";
+            this.lbquocgia.Visible = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::_20521587_TH03_Music_Online.Properties.Resources.tim3;
+            this.pictureBox3.Location = new System.Drawing.Point(415, 46);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 9;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
+            this.pictureBox3.MouseLeave += new System.EventHandler(this.pictureBox3_MouseLeave);
+            this.pictureBox3.MouseHover += new System.EventHandler(this.pictureBox3_MouseHover);
+            // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::_20521587_TH03_Music_Online.Properties.Resources.play_button__1_;
@@ -117,6 +144,8 @@ namespace _20521587_TH03_Music_Online.UI
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.lbquocgia);
             this.Controls.Add(this.lbMahb);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox2);
@@ -126,6 +155,8 @@ namespace _20521587_TH03_Music_Online.UI
             this.Controls.Add(this.lbSongName);
             this.Name = "ucSong";
             this.Size = new System.Drawing.Size(730, 118);
+            this.Load += new System.EventHandler(this.ucSong_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -141,5 +172,7 @@ namespace _20521587_TH03_Music_Online.UI
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lbMahb;
+        private System.Windows.Forms.Label lbquocgia;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }

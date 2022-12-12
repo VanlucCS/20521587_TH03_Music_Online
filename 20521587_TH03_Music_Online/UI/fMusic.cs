@@ -25,8 +25,10 @@ namespace _20521587_TH03_Music_Online
         ReviewsDAL rdal = new ReviewsDAL();
         DataTable listSongData = new DataTable();
         UserDAL udal = new UserDAL();
-        DataTable userdata = new DataTable();
+        FvorSongDAL fvordal = new FvorSongDAL();
 
+        DataTable userdata = new DataTable();
+        DataTable favorData = new DataTable();
 
         public string Playing = "BH01";
         public bool stage = false;
@@ -40,12 +42,14 @@ namespace _20521587_TH03_Music_Online
         public fMusic()
         {
             InitializeComponent();
+            //this.IsMdiContainer = true;
             load_ListSong();
             userdata = udal.Select();
             media.URL = "./" + Playing + ".mp3";
             media.Ctlcontrols.play();
             timer1.Start();
             tabControl1.SelectedIndex = 1;
+
         }
 
         private void mome_Image(object sender)
@@ -55,7 +59,6 @@ namespace _20521587_TH03_Music_Online
             try
             {
                 pictureBox1.Location = new Point(b.Location.X + 145, b.Location.Y - 44);
-
             }
             catch (Exception)
             {
@@ -71,7 +74,10 @@ namespace _20521587_TH03_Music_Online
 
         private void load_ListSong()
         {
+            flowLayoutPanel1.Controls.Clear();
             listSongData = ldal.Select();
+            favorData = fvordal.Select();
+
             flowLayoutPanel1.Height = listSongData.Rows.Count * 125;
             ucSong[] ListSong = new ucSong[listSongData.Rows.Count];
             for (int i = 0; i < listSongData.Rows.Count; i++)
@@ -79,12 +85,19 @@ namespace _20521587_TH03_Music_Online
                 ListSong[i] = new ucSong();
                 ListSong[i].maBh = listSongData.Rows[i][0].ToString();
                 ListSong[i].tenBh = listSongData.Rows[i][1].ToString();
+                ListSong[i].tacGia = listSongData.Rows[i][2].ToString();
                 ListSong[i].caSi = listSongData.Rows[i][3].ToString();
                 ListSong[i].image = (Image)rm.GetObject(listSongData.Rows[i][0].ToString());
                 ListSong[i].theLoai = listSongData.Rows[i][4].ToString();
+                ListSong[i].quocGia = listSongData.Rows[i][5].ToString();
                 ListSong[i].time = listSongData.Rows[i][6].ToString().Substring(3);
+                if ((favorData.AsEnumerable().SingleOrDefault(r => r.Field<string>("MABH") == listSongData.Rows[i][0].ToString()) != null))
+                    ListSong[i].isFavor = true;
+                else
+                    ListSong[i].isFavor = false;
                 ListSong[i].playButtonClick += play_Click;
                 ListSong[i].Ucclick += play_Click2;
+
                 flowLayoutPanel1.Controls.Add(ListSong[i]);
             }
             flowLayoutPanel1.Refresh();
@@ -135,6 +148,13 @@ namespace _20521587_TH03_Music_Online
 
             lbsongtitle.Text = preSong.tenBh + "  -  " + preSong.caSi;
             load_SongIn4(preSong.maBh);
+            if (preSong.isFavor)
+            {
+                pictureBox21.Image = _20521587_TH03_Music_Online.Properties.Resources.tim4;
+            }
+            else
+                pictureBox21.Image = _20521587_TH03_Music_Online.Properties.Resources.tim3;
+
             preSong.isPlaying = true;
             preSong.playButton = _20521587_TH03_Music_Online.Properties.Resources.pause_button__1_;
             Playing = preSong.maBh;
@@ -150,7 +170,7 @@ namespace _20521587_TH03_Music_Online
             // button thêm đánh giá mới cho bài hát
             flowLayoutPanel2.Controls.Add(addReviewButton());
 
-            guna2Button1_Click_1(guna2Button1,null);
+            guna2Button1_Click_1(guna2Button1, null);
 
 
 
@@ -168,10 +188,10 @@ namespace _20521587_TH03_Music_Online
             float everageRate = 0;
             int countSongRate = 0;
             dt = rdal.Select();
-            flowLayoutPanel2.Size = new Size(735,130*(dt.Rows.Count+2));
-            foreach(DataRow dr in dt.Rows)
+            flowLayoutPanel2.Size = new Size(735, 130 * (dt.Rows.Count + 2));
+            foreach (DataRow dr in dt.Rows)
             {
-                if(dr[0].ToString()==Playing)
+                if (dr[0].ToString() == Playing)
                 {
                     ucReviews rv = new ucReviews();
                     rv.ten = dr[2].ToString();
@@ -183,36 +203,36 @@ namespace _20521587_TH03_Music_Online
                     rv.thoiGian = DateTime.Parse(dr[5].ToString());
                     try
                     {
-                    DataRow druser = userdata.AsEnumerable().SingleOrDefault(r => r.Field<string>("TEN") == rv.ten);
-                    rv.userImage = (Image)rm.GetObject(druser[0].ToString());
+                        DataRow druser = userdata.AsEnumerable().SingleOrDefault(r => r.Field<string>("TEN") == rv.ten);
+                        rv.userImage = (Image)rm.GetObject(druser[0].ToString());
                     }
                     catch (Exception)
                     {
                     }
                     flowLayoutPanel2.Controls.Add(rv);
                     countSongRate++;
-                    
+
                 }
             }
-            if(countSongRate!=0)
-            everageRate = everageRate / countSongRate;
+            if (countSongRate != 0)
+                everageRate = everageRate / countSongRate;
             //if(everageRate)
             rate((int)everageRate);
 
 
         }
-        private void rate(int value )
+        private void rate(int value)
         {
-                if (value == 1)
-                    setRate(1, 0, 0, 0, 0);
-                else if (value == 2)
-                    setRate(1, 1, 0, 0, 0);
-                else if (value == 3)
-                    setRate(1, 1, 1, 0, 0);
-                else if (value == 4)
-                    setRate(1, 1, 1, 1, 0);
-                else
-                    setRate(1, 1, 1, 1, 1);
+            if (value == 1)
+                setRate(1, 0, 0, 0, 0);
+            else if (value == 2)
+                setRate(1, 1, 0, 0, 0);
+            else if (value == 3)
+                setRate(1, 1, 1, 0, 0);
+            else if (value == 4)
+                setRate(1, 1, 1, 1, 0);
+            else
+                setRate(1, 1, 1, 1, 1);
         }
         private void setRate(int a, int b, int c, int d, int e)
         {
@@ -355,7 +375,7 @@ namespace _20521587_TH03_Music_Online
         {
             IWMPPlaylist fullSong = media.newPlaylist("fullSongd", null);
             //WMPLib.IWMPMedia m1 = media.newMedia("./" + "BH01" + ".mp3");
-            foreach(ucSong i in flowLayoutPanel1.Controls)
+            foreach (ucSong i in flowLayoutPanel1.Controls)
             {
                 WMPLib.IWMPMedia m = media.newMedia("./" + i.maBh + ".mp3");
                 fullSong.appendItem(m);
@@ -405,11 +425,11 @@ namespace _20521587_TH03_Music_Online
         {
             DataRow dr = listSongData.AsEnumerable().SingleOrDefault(r => r.Field<string>("MABH") == mabh);
             richTextBox1.Clear();
-            pbSongPic.Image=  (Image)rm.GetObject(mabh);
+            pbSongPic.Image = (Image)rm.GetObject(mabh);
             lbSongTitleMain.Text = dr[1].ToString();
             lbAuthorMain.Text = dr[2].ToString();
             lbSingerMain.Text = dr[3].ToString();
-            string lyricUrl = @".\"+mabh+".txt";
+            string lyricUrl = @".\" + mabh + ".txt";
             string[] lines = System.IO.File.ReadAllLines(lyricUrl);
             //MessageBox.Show(lines.Length.ToString());
             richTextBox1.Size = new Size(500, lines.Length * 24);
@@ -417,11 +437,11 @@ namespace _20521587_TH03_Music_Online
             {
                 // Use a tab to indent each line of the file.
                 //Console.WriteLine("\t" + line);
-                richTextBox1.AppendText(line+"\n");
+                richTextBox1.AppendText(line + "\n");
             }
             //lbAuthorMain.Text = dr[2].ToString();
             guna2HtmlLabel1.Top = richTextBox1.Top + richTextBox1.Height;
-            panel2.Top = richTextBox1.Top + richTextBox1.Height-5;
+            panel2.Top = richTextBox1.Top + richTextBox1.Height - 5;
             guna2HtmlLabel2.Top = guna2HtmlLabel1.Top + 40;
             pictureBox14.Top = guna2HtmlLabel2.Top + 40;
             flowLayoutPanel2.Top = pictureBox14.Top + 40;
@@ -430,11 +450,14 @@ namespace _20521587_TH03_Music_Online
 
         private void guna2Button5_Click(object sender, EventArgs e)
         {
-
+            tabControl1.SelectedIndex = 4;
+            mome_Image(sender);
         }
         private void guna2Button3_Click(object sender, EventArgs e)
         {
-
+            tabControl1.SelectedIndex = 3;
+            loadFavorSong();
+            mome_Image(sender);
         }
         private void guna2Button4_Click(object sender, EventArgs e)
         {
@@ -463,7 +486,7 @@ namespace _20521587_TH03_Music_Online
             int songCounter = 0;
             foreach (DataRow dr in dt.Rows)
             {
-                if(dr[1].ToString() == tenpl && dr[2].ToString()!= "FFFF")
+                if (dr[1].ToString() == tenpl && dr[2].ToString() != "FFFF")
                 {
                     DataRow datasong = listSongData.AsEnumerable().SingleOrDefault(r => r.Field<string>("MABH") == dr[2].ToString());
                     ucSong s = new ucSong();
@@ -495,7 +518,7 @@ namespace _20521587_TH03_Music_Online
         }
         private void update_review(object sender, EventArgs e)
         {
-                // bấm thêm review tự gọi hàm này 
+            // bấm thêm review tự gọi hàm này 
         }
         private void addReview(object sender, EventArgs e)
         {
@@ -523,7 +546,7 @@ namespace _20521587_TH03_Music_Online
             fAddPlayList f = new fAddPlayList();
             f.ShowDialog();
             // thêm tên play list
-            
+
             if (!f.cancel)
             {
 
@@ -581,7 +604,7 @@ namespace _20521587_TH03_Music_Online
             toolStrip.Items.Add("-");
             toolStrip.Items.Add("New playlist");
             int Y = 400;
-            
+
             toolStrip.Location = new Point(pbAddToPlayList.Location.X + 70, pbAddToPlayList.Location.Y + Y);
             toolStrip.Show(MousePosition);
             toolStrip.BringToFront();
@@ -624,10 +647,10 @@ namespace _20521587_TH03_Music_Online
         {
 
             // them vao play list
-            if(e.ClickedItem.Text == "New playlist")
+            if (e.ClickedItem.Text == "New playlist")
             {
 
-            }   
+            }
             else
             {
                 PlaylistDAL pdal = new PlaylistDAL();
@@ -643,7 +666,7 @@ namespace _20521587_TH03_Music_Online
         }
         private void pbAddToPlayList_MouseClick(object sender, MouseEventArgs e)
         {
-            
+
         }
 
         private void pictureBox15_Click(object sender, EventArgs e)
@@ -666,12 +689,12 @@ namespace _20521587_TH03_Music_Online
             ContextMenuStrip toolStrip = new ContextMenuStrip();
             toolStrip.ItemClicked += ClickUserOption;
             toolStrip.Items.Clear();
-                 toolStrip.LayoutStyle = ToolStripLayoutStyle.VerticalStackWithOverflow;
+            toolStrip.LayoutStyle = ToolStripLayoutStyle.VerticalStackWithOverflow;
             toolStrip.Items.Add("Đổi tải khoản");
             toolStrip.Items.Add("-");
             toolStrip.Items.Add("Đổi ảnh nền");
             toolStrip.Items.Add("-");
-            toolStrip.Items.Add("Thông tin người dùng",_20521587_TH03_Music_Online.Properties.Resources.info);
+            toolStrip.Items.Add("Thông tin người dùng", _20521587_TH03_Music_Online.Properties.Resources.info);
             int Y = 400;
             toolStrip.Location = new Point(pbAddToPlayList.Location.X + 70, pbAddToPlayList.Location.Y + Y);
             toolStrip.Show(MousePosition);
@@ -689,7 +712,7 @@ namespace _20521587_TH03_Music_Online
                 fswuer.ShowDialog();
                 pbuserimage.Image = fswuer.userImage;
                 lbUserName.Text = fswuer.userName;
-                userName= fswuer.userName;
+                userName = fswuer.userName;
                 userID = fswuer.userID;
             }
 
@@ -699,9 +722,13 @@ namespace _20521587_TH03_Music_Online
             // ? 
             //toolStrip = null;
         }
-        private void LoadTopicSong( string topic)
+        private void LoadTopicSong(string topic, string country)
         {
-            load_ListSong();
+            //load_ListSong();
+            foreach (ucSong song in flowLayoutPanel1.Controls)
+            {
+                song.Visible = true;
+            }
             //listSongData = ldal.Select();
             //ucSong[] ListSong = new ucSong[listSongData.Rows.Count];
             //for (int i = 0; i < listSongData.Rows.Count; i++)
@@ -717,19 +744,194 @@ namespace _20521587_TH03_Music_Online
             //    ListSong[i].Ucclick += play_Click2;
             //    flowLayoutPanel1.Controls.Add(ListSong[i]);
             //}
+            int count = 0;
             foreach (ucSong song in flowLayoutPanel1.Controls)
             {
-                if (song.theLoai != topic)
+                if (song.theLoai != topic || song.quocGia != country)
                 {
-                    flowLayoutPanel1.Controls.Remove(song);
-                }    
+                    song.Visible = false;
+                }
+                else
+                    count++;
             }
-            flowLayoutPanel1.Height = listSongData.Rows.Count * 125;
+            flowLayoutPanel1.Height = count * 125;
             flowLayoutPanel1.Refresh();
         }
         private void guna2Button8_Click(object sender, EventArgs e)
         {
-            LoadTopicSong("Nhạc Trẻ");
+            LoadTopicSong("Nhạc Trẻ", "Việt Nam");
+            gunaLabel1.Visible = true;
+            gunaLabel1.Text = "Nhạc Trẻ";
+        }
+        private void guna2Button9_Click(object sender, EventArgs e)
+        {
+            LoadTopicSong("Trữ Tình", "Việt Nam");
+            gunaLabel1.Visible = true;
+            gunaLabel1.Text = "Trữ Tình";
+
+        }
+        private void guna2Button10_Click(object sender, EventArgs e)
+        {
+            LoadTopicSong("Remix Việt", "Việt Nam");
+            gunaLabel1.Visible = true;
+            gunaLabel1.Text = "Remix Việt";
+
+        }
+        private void guna2Button13_Click(object sender, EventArgs e)
+        {
+            LoadTopicSong("Pop", "Âu Mỹ");
+            gunaLabel1.Visible = true;
+            gunaLabel1.Text = "Pop";
+
+        }
+
+        private void guna2Button12_Click(object sender, EventArgs e)
+        {
+            LoadTopicSong("Electronica/Dance", "Âu Mỹ");
+            gunaLabel1.Visible = true;
+            gunaLabel1.Text = "Electronica/Dance";
+
+        }
+
+        private void guna2Button11_Click(object sender, EventArgs e)
+        {
+            LoadTopicSong("Rock", "Âu Mỹ");
+            gunaLabel1.Visible = true;
+            gunaLabel1.Text = "Rock";
+
+        }
+        private void findSong()
+        {
+            foreach (ucSong song in flowLayoutPanel1.Controls)
+            {
+                song.Visible = true;
+            }
+            if (guna2ComboBox2.Text == "Tên Bài Hát")
+            {
+                int count = 0;
+                foreach (ucSong song in flowLayoutPanel1.Controls)
+                {
+                    if (!song.tenBh.ToLower().Contains(guna2TextBox1.Text.ToString().ToLower()))
+                    {
+                        song.Visible = false;
+                    }
+                    else
+                        count++;
+                }
+                flowLayoutPanel1.Height = count * 125;
+                flowLayoutPanel1.Refresh();
+            }
+            if (guna2ComboBox2.Text == "Thể Loại")
+            {
+                int count = 0;
+                foreach (ucSong song in flowLayoutPanel1.Controls)
+                {
+                    if (!song.theLoai.ToLower().Contains(guna2TextBox1.Text.ToString().ToLower()))
+                    {
+                        song.Visible = false;
+                    }
+                    else
+                        count++;
+                }
+                flowLayoutPanel1.Height = count * 125;
+                flowLayoutPanel1.Refresh();
+            }
+
+
+            if (guna2ComboBox2.SelectedIndex == 2)
+            {
+                int count = 0;
+                foreach (ucSong song in flowLayoutPanel1.Controls)
+                {
+                    if (!song.tacGia.ToLower().Contains(guna2TextBox1.Text.ToString().ToLower()))
+                    {
+                        song.Visible = false;
+                    }
+                    else
+                        count++;
+                }
+                flowLayoutPanel1.Height = count * 125;
+                flowLayoutPanel1.Refresh();
+            }
+            if (guna2ComboBox2.SelectedIndex == 3)
+            {
+                int count = 0;
+                foreach (ucSong song in flowLayoutPanel1.Controls)
+                {
+                    if (!song.caSi.ToLower().Contains(guna2TextBox1.Text.ToString().ToLower()))
+                    {
+                        song.Visible = false;
+                    }
+                    else
+                        count++;
+                }
+                flowLayoutPanel1.Height = count * 125;
+                flowLayoutPanel1.Refresh();
+            }
+
+        }
+
+        private void guna2TextBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode.ToString() == "Return")
+            {
+                findSong();
+            }
+        }
+        private void loadFavorSong()
+        {
+            flowLayoutPanel4.Controls.Clear();
+
+            listSongData = ldal.Select();
+            favorData = fvordal.Select();
+
+            //ucSong[] ListSong = new ucSong[listSongData.Rows.Count];
+            for (int i = 0; i < listSongData.Rows.Count; i++)
+            {
+                ucSong c = new ucSong();
+                if ((favorData.AsEnumerable().SingleOrDefault(r => r.Field<string>("MABH") == listSongData.Rows[i][0].ToString()) != null))
+                    c.isFavor = true;
+                else
+                {
+                    c.isFavor = false;
+                    continue;
+                }
+                c.maBh = listSongData.Rows[i][0].ToString();
+                c.tenBh = listSongData.Rows[i][1].ToString();
+                c.tacGia = listSongData.Rows[i][2].ToString();
+                c.caSi = listSongData.Rows[i][3].ToString();
+                c.image = (Image)rm.GetObject(listSongData.Rows[i][0].ToString());
+                c.theLoai = listSongData.Rows[i][4].ToString();
+                c.quocGia = listSongData.Rows[i][5].ToString();
+                c.time = listSongData.Rows[i][6].ToString().Substring(3);
+                c.playButtonClick += play_Click;
+                c.Ucclick += play_Click2;
+                flowLayoutPanel4.Controls.Add(c);
+            }
+            flowLayoutPanel4.Height = favorData.Rows.Count * 130;
+            flowLayoutPanel4.Refresh();
+        }
+
+        private void pictureBox23_Click(object sender, EventArgs e)
+        {
+            //MessageBox.Show(System.IO.Path.GetDirectoryName(Application.ExecutablePath));
+            //"./" + i.maBh + ".mp3";
+
+            SaveFileDialog savedlg = new SaveFileDialog();
+            savedlg.DefaultExt = "mp3";
+            savedlg.Filter = "Audio file .mp3 |*.mp3";
+            savedlg.AddExtension = true;
+            savedlg.RestoreDirectory = true;
+            savedlg.Title = "Where do you want to save the song dowloaded?";
+            savedlg.InitialDirectory = @"C:/";
+            if (savedlg.ShowDialog() == DialogResult.OK)
+            {
+                MessageBox.Show(System.IO.Path.GetDirectoryName(Application.ExecutablePath) + "/" + Playing + ".mp3");
+                MessageBox.Show(savedlg.FileName);
+                System.IO.File.Copy(System.IO.Path.GetDirectoryName(Application.ExecutablePath)+ "\\" + Playing+ ".mp3", savedlg.FileName, true);
+            }
+            savedlg.Dispose();
         }
     }
+
 }

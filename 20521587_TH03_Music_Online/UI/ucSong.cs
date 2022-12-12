@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using _20521587_TH03_Music_Online.DAL;
 
 namespace _20521587_TH03_Music_Online.UI
 {
@@ -17,12 +18,13 @@ namespace _20521587_TH03_Music_Online.UI
         public event UcclickHandler Ucclick;
         public delegate void ClickEventHandler(object sender, EventArgs e);
         //public event ClickEventHandler Click = delegate { };
-
+        FvorSongDAL fvordal = new FvorSongDAL();
         public ucSong()
         {
             InitializeComponent();
             this.pictureBox2.Click += new EventHandler(lbMahb_Click);
             _isPlaying = false;
+            isFavor = false;
         }
         private string _tenBh;
         private Image _image;
@@ -32,6 +34,27 @@ namespace _20521587_TH03_Music_Online.UI
         private string _maBh;
         private Image _playButton;
         private bool _isPlaying ;
+        private string _quocGia;
+        private string _tacGia;
+        private bool _isFavor;
+
+        public bool isFavor
+        {
+            get { return _isFavor; }
+            set { _isFavor = value; checkFavor(); }
+        }
+
+        public string tacGia
+        {
+            get { return _tacGia; }
+            set { _tacGia = value; }
+        }
+
+        public string quocGia
+        {
+            get { return _quocGia; }
+            set { _quocGia = value; }
+        }
 
         [Category("custom Props")]
 
@@ -91,13 +114,62 @@ namespace _20521587_TH03_Music_Online.UI
             get { return _caSi; }
             set { _caSi = value; lbSinger.Text = value; }
         }
+        private void checkFavor()
+        {
+            if(isFavor)
+            {
+                pictureBox3.Image = _20521587_TH03_Music_Online.Properties.Resources.tim4;
+            }
+            else
+                pictureBox3.Image = _20521587_TH03_Music_Online.Properties.Resources.tim3;
 
+        }
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             Ucclick(this, new EventArgs());
         }
         private void lbMahb_Click(object sender, EventArgs e)
         {
+        }
+
+        private void pictureBox3_MouseHover(object sender, EventArgs e)
+        {
+            if (isFavor)
+                pictureBox3.Image = _20521587_TH03_Music_Online.Properties.Resources.tim4;
+        }
+
+        private void pictureBox3_MouseLeave(object sender, EventArgs e)
+        {
+            if(!isFavor)
+                pictureBox3.Image = _20521587_TH03_Music_Online.Properties.Resources.tim3;
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            //DataTable dt = new DataTable();
+            //dt = fvordal.Select();
+            //DataRow datasong = listSongData.AsEnumerable().SingleOrDefault(r => r.Field<string>("MABH") == dr[2].ToString());
+
+            if (isFavor)
+            {
+                pictureBox3.Image = _20521587_TH03_Music_Online.Properties.Resources.tim3;
+                isFavor = false;
+                fvordal.Remove(this.maBh);
+
+            }
+            else
+            {
+                pictureBox3.Image = _20521587_TH03_Music_Online.Properties.Resources.tim4;
+                isFavor = true;
+
+                fvordal.Insert(this.maBh);
+            }
+
+        }
+
+        private void ucSong_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
