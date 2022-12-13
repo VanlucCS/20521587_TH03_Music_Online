@@ -15,7 +15,7 @@ namespace _20521587_TH03_Music_Online.UI
         public fAddPlayList()
         {
             InitializeComponent();
-
+            guna2ShadowForm1.SetShadowForm(this);
         }
         private bool _cacel = false;
 
@@ -62,6 +62,11 @@ namespace _20521587_TH03_Music_Online.UI
         {
             cancel = true;
             this.Close();
+        }
+
+        private void fAddPlayList_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

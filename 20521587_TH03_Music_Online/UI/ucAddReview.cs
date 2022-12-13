@@ -54,24 +54,24 @@ namespace _20521587_TH03_Music_Online.UI
             get { return _danhGia; }
             set { _danhGia = value;tbCommand.Text = value; }
         }
-        private int _rate;
+        //private int _rate;
 
-        public int rate
-        {
-            get { return _rate; }
-            set { _rate = value;
-                if (value == 1)
-                    setRate(1, 0, 0, 0, 0);
-                else if (value == 2)
-                    setRate(1, 1, 0, 0, 0);
-                else if (value == 3)
-                    setRate(1, 1, 1, 0, 0);
-                else if (value == 4)
-                    setRate(1, 1, 1, 1, 0);
-                else
-                    setRate(1, 1, 1, 1, 1);
-            }
-        }
+        //public int rate
+        //{
+        //    get { return _rate; }
+        //    set { _rate = value;
+        //        if (value == 1)
+        //            setRate(1, 0, 0, 0, 0);
+        //        else if (value == 2)
+        //            setRate(1, 1, 0, 0, 0);
+        //        else if (value == 3)
+        //            setRate(1, 1, 1, 0, 0);
+        //        else if (value == 4)
+        //            setRate(1, 1, 1, 1, 0);
+        //        else
+        //            setRate(1, 1, 1, 1, 1);
+        //    }
+        //}
         private DateTime _thoiGian;
 
         public DateTime thoiGian
@@ -96,58 +96,29 @@ namespace _20521587_TH03_Music_Online.UI
 
         public event EventHandler insertClick
         {
-            add { guna2Button1.Click += value; }
-            remove { guna2Button1.Click -= value; }
+            add { guna2GradientButton1.Click += value; }
+            remove { guna2GradientButton1.Click -= value; }
         }
 
-        private void setRate(int a, int b, int c, int d, int e)
-        {
-            pbstart1.Image = _20521587_TH03_Music_Online.Properties.Resources.star__2_;
-            pbstart2.Image = _20521587_TH03_Music_Online.Properties.Resources.star__2_;
-            pbstart3.Image = _20521587_TH03_Music_Online.Properties.Resources.star__2_;
-            pbstart4.Image = _20521587_TH03_Music_Online.Properties.Resources.star__2_;
-            pbstart5.Image = _20521587_TH03_Music_Online.Properties.Resources.star__2_;
-            if (a == 0)
-                pbstart1.Image = _20521587_TH03_Music_Online.Properties.Resources.star__4_;
-            if (b == 0)
-                pbstart2.Image = _20521587_TH03_Music_Online.Properties.Resources.star__4_;
-            if (c == 0)
-                pbstart3.Image = _20521587_TH03_Music_Online.Properties.Resources.star__4_;
-            if (d == 0)
-                pbstart4.Image = _20521587_TH03_Music_Online.Properties.Resources.star__4_;
-            if (e == 0)
-                pbstart5.Image = _20521587_TH03_Music_Online.Properties.Resources.star__4_;
-        }
-
-        private void pbstart1_Click(object sender, EventArgs e)
-        {
-            setRate(1,0,0,0,0);
-            rate = 1;
-        }
-
-        private void pbstart2_Click(object sender, EventArgs e)
-        {
-            setRate(1, 1, 0, 0, 0);
-            rate = 2;
-        }
-
-        private void pbstart3_Click(object sender, EventArgs e)
-        {
-            setRate(1, 1, 1, 0, 0);
-            rate =3;
-        }
-        private void pbstart4_Click(object sender, EventArgs e)
-        {
-            setRate(1, 1, 1, 1, 0);
-            rate = 4;
-        }
-
-        private void pbstart5_Click(object sender, EventArgs e)
-        {
-            setRate(1, 1, 1, 1, 1);
-            rate = 5;
-        }
-
+        //private void setRate(int a, int b, int c, int d, int e)
+        //{
+        //    pbstart1.Image = _20521587_TH03_Music_Online.Properties.Resources.star__2_;
+        //    pbstart2.Image = _20521587_TH03_Music_Online.Properties.Resources.star__2_;
+        //    pbstart3.Image = _20521587_TH03_Music_Online.Properties.Resources.star__2_;
+        //    pbstart4.Image = _20521587_TH03_Music_Online.Properties.Resources.star__2_;
+        //    pbstart5.Image = _20521587_TH03_Music_Online.Properties.Resources.star__2_;
+        //    if (a == 0)
+        //        pbstart1.Image = _20521587_TH03_Music_Online.Properties.Resources.star__4_;
+        //    if (b == 0)
+        //        pbstart2.Image = _20521587_TH03_Music_Online.Properties.Resources.star__4_;
+        //    if (c == 0)
+        //        pbstart3.Image = _20521587_TH03_Music_Online.Properties.Resources.star__4_;
+        //    if (d == 0)
+        //        pbstart4.Image = _20521587_TH03_Music_Online.Properties.Resources.star__4_;
+        //    if (e == 0)
+        //        pbstart5.Image = _20521587_TH03_Music_Online.Properties.Resources.star__4_;
+        //}
+       
         private void ucAddReview_Load(object sender, EventArgs e)
         {
 
@@ -161,19 +132,39 @@ namespace _20521587_TH03_Music_Online.UI
             rbll.SODG = this.soDg;
             rbll.TEN = this.ten;
             rbll.DANHGIA = this.danhGia;
-            rbll.rate = this.rate;
+            rbll.rate = guna2RatingStar1.Value;
             rbll.THOIGIAN = DateTime.Now;
             rbll.THICH = 0;
             rbll.KOTHICH = 0;
             rdal.Insert(rbll);
             MessageBox.Show("Đánh giá thành công");
             this.Enabled = false;
-            guna2Button1.Visible = false;
+            //guna2Button1.Visible = false;
         }
 
         private void tbCommand_TextChanged(object sender, EventArgs e)
         {
             danhGia = tbCommand.Text;
+        }
+
+        private void guna2GradientButton1_Click(object sender, EventArgs e)
+        {
+            ReviewsDAL rdal = new ReviewsDAL();
+            ReviewBLL rbll = new ReviewBLL();
+            rbll.MABH = this.maBh;
+            rbll.SODG = this.soDg;
+            rbll.TEN = this.ten;
+            rbll.DANHGIA = this.danhGia;
+            rbll.rate = guna2RatingStar1.Value;
+            rbll.THOIGIAN = DateTime.Now;
+            rbll.THICH = 0;
+            rbll.KOTHICH = 0;
+            rdal.Insert(rbll);
+            fMessShow d = new fMessShow("Đánh Giá Thành công");
+            d.Show();
+            //MessageBox.Show("Đánh giá thành công");
+            this.tbCommand.Enabled = false;
+            guna2GradientButton1.Visible = false;
         }
     }
 }

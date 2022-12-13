@@ -47,7 +47,7 @@ namespace _20521587_TH03_Music_Online.UI
             // 
             this.lbSongName.AutoSize = true;
             this.lbSongName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSongName.Location = new System.Drawing.Point(221, 24);
+            this.lbSongName.Location = new System.Drawing.Point(221, 22);
             this.lbSongName.Name = "lbSongName";
             this.lbSongName.Size = new System.Drawing.Size(94, 21);
             this.lbSongName.TabIndex = 1;
@@ -57,7 +57,7 @@ namespace _20521587_TH03_Music_Online.UI
             // 
             this.lbSinger.AutoSize = true;
             this.lbSinger.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSinger.Location = new System.Drawing.Point(221, 66);
+            this.lbSinger.Location = new System.Drawing.Point(221, 72);
             this.lbSinger.Name = "lbSinger";
             this.lbSinger.Size = new System.Drawing.Size(77, 19);
             this.lbSinger.TabIndex = 2;
@@ -109,7 +109,7 @@ namespace _20521587_TH03_Music_Online.UI
             // pictureBox3
             // 
             this.pictureBox3.Image = global::_20521587_TH03_Music_Online.Properties.Resources.tim3;
-            this.pictureBox3.Location = new System.Drawing.Point(415, 46);
+            this.pictureBox3.Location = new System.Drawing.Point(415, 45);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(30, 30);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;

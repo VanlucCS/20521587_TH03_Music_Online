@@ -12,7 +12,7 @@ namespace _20521587_TH03_Music_Online.BLL
         public int SODG { get; set; }
         public string TEN { get; set; }
         public string DANHGIA { get; set; }
-        public int rate { get; set; }
+        public float rate { get; set; }
         public DateTime THOIGIAN { get; set; }
         public int THICH { get; set; }
         public int KOTHICH { get; set; }

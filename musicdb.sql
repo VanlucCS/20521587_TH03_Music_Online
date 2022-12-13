@@ -31,6 +31,11 @@ INSERT INTO THONGTIN VALUES('BH12',N'Bước Qua Nhau',N'Vũ',N'Vũ',N'Nhạc Tr
 INSERT INTO THONGTIN VALUES('BH13',N'Anh Tự Do Nhưng Cô Đơn ',N'Đạt G',N'Trung Quân',N'Nhạc Trẻ',N'Việt Nam','00:05:15');
 INSERT INTO THONGTIN VALUES('BH14',N'Cứ Chill Thôi',N'Trần Duy Khang',N'Chillies, Suni Hạ Linh',N'Nhạc Trẻ',N'Việt Nam','00:04:30');
 INSERT INTO THONGTIN VALUES('BH15',N'Savage Love',N'Jawsh 685',N'Jason Derulo',N'Electronica/Dance',N'Âu Mỹ','00:02:49');
+INSERT INTO THONGTIN VALUES('BH16',N'Tình Cố Hương',N'Hoàng Văn',N'Bảo Nguyên',N'Trữ Tình',N'Việt Nam','00:05:58');
+INSERT INTO THONGTIN VALUES('BH17',N'Quê Em Mùa Nước Lũ',N'Tiến Luân',N'Phương Mỹ Chi',N'Trữ Tình',N'Việt Nam','00:05:34');
+INSERT INTO THONGTIN VALUES('BH18',N'Áo Mới Cà Mau',N'Thanh Sơn',N'Phương Mỹ Chi',N'Trữ Tình',N'Việt Nam','00:03:49');
+INSERT INTO THONGTIN VALUES('BH19',N'Hoa Sứ Nhà Nàng',N'Hoàng Phương',N'Anh Khang',N'Trữ Tình',N'Việt Nam','00:03:43');
+INSERT INTO THONGTIN VALUES('BH20',N'Bất Chấp',N'Dư Quốc Vương',N'Anh Khang',N'Trữ Tình',N'Việt Nam','00:03:43');
 
 delete from THONGTIN where MABH ='BH15'
 
@@ -40,7 +45,7 @@ CREATE TABLE DANHGIA(
 	SODG		int,
 	TEN			nvarchar(50),
 	DANHGIA		nvarchar(100),
-	rate		int,
+	rate		float,
 	THOIGIAN	smalldatetime,	
 	THICH		int,
 	KOTHICH		int,
@@ -51,6 +56,7 @@ INSERT INTO DANHGIA VALUES('BH01','1',N'Nguyễn Tuân',N'Tuiyt zời','5','28/1
 INSERT INTO DANHGIA VALUES('BH01','2',N'Thúy Kiều',N'Muốn Zề nhà ăn tết ghê','5','25/11/2022','7','1');
 INSERT INTO DANHGIA VALUES('BH01','3',N'Thúy Vân',N'Nhớ Tết Quớ','5','20/11/2022','5','1');
 INSERT INTO DANHGIA VALUES('BH02','4',N'Nguyễn Du',N'Từ lúc sáng tác truyện kiều chưa thấy bài nào hay như bài này','5','27/11/2022','4','1');
+INSERT INTO DANHGIA VALUES('BH06','5',N'Đoán Xem',N'good','4.3','27/11/2022','4','1');
 
 delete from DANHGIA where SODG ='1'
 
@@ -88,5 +94,22 @@ INSERT INTO USERINFO VALUES('US05',N'Văn Lực','vanluc','123123','28/11/2022')
 CREATE TABLE FAVORITESONG(
 	MABH			char(4),
 );
+INSERT INTO FAVORITESONG VALUES('BH04');
+INSERT INTO FAVORITESONG VALUES('BH03');
+INSERT INTO FAVORITESONG VALUES('BH06');
+IF NOT EXISTS(SELECT 1 FROM FAVORITESONG WHERE MABH='BH01')
+INSERT INTO FAVORITESONG VALUES('BH01');
+delete from DANHGIA where MABH ='1'
 
+CREATE TABLE LISTENHIS(
+	MABH			char(4),
+	SOLAN			int,
+	THOIGIAN		smalldatetime,
+);
+SET DATEFORMAT DMY;
 
+INSERT INTO LISTENHIS VALUES('BH04','2','12/11/2022');
+INSERT INTO LISTENHIS VALUES('BH01','7','12/11/2022');
+INSERT INTO LISTENHIS VALUES('BH02','4','12/11/2022');
+
+delete from LISTENHIS where MABH ='BH04'

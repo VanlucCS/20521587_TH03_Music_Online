@@ -111,8 +111,8 @@ namespace _20521587_TH03_Music_Online.DAL
             try
             {
                 //SQL Query to insert product into database
-                String sql = @"UPDATE DANHGIA SET THICH = @LIKE,KOTHICH = @UNLIKE WHERE SODG = @SODG; " +
-                                "VALUES (@SODG,@LIKE,@UNLIKE)";
+                String sql = @"UPDATE DANHGIA SET THICH = @LIKE,KOTHICH = @UNLIKE WHERE SODG = @SODG; ";
+                                //"VALUES (@SODG,@LIKE,@UNLIKE)";
 
                 //Creating SQL Command to pass the values
                 SqlCommand cmd = new SqlCommand(sql, conn);

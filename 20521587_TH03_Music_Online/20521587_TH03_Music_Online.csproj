@@ -60,6 +60,7 @@
   <ItemGroup>
     <Compile Include="BLL\ReviewBLL.cs" />
     <Compile Include="DAL\FvorSongDAL.cs" />
+    <Compile Include="DAL\ListenHisDAL.cs" />
     <Compile Include="DAL\ListSongDAL.cs" />
     <Compile Include="DAL\PlaylistDAL.cs" />
     <Compile Include="DAL\ReviewsDAL.cs" />
@@ -114,6 +115,12 @@
     <Compile Include="UI\ucAddToPlayList_demo.Designer.cs">
       <DependentUpon>ucAddToPlayList_demo.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\ucListenHis.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\ucListenHis.Designer.cs">
+      <DependentUpon>ucListenHis.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\ucReviews.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -156,6 +163,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\ucAddToPlayList_demo.resx">
       <DependentUpon>ucAddToPlayList_demo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ucListenHis.resx">
+      <DependentUpon>ucListenHis.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\ucReviews.resx">
       <DependentUpon>ucReviews.cs</DependentUpon>
@@ -458,6 +468,84 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\download.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\share %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playlist %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playlist %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\music %285%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\history %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kawaii-love.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playlist %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playlist %283%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BH16.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BH17.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BH18.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BH19.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BH20.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BH21.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BH22.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BH23.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\liked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\disliked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BH24.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BH25.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BH26.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BH27.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BH28.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BH29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BH30.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

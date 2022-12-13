@@ -62,5 +62,10 @@ namespace _20521587_TH03_Music_Online.UI
             userImage = (Image)rm.GetObject(druser[0].ToString());
             this.Close();
         }
+
+        private void gunaLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

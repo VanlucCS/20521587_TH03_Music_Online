@@ -60,3 +60,4 @@ C:\Users\VQ\Documents\GitHub\20521587_TH03_Music_Online\20521587_TH03_Music_Onli
 C:\Users\VQ\Documents\GitHub\20521587_TH03_Music_Online\20521587_TH03_Music_Online\obj\Debug\_20521587_TH03_Music_Online.UI.ucAddToPlayList_demo.resources
 C:\Users\VQ\Documents\GitHub\20521587_TH03_Music_Online\20521587_TH03_Music_Online\obj\Debug\_20521587_TH03_Music_Online.UI.fMessShow.resources
 C:\Users\VQ\Documents\GitHub\20521587_TH03_Music_Online\20521587_TH03_Music_Online\obj\Debug\_20521587_TH03_Music_Online.UI.fSwichUser.resources
+C:\Users\VQ\Documents\GitHub\20521587_TH03_Music_Online\20521587_TH03_Music_Online\obj\Debug\_20521587_TH03_Music_Online.UI.ucListenHis.resources

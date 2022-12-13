@@ -37,6 +37,13 @@ namespace _20521587_TH03_Music_Online.UI
         private string _quocGia;
         private string _tacGia;
         private bool _isFavor;
+        private int _setXPositionTimeSong;
+
+        public int setXPositionTimeSong
+        {
+            get { return _setXPositionTimeSong; }
+            set { _setXPositionTimeSong = value;label2.Location = new Point(label2.Location.X-value, label2.Location.Y); }
+        }
 
         public bool isFavor
         {

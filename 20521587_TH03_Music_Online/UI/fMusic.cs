@@ -14,6 +14,8 @@ using System.Resources;
 using System.Reflection;
 using WMPLib;
 using System.IO;
+using System.Configuration;
+using System.Diagnostics;
 
 namespace _20521587_TH03_Music_Online
 {
@@ -23,21 +25,25 @@ namespace _20521587_TH03_Music_Online
             Assembly.GetExecutingAssembly());
         ListSongDAL ldal = new ListSongDAL();
         ReviewsDAL rdal = new ReviewsDAL();
-        DataTable listSongData = new DataTable();
         UserDAL udal = new UserDAL();
         FvorSongDAL fvordal = new FvorSongDAL();
+        ListenHisDAL lhisdal = new ListenHisDAL();
 
+        DataTable listenHisData = new DataTable();
+
+        DataTable listSongData = new DataTable();
         DataTable userdata = new DataTable();
         DataTable favorData = new DataTable();
 
         public string Playing = "BH01";
-        public bool stage = false;
+        public bool stage = true;
         //public bool soundo
         public bool soundOn = true;
         public int volumn = 1;
         public ucSong preSong;
         public string userName = "Văn Lực";
         public string userID = "US05";
+        public float rating = 5;
         //public double heso = 0
         public fMusic()
         {
@@ -46,10 +52,11 @@ namespace _20521587_TH03_Music_Online
             load_ListSong();
             userdata = udal.Select();
             media.URL = "./" + Playing + ".mp3";
-            media.Ctlcontrols.play();
+            media.Ctlcontrols.stop();
+            pictureBox6.Visible = false;
             timer1.Start();
             tabControl1.SelectedIndex = 1;
-
+            guna2ShadowForm1.SetShadowForm(this);
         }
 
         private void mome_Image(object sender)
@@ -58,7 +65,7 @@ namespace _20521587_TH03_Music_Online
             Guna2Button b = (Guna2Button)sender;
             try
             {
-                pictureBox1.Location = new Point(b.Location.X + 145, b.Location.Y - 44);
+                pictureBox1.Location = new Point(b.Location.X + 157, b.Location.Y - 44);
             }
             catch (Exception)
             {
@@ -121,8 +128,10 @@ namespace _20521587_TH03_Music_Online
                 {
                     preSong.playButton = _20521587_TH03_Music_Online.Properties.Resources.play_button__1_;
                     media.Ctlcontrols.pause();
+                    pictureBox6.Visible = false;
                     timer1.Stop();
-                    lbsongtitle.Text = "";
+                    //lbsongtitle.Text = "";
+                    btsongtitle.Text = "";
 
                     preSong.BackColor = Color.White;
                     preSong.isPlaying = false;
@@ -133,20 +142,24 @@ namespace _20521587_TH03_Music_Online
                     preSong.playButton = _20521587_TH03_Music_Online.Properties.Resources.pause_button__1_;
                     timer1.Start();
                     media.Ctlcontrols.play();
-                    lbsongtitle.Text = preSong.tenBh + "  -  " + preSong.caSi;
+                    pictureBox6.Visible = true;
+                    //lbsongtitle.Text = preSong.tenBh + "  -  " + preSong.caSi;
+                    btsongtitle.Text = preSong.tenBh + "  -  " + preSong.caSi;
 
                     preSong.BackColor = Color.FromArgb(192, 255, 255);
                     preSong.isPlaying = true;
                     return;
                 }
             }
-
-
+            stage = true;
+            btplay.Image = _20521587_TH03_Music_Online.Properties.Resources.pause;
             media.Ctlcontrols.stop();
+            pictureBox6.Visible = false;
             //MessageBox.Show("bai moi");
             preSong = (ucSong)sender;
 
-            lbsongtitle.Text = preSong.tenBh + "  -  " + preSong.caSi;
+            //lbsongtitle.Text = preSong.tenBh + "  -  " + preSong.caSi;
+            btsongtitle.Text = preSong.tenBh + "  -  " + preSong.caSi;
             load_SongIn4(preSong.maBh);
             if (preSong.isFavor)
             {
@@ -160,6 +173,15 @@ namespace _20521587_TH03_Music_Online
             Playing = preSong.maBh;
             media.URL = "./" + Playing + ".mp3";
             media.Ctlcontrols.play();
+            pictureBox6.Visible = true;
+            // thêm vào lịch sử nghe gần đây
+            listenHisData = lhisdal.Select();
+            DataRow dr = listenHisData.AsEnumerable().SingleOrDefault(r => r.Field<string>("MABH") == Playing);
+            if (dr != null)
+                lhisdal.Update(Playing, (int.Parse(dr[1].ToString()) + 1));
+            else
+                lhisdal.Insert(Playing);
+            guna2Button1.Visible = true;
             timer1.Start();
             preSong.BackColor = Color.FromArgb(192, 255, 255);
             flowLayoutPanel2.Controls.Clear();
@@ -196,11 +218,12 @@ namespace _20521587_TH03_Music_Online
                     ucReviews rv = new ucReviews();
                     rv.ten = dr[2].ToString();
                     rv.danhGia = dr[3].ToString();
-                    rv.rate = int.Parse(dr[4].ToString());
-                    everageRate += int.Parse(dr[4].ToString());
+                    rv.rateStart = float.Parse(dr[4].ToString());
+                    everageRate += float.Parse(dr[4].ToString());
                     rv.like = int.Parse(dr[6].ToString());
                     rv.unLike = int.Parse(dr[7].ToString());
                     rv.thoiGian = DateTime.Parse(dr[5].ToString());
+                    rv.reviewData = dr;
                     try
                     {
                         DataRow druser = userdata.AsEnumerable().SingleOrDefault(r => r.Field<string>("TEN") == rv.ten);
@@ -217,42 +240,44 @@ namespace _20521587_TH03_Music_Online
             if (countSongRate != 0)
                 everageRate = everageRate / countSongRate;
             //if(everageRate)
-            rate((int)everageRate);
+            //rate((int)everageRate);
+            guna2RatingStar1.Value = (float)(Math.Round(everageRate * 2, MidpointRounding.AwayFromZero) / 2);
+            rating = guna2RatingStar1.Value;
 
-
-        }
-        private void rate(int value)
-        {
-            if (value == 1)
-                setRate(1, 0, 0, 0, 0);
-            else if (value == 2)
-                setRate(1, 1, 0, 0, 0);
-            else if (value == 3)
-                setRate(1, 1, 1, 0, 0);
-            else if (value == 4)
-                setRate(1, 1, 1, 1, 0);
-            else
-                setRate(1, 1, 1, 1, 1);
-        }
-        private void setRate(int a, int b, int c, int d, int e)
-        {
-            s1.Image = _20521587_TH03_Music_Online.Properties.Resources.star__2_;
-            s2.Image = _20521587_TH03_Music_Online.Properties.Resources.star__2_;
-            s3.Image = _20521587_TH03_Music_Online.Properties.Resources.star__2_;
-            s4.Image = _20521587_TH03_Music_Online.Properties.Resources.star__2_;
-            s5.Image = _20521587_TH03_Music_Online.Properties.Resources.star__2_;
-            if (a == 0)
-                s1.Image = _20521587_TH03_Music_Online.Properties.Resources.star__4_;
-            if (b == 0)
-                s2.Image = _20521587_TH03_Music_Online.Properties.Resources.star__4_;
-            if (c == 0)
-                s3.Image = _20521587_TH03_Music_Online.Properties.Resources.star__4_;
-            if (d == 0)
-                s4.Image = _20521587_TH03_Music_Online.Properties.Resources.star__4_;
-            if (e == 0)
-                s5.Image = _20521587_TH03_Music_Online.Properties.Resources.star__4_;
-        }
-        private void gunaGradient2Panel1_Paint(object sender, PaintEventArgs e)
+        //guna2RatingStar1.Enabled = false;
+    }
+    //private void rate(int value)
+    //{
+    //    if (value == 1)
+    //        setRate(1, 0, 0, 0, 0);
+    //    else if (value == 2)
+    //        setRate(1, 1, 0, 0, 0);
+    //    else if (value == 3)
+    //        setRate(1, 1, 1, 0, 0);
+    //    else if (value == 4)
+    //        setRate(1, 1, 1, 1, 0);
+    //    else
+    //        setRate(1, 1, 1, 1, 1);
+    //}
+    //private void setRate(int a, int b, int c, int d, int e)
+    //{
+    //    s1.Image = _20521587_TH03_Music_Online.Properties.Resources.star__2_;
+    //    s2.Image = _20521587_TH03_Music_Online.Properties.Resources.star__2_;
+    //    s3.Image = _20521587_TH03_Music_Online.Properties.Resources.star__2_;
+    //    s4.Image = _20521587_TH03_Music_Online.Properties.Resources.star__2_;
+    //    s5.Image = _20521587_TH03_Music_Online.Properties.Resources.star__2_;
+    //    if (a == 0)
+    //        s1.Image = _20521587_TH03_Music_Online.Properties.Resources.star__4_;
+    //    if (b == 0)
+    //        s2.Image = _20521587_TH03_Music_Online.Properties.Resources.star__4_;
+    //    if (c == 0)
+    //        s3.Image = _20521587_TH03_Music_Online.Properties.Resources.star__4_;
+    //    if (d == 0)
+    //        s4.Image = _20521587_TH03_Music_Online.Properties.Resources.star__4_;
+    //    if (e == 0)
+    //        s5.Image = _20521587_TH03_Music_Online.Properties.Resources.star__4_;
+    //}
+    private void gunaGradient2Panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
@@ -293,7 +318,9 @@ namespace _20521587_TH03_Music_Online
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-
+            if (media.playState != WMPLib.WMPPlayState.wmppsPlaying)
+                pictureBox6.Visible = false;
+            
             // update trackbar
             if (media.currentMedia.duration != 0)
                 gunaTrackBar1.Value = (int)(100.0 * (media.Ctlcontrols.currentPosition / media.currentMedia.duration));
@@ -309,22 +336,22 @@ namespace _20521587_TH03_Music_Online
 
         private void guna2CirclePictureBox2_Click(object sender, EventArgs e)
         {
-            if (stage == false)
+            if (stage == true)
             {
-                stage = true;
+                stage = false;
                 btplay.Image = _20521587_TH03_Music_Online.Properties.Resources.play_button;
 
                 media.Ctlcontrols.pause();
-
+                pictureBox6.Visible = false;
             }
             else
             {
+                stage = true;
                 btplay.Image = _20521587_TH03_Music_Online.Properties.Resources.pause;
-                stage = false;
                 media.Ctlcontrols.play();
-
+                pictureBox6.Visible = true;
             }
-            pictureBox6.Visible = !stage;
+            pictureBox6.Visible = stage;
         }
 
         private void gunaTrackBar1_Scroll(object sender, ScrollEventArgs e)
@@ -336,7 +363,6 @@ namespace _20521587_TH03_Music_Online
         {
             tabControl1.SelectedIndex = 0;
             mome_Image(sender);
-
         }
 
         private void guna2Button2_Click(object sender, EventArgs e)
@@ -348,6 +374,7 @@ namespace _20521587_TH03_Music_Online
         private void fMusic_FormClosing(object sender, FormClosingEventArgs e)
         {
             media.Ctlcontrols.stop();
+            pictureBox6.Visible = false;
         }
 
         private void tbVolumn_Scroll(object sender, ScrollEventArgs e)
@@ -384,11 +411,13 @@ namespace _20521587_TH03_Music_Online
             //media.playlistCollection.
             media.currentPlaylist = fullSong;
             media.Ctlcontrols.play();
+            pictureBox6.Visible = true;
         }
 
         private void guna2CirclePictureBox4_Click(object sender, EventArgs e)
         {
             media.Ctlcontrols.next();
+            pictureBox6.Visible = true;
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
@@ -442,6 +471,7 @@ namespace _20521587_TH03_Music_Online
             //lbAuthorMain.Text = dr[2].ToString();
             guna2HtmlLabel1.Top = richTextBox1.Top + richTextBox1.Height;
             panel2.Top = richTextBox1.Top + richTextBox1.Height - 5;
+            guna2RatingStar1.Top = richTextBox1.Top + richTextBox1.Height - 5;
             guna2HtmlLabel2.Top = guna2HtmlLabel1.Top + 40;
             pictureBox14.Top = guna2HtmlLabel2.Top + 40;
             flowLayoutPanel2.Top = pictureBox14.Top + 40;
@@ -452,7 +482,50 @@ namespace _20521587_TH03_Music_Online
         {
             tabControl1.SelectedIndex = 4;
             mome_Image(sender);
+            loadListenHis();
         }
+
+        private void loadListenHis()
+        {
+            flowLayoutPanel5.Controls.Clear();
+
+            listSongData = ldal.Select();
+            favorData = fvordal.Select();
+            listenHisData = lhisdal.Select();
+            //ucSong[] ListSong = new ucSong[listSongData.Rows.Count];
+            for (int i = 0; i < listSongData.Rows.Count; i++)
+            {
+                ucSong c = new ucSong();
+                ucListenHis d = new ucListenHis();
+                DataRow hisdr = listenHisData.AsEnumerable().SingleOrDefault(r => r.Field<string>("MABH") == listSongData.Rows[i][0].ToString());
+                if (hisdr == null)
+                    continue;
+                if ((favorData.AsEnumerable().SingleOrDefault(r => r.Field<string>("MABH") == listSongData.Rows[i][0].ToString()) != null))
+                    c.isFavor = true;
+                else
+                    c.isFavor = false;
+                d.thoiDiem = hisdr[2].ToString();
+                d.luotNghe = hisdr[1].ToString();
+                c.maBh = listSongData.Rows[i][0].ToString();
+                c.tenBh = listSongData.Rows[i][1].ToString();
+                c.tacGia = listSongData.Rows[i][2].ToString();
+                c.caSi = listSongData.Rows[i][3].ToString();
+                c.image = (Image)rm.GetObject(listSongData.Rows[i][0].ToString());
+                c.theLoai = listSongData.Rows[i][4].ToString();
+                c.quocGia = listSongData.Rows[i][5].ToString();
+                c.setXPositionTimeSong = 30;
+                c.time = listSongData.Rows[i][6].ToString().Substring(3);
+                c.playButtonClick += play_Click;
+                c.Ucclick += play_Click2;
+                flowLayoutPanel5.Controls.Add(c);
+                flowLayoutPanel6.Controls.Add(d);
+            }
+            flowLayoutPanel5.Height = listenHisData.Rows.Count * 130;
+            flowLayoutPanel6.Height = listenHisData.Rows.Count * 130;
+            flowLayoutPanel5.Refresh();
+            flowLayoutPanel6.Refresh();
+        }
+
         private void guna2Button3_Click(object sender, EventArgs e)
         {
             tabControl1.SelectedIndex = 3;
@@ -509,12 +582,27 @@ namespace _20521587_TH03_Music_Online
 
 
         }
-        private Button addReviewButton()
+        private Guna2GradientButton addReviewButton()
         {
-            Button bt = new Button() { Width = 730, Height = 25, Text = "Thêm Đánh Giá" };
-            bt.Click += new EventHandler(addReview);
+            //Button bt = new Button() { Width = 730, Height = 25, Text = "Thêm Đánh Giá" };
+            //bt.Click += new EventHandler(addReview);
+            Guna2GradientButton b = new Guna2GradientButton();
+            b.Animated = true;
+            b.BorderRadius = 10;
+            b.CheckedState.Parent = b;
+            b.CustomImages.Parent = b;
+            b.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            b.ForeColor = System.Drawing.Color.White;
+            b.HoverState.Parent = b;
+            b.Location = new System.Drawing.Point(491, 335);
+            b.Name = "guna2GradientButton1";
+            b.ShadowDecoration.Parent = b;
+            b.Size = new System.Drawing.Size(730, 35);
+            b.TabIndex = 79;
+            b.Text = "Thêm đánh giá mới";
+            b.Click += new EventHandler(addReview);
 
-            return bt;
+            return b;
         }
         private void update_review(object sender, EventArgs e)
         {
@@ -531,7 +619,7 @@ namespace _20521587_TH03_Music_Online
             f.insertClick += update_review;
             foreach (Control i in flowLayoutPanel2.Controls)
             {
-                if (i.GetType() == typeof(Button))
+                if (i.GetType() == typeof(Guna2GradientButton))
                 {
                     flowLayoutPanel2.Controls.Remove(i);
                     break;
@@ -649,18 +737,18 @@ namespace _20521587_TH03_Music_Online
             // them vao play list
             if (e.ClickedItem.Text == "New playlist")
             {
-
+                guna2Button6_Click(sender, null);
             }
             else
             {
                 PlaylistDAL pdal = new PlaylistDAL();
                 pdal.Insert(1, e.ClickedItem.Text, Playing);
-
+                fMessShow d = new fMessShow("Thêm Thành công");
+                d.Show();
             }
 
 
-            fMessShow d = new fMessShow();
-            d.Show();
+            
             // ? 
             //toolStrip = null;
         }
@@ -682,6 +770,7 @@ namespace _20521587_TH03_Music_Online
             //media.playlistCollection.
             media.currentPlaylist = playlist;
             media.Ctlcontrols.play();
+            pictureBox6.Visible = true;
         }
 
         private void pictureBox16_Click(object sender, EventArgs e)
@@ -714,11 +803,12 @@ namespace _20521587_TH03_Music_Online
                 lbUserName.Text = fswuer.userName;
                 userName = fswuer.userName;
                 userID = fswuer.userID;
+                fMessShow d = new fMessShow("Đổi TK Thành công");
+                d.Show();
             }
 
 
-            fMessShow d = new fMessShow();
-            d.Show();
+            
             // ? 
             //toolStrip = null;
         }
@@ -917,6 +1007,7 @@ namespace _20521587_TH03_Music_Online
             //MessageBox.Show(System.IO.Path.GetDirectoryName(Application.ExecutablePath));
             //"./" + i.maBh + ".mp3";
 
+
             SaveFileDialog savedlg = new SaveFileDialog();
             savedlg.DefaultExt = "mp3";
             savedlg.Filter = "Audio file .mp3 |*.mp3";
@@ -926,12 +1017,69 @@ namespace _20521587_TH03_Music_Online
             savedlg.InitialDirectory = @"C:/";
             if (savedlg.ShowDialog() == DialogResult.OK)
             {
-                MessageBox.Show(System.IO.Path.GetDirectoryName(Application.ExecutablePath) + "/" + Playing + ".mp3");
-                MessageBox.Show(savedlg.FileName);
-                System.IO.File.Copy(System.IO.Path.GetDirectoryName(Application.ExecutablePath)+ "\\" + Playing+ ".mp3", savedlg.FileName, true);
+                //MessageBox.Show(System.IO.Path.GetDirectoryName(Application.ExecutablePath) + "/" + Playing + ".mp3");
+                //MessageBox.Show(savedlg.FileName);
+                System.IO.File.Copy(System.IO.Path.GetDirectoryName(Application.ExecutablePath) + "\\" + Playing + ".mp3", savedlg.FileName, true);
             }
             savedlg.Dispose();
         }
-    }
 
+        private void pictureBox24_Click(object sender, EventArgs e)
+        {
+            Process process = new Process();
+            string FILE_SHARE = System.IO.Path.GetDirectoryName(Application.ExecutablePath) + "/" + Playing + ".mp3";
+            var PATH_SPECIAL_PROGRAMS = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData, Environment.SpecialFolderOption.None) + @"Programs";
+            string AGRUMENTS = $@"{PATH_SPECIAL_PROGRAMS}\Zalo\sl.exe "" % 1"" ""{PATH_SPECIAL_PROGRAMS}\Zalo\Zalo.exe"" {FILE_SHARE} --si-timeout 1000";
+            ProcessStartInfo startInfo = new ProcessStartInfo();
+            MessageBox.Show(AGRUMENTS);
+            startInfo.WindowStyle = ProcessWindowStyle.Hidden;
+            startInfo.FileName = "cmd.exe";
+            startInfo.Arguments = $"/C {AGRUMENTS}";
+            process.StartInfo = startInfo;
+            process.Start();
+        }
+
+        private void pictureBox19_Click(object sender, EventArgs e)
+        {
+            IWMPPlaylist fvor = media.newPlaylist("fvor", null);
+            //WMPLib.IWMPMedia m1 = media.newMedia("./" + "BH01" + ".mp3");
+            foreach (ucSong i in flowLayoutPanel4.Controls)
+            {
+                WMPLib.IWMPMedia m = media.newMedia("./" + i.maBh + ".mp3");
+                fvor.appendItem(m);
+            }
+            //fullSong.appendItem(m2);
+            //media.playlistCollection.
+            media.currentPlaylist = fvor;
+            media.Ctlcontrols.play();
+            pictureBox6.Visible = true;
+        }
+
+        private void pictureBox25_Click(object sender, EventArgs e)
+        {
+            IWMPPlaylist listenhis = media.newPlaylist("listenhis", null);
+            //WMPLib.IWMPMedia m1 = media.newMedia("./" + "BH01" + ".mp3");
+            foreach (ucSong i in flowLayoutPanel5.Controls)
+            {
+                WMPLib.IWMPMedia m = media.newMedia("./" + i.maBh + ".mp3");
+                listenhis.appendItem(m);
+            }
+            //fullSong.appendItem(m2);
+            //media.playlistCollection.
+            media.currentPlaylist = listenhis;
+            media.Ctlcontrols.play();
+            pictureBox6.Visible = true;
+        }
+
+        private void Media_EndOfStream(object sender, AxWMPLib._WMPOCXEvents_EndOfStreamEvent e)
+        {
+            //pictureBox6.Visible = false;
+            //throw new NotImplementedException();
+        }
+
+        private void guna2RatingStar1_ValueChanged(object sender, EventArgs e)
+        {
+            guna2RatingStar1.Value = rating;
+        }
+    }
 }
