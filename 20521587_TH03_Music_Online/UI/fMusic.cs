@@ -16,6 +16,7 @@ using WMPLib;
 using System.IO;
 using System.Configuration;
 using System.Diagnostics;
+using System.Threading;
 
 namespace _20521587_TH03_Music_Online
 {
@@ -1019,24 +1020,55 @@ namespace _20521587_TH03_Music_Online
             {
                 //MessageBox.Show(System.IO.Path.GetDirectoryName(Application.ExecutablePath) + "/" + Playing + ".mp3");
                 //MessageBox.Show(savedlg.FileName);
+                guna2ProgressBar1.Visible = true;
+                guna2HtmlLabel7.Visible = true;
+                Thread myThread = new Thread(new ThreadStart(thread1));
+                myThread.Start();
                 System.IO.File.Copy(System.IO.Path.GetDirectoryName(Application.ExecutablePath) + "\\" + Playing + ".mp3", savedlg.FileName, true);
+
             }
             savedlg.Dispose();
+            
+            //timer2.Start();
+           
+        }
+        private void thread2()
+        {
+            guna2HtmlLabel7.Visible = false;
+            guna2ProgressBar1.Visible = false;
         }
 
+        private void thread1()
+        {
+            guna2ProgressBar1.Value = 0;
+            guna2ProgressBar1.Update();
+            for (int i = 0; i <= 100; i++)
+            {
+                guna2ProgressBar1.Value = i;
+                guna2ProgressBar1.Update();
+                //guna2ProgressBar1.PerformLayout();
+                Thread.Sleep(100);
+            }
+            guna2HtmlLabel7.Text = "Tải thành công";
+            Thread.Sleep(1000);
+            thread2();
+            guna2HtmlLabel7.Text = "Đang tải xuống ....";
+        }
         private void pictureBox24_Click(object sender, EventArgs e)
         {
-            Process process = new Process();
-            string FILE_SHARE = System.IO.Path.GetDirectoryName(Application.ExecutablePath) + "/" + Playing + ".mp3";
-            var PATH_SPECIAL_PROGRAMS = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData, Environment.SpecialFolderOption.None) + @"Programs";
-            string AGRUMENTS = $@"{PATH_SPECIAL_PROGRAMS}\Zalo\sl.exe "" % 1"" ""{PATH_SPECIAL_PROGRAMS}\Zalo\Zalo.exe"" {FILE_SHARE} --si-timeout 1000";
-            ProcessStartInfo startInfo = new ProcessStartInfo();
-            MessageBox.Show(AGRUMENTS);
-            startInfo.WindowStyle = ProcessWindowStyle.Hidden;
-            startInfo.FileName = "cmd.exe";
-            startInfo.Arguments = $"/C {AGRUMENTS}";
-            process.StartInfo = startInfo;
-            process.Start();
+            #region Test Download 
+            //Process process = new Process();
+            //string FILE_SHARE = System.IO.Path.GetDirectoryName(Application.ExecutablePath) + "/" + Playing + ".mp3";
+            //var PATH_SPECIAL_PROGRAMS = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData, Environment.SpecialFolderOption.None) + @"Programs";
+            //string AGRUMENTS = $@"{PATH_SPECIAL_PROGRAMS}\Zalo\sl.exe "" % 1"" ""{PATH_SPECIAL_PROGRAMS}\Zalo\Zalo.exe"" {FILE_SHARE} --si-timeout 1000";
+            //ProcessStartInfo startInfo = new ProcessStartInfo();
+            //MessageBox.Show(AGRUMENTS);
+            //startInfo.WindowStyle = ProcessWindowStyle.Hidden;
+            //startInfo.FileName = "cmd.exe";
+            //startInfo.Arguments = $"/C {AGRUMENTS}";
+            //process.StartInfo = startInfo;
+            //process.Start(); 
+            #endregion
         }
 
         private void pictureBox19_Click(object sender, EventArgs e)
@@ -1080,6 +1112,11 @@ namespace _20521587_TH03_Music_Online
         private void guna2RatingStar1_ValueChanged(object sender, EventArgs e)
         {
             guna2RatingStar1.Value = rating;
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            
         }
     }
 }

@@ -35,9 +35,19 @@ INSERT INTO THONGTIN VALUES('BH16',N'Tình Cố Hương',N'Hoàng Văn',N'Bảo 
 INSERT INTO THONGTIN VALUES('BH17',N'Quê Em Mùa Nước Lũ',N'Tiến Luân',N'Phương Mỹ Chi',N'Trữ Tình',N'Việt Nam','00:05:34');
 INSERT INTO THONGTIN VALUES('BH18',N'Áo Mới Cà Mau',N'Thanh Sơn',N'Phương Mỹ Chi',N'Trữ Tình',N'Việt Nam','00:03:49');
 INSERT INTO THONGTIN VALUES('BH19',N'Hoa Sứ Nhà Nàng',N'Hoàng Phương',N'Anh Khang',N'Trữ Tình',N'Việt Nam','00:03:43');
-INSERT INTO THONGTIN VALUES('BH20',N'Bất Chấp',N'Dư Quốc Vương',N'Anh Khang',N'Trữ Tình',N'Việt Nam','00:03:43');
+INSERT INTO THONGTIN VALUES('BH20',N'Bất Chấp',N'Dư Quốc Vương',N'WHEE!',N'Remix Việt',N'Việt Nam','00:03:04');
+INSERT INTO THONGTIN VALUES('BH21',N'Mah Boo',N'Tăng Duy Tân',N'Phạm Việt Thắng',N'Remix Việt',N'Việt Nam','00:03:54');
+INSERT INTO THONGTIN VALUES('BH22',N'Replay trên con Guây (ShenlongZ Remix)',N'Phúc Du,Tiên Cookie',N'Phúc Du & Đan Ni',N'Remix Việt',N'Việt Nam','00:03:12');
+INSERT INTO THONGTIN VALUES('BH23',N'Say Đắm Trong Lần Đầu (Sped Up)',N'Winno',N'Winno',N'Remix Việt',N'Việt Nam','00:02:04');
+INSERT INTO THONGTIN VALUES('BH24',N'Memories',N'Maroon 5',N'Maroon 5',N'Pop',N'Âu Mỹ','00:03:09');
+INSERT INTO THONGTIN VALUES('BH25',N'Yummy',N'Justin Bieber, Jason Boyd',N'Justin Bieber',N'Pop',N'Âu Mỹ','00:03:23');
+INSERT INTO THONGTIN VALUES('BH26',N'We Dont Talk Anymore',N'Charlie Puth',N'Charlie Puth, Selena Gomez',N'Pop',N'Âu Mỹ','00:03:37');
+INSERT INTO THONGTIN VALUES('BH27',N'Girls Like You',N'Adam Levine, ‎Henry Walter',N'Maroon 5, Cardi B',N'Pop',N'Âu Mỹ','00:03:55');
+INSERT INTO THONGTIN VALUES('BH28',N'Drive My Car',N'Artemii Besedin',N'Deamn',N'Electronica/Dance',N'Âu Mỹ','00:03:17');
+INSERT INTO THONGTIN VALUES('BH29',N'So Far Away',N'David Guetta, Jamie Scott',N'Martin Garrix, David Guetta',N'Electronica/Dance',N'Âu Mỹ','00:03:04');
+INSERT INTO THONGTIN VALUES('BH30',N'Something Just Like This',N' Andrew Taggart, Guy Berryman',N'The Chainsmokers, Coldplay',N'Electronica/Dance',N'Âu Mỹ','00:04:07');
 
-delete from THONGTIN where MABH ='BH15'
+delete from THONGTIN where MABH ='BH26'
 
 drop table  DANHGIA
 CREATE TABLE DANHGIA(
