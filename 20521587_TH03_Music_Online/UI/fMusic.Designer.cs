@@ -47,7 +47,6 @@ namespace _20521587_TH03_Music_Online
             this.gunaTrackBar1 = new Guna.UI.WinForms.GunaTrackBar();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btsongtitle = new Guna.UI2.WinForms.Guna2Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.gunaWinSwitch1 = new Guna.UI.WinForms.GunaWinSwitch();
             this.lbUserName = new Guna.UI.WinForms.GunaLabel();
             this.gunaGradient2Panel3 = new Guna.UI.WinForms.GunaGradient2Panel();
@@ -152,6 +151,9 @@ namespace _20521587_TH03_Music_Online
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
+            this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
+            this.guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
+            this.guna2ControlBox3 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.gunaGradient2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -160,7 +162,6 @@ namespace _20521587_TH03_Music_Online
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btplay)).BeginInit();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.gunaGradient2Panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
@@ -229,6 +230,7 @@ namespace _20521587_TH03_Music_Online
             // 
             // gunaGradient2Panel2
             // 
+            this.gunaGradient2Panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.gunaGradient2Panel2.BackColor = System.Drawing.Color.Transparent;
             this.gunaGradient2Panel2.Controls.Add(this.cbtshuffer);
             this.gunaGradient2Panel2.Controls.Add(this.cbtloop);
@@ -396,8 +398,11 @@ namespace _20521587_TH03_Music_Online
             // 
             // panel4
             // 
+            this.panel4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel4.Controls.Add(this.guna2ControlBox3);
+            this.panel4.Controls.Add(this.guna2ControlBox2);
+            this.panel4.Controls.Add(this.guna2ControlBox1);
             this.panel4.Controls.Add(this.btsongtitle);
-            this.panel4.Controls.Add(this.pictureBox2);
             this.panel4.Location = new System.Drawing.Point(232, 0);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(889, 42);
@@ -419,17 +424,6 @@ namespace _20521587_TH03_Music_Online
             this.btsongtitle.Size = new System.Drawing.Size(607, 36);
             this.btsongtitle.TabIndex = 4;
             this.btsongtitle.Text = "guna2Button15";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::_20521587_TH03_Music_Online.Properties.Resources.close__1_;
-            this.pictureBox2.Location = new System.Drawing.Point(836, 5);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(30, 30);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // gunaWinSwitch1
             // 
@@ -684,6 +678,7 @@ namespace _20521587_TH03_Music_Online
             // tabControl1
             // 
             this.tabControl1.Alignment = System.Windows.Forms.TabAlignment.Bottom;
+            this.tabControl1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
@@ -1803,6 +1798,47 @@ namespace _20521587_TH03_Music_Online
             this.guna2Elipse1.BorderRadius = 20;
             this.guna2Elipse1.TargetControl = this;
             // 
+            // guna2ControlBox1
+            // 
+            this.guna2ControlBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.guna2ControlBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.guna2ControlBox1.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
+            this.guna2ControlBox1.FillColor = System.Drawing.SystemColors.Control;
+            this.guna2ControlBox1.HoverState.Parent = this.guna2ControlBox1;
+            this.guna2ControlBox1.IconColor = System.Drawing.Color.Black;
+            this.guna2ControlBox1.Location = new System.Drawing.Point(742, 5);
+            this.guna2ControlBox1.Name = "guna2ControlBox1";
+            this.guna2ControlBox1.ShadowDecoration.Parent = this.guna2ControlBox1;
+            this.guna2ControlBox1.Size = new System.Drawing.Size(44, 34);
+            this.guna2ControlBox1.TabIndex = 5;
+            // 
+            // guna2ControlBox2
+            // 
+            this.guna2ControlBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.guna2ControlBox2.BackColor = System.Drawing.SystemColors.Control;
+            this.guna2ControlBox2.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MaximizeBox;
+            this.guna2ControlBox2.FillColor = System.Drawing.SystemColors.Control;
+            this.guna2ControlBox2.HoverState.Parent = this.guna2ControlBox2;
+            this.guna2ControlBox2.IconColor = System.Drawing.Color.Black;
+            this.guna2ControlBox2.Location = new System.Drawing.Point(786, 5);
+            this.guna2ControlBox2.Name = "guna2ControlBox2";
+            this.guna2ControlBox2.ShadowDecoration.Parent = this.guna2ControlBox2;
+            this.guna2ControlBox2.Size = new System.Drawing.Size(44, 34);
+            this.guna2ControlBox2.TabIndex = 6;
+            // 
+            // guna2ControlBox3
+            // 
+            this.guna2ControlBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.guna2ControlBox3.BackColor = System.Drawing.SystemColors.Control;
+            this.guna2ControlBox3.FillColor = System.Drawing.SystemColors.Control;
+            this.guna2ControlBox3.HoverState.Parent = this.guna2ControlBox3;
+            this.guna2ControlBox3.IconColor = System.Drawing.Color.Black;
+            this.guna2ControlBox3.Location = new System.Drawing.Point(830, 5);
+            this.guna2ControlBox3.Name = "guna2ControlBox3";
+            this.guna2ControlBox3.ShadowDecoration.Parent = this.guna2ControlBox3;
+            this.guna2ControlBox3.Size = new System.Drawing.Size(44, 34);
+            this.guna2ControlBox3.TabIndex = 7;
+            // 
             // fMusic
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1828,7 +1864,6 @@ namespace _20521587_TH03_Music_Online
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btplay)).EndInit();
             this.panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.gunaGradient2Panel3.ResumeLayout(false);
             this.gunaGradient2Panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).EndInit();
@@ -1884,7 +1919,6 @@ namespace _20521587_TH03_Music_Online
         private Guna.UI.WinForms.GunaMetroTrackBar tbVolumn;
         private Guna.UI.WinForms.GunaGradient2Panel gunaGradient2Panel2;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private Guna.UI.WinForms.GunaTrackBar gunaTrackBar1;
         private Guna.UI2.WinForms.Guna2CirclePictureBox btplay;
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox4;
@@ -2001,6 +2035,9 @@ namespace _20521587_TH03_Music_Online
         private Guna.UI2.WinForms.Guna2Button btsongtitle;
         private Guna.UI2.WinForms.Guna2ProgressBar guna2ProgressBar1;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel7;
+        private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
+        private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox2;
+        private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox3;
     }
 }
 
