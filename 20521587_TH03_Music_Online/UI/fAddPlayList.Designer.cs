@@ -44,7 +44,7 @@ namespace _20521587_TH03_Music_Online.UI
             this.tbNamePlaylist.BorderColor = System.Drawing.Color.Teal;
             this.tbNamePlaylist.BorderRadius = 15;
             this.tbNamePlaylist.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbNamePlaylist.DefaultText = "fgh";
+            this.tbNamePlaylist.DefaultText = "";
             this.tbNamePlaylist.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.tbNamePlaylist.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.tbNamePlaylist.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -54,19 +54,20 @@ namespace _20521587_TH03_Music_Online.UI
             this.tbNamePlaylist.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbNamePlaylist.FocusedState.Parent = this.tbNamePlaylist;
             this.tbNamePlaylist.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbNamePlaylist.ForeColor = System.Drawing.Color.Khaki;
+            this.tbNamePlaylist.ForeColor = System.Drawing.Color.Black;
             this.tbNamePlaylist.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbNamePlaylist.HoverState.Parent = this.tbNamePlaylist;
             this.tbNamePlaylist.Location = new System.Drawing.Point(12, 12);
+            this.tbNamePlaylist.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.tbNamePlaylist.Name = "tbNamePlaylist";
             this.tbNamePlaylist.PasswordChar = '\0';
             this.tbNamePlaylist.PlaceholderForeColor = System.Drawing.Color.Black;
             this.tbNamePlaylist.PlaceholderText = "Nhập tên playlist";
             this.tbNamePlaylist.SelectedText = "";
-            this.tbNamePlaylist.SelectionStart = 3;
             this.tbNamePlaylist.ShadowDecoration.Parent = this.tbNamePlaylist;
             this.tbNamePlaylist.Size = new System.Drawing.Size(322, 36);
             this.tbNamePlaylist.TabIndex = 0;
+            this.tbNamePlaylist.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // guna2Button2
             // 
@@ -98,7 +99,7 @@ namespace _20521587_TH03_Music_Online.UI
             // 
             this.guna2GradientButton1.Animated = true;
             this.guna2GradientButton1.AutoRoundedCorners = true;
-            this.guna2GradientButton1.BorderRadius = 14;
+            this.guna2GradientButton1.BorderRadius = 17;
             this.guna2GradientButton1.CheckedState.Parent = this.guna2GradientButton1;
             this.guna2GradientButton1.CustomImages.Parent = this.guna2GradientButton1;
             this.guna2GradientButton1.FillColor = System.Drawing.Color.Chocolate;
