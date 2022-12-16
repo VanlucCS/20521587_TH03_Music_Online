@@ -46,6 +46,9 @@ namespace _20521587_TH03_Music_Online
             this.btplay = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.gunaTrackBar1 = new Guna.UI.WinForms.GunaTrackBar();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.guna2ControlBox3 = new Guna.UI2.WinForms.Guna2ControlBox();
+            this.guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
+            this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.btsongtitle = new Guna.UI2.WinForms.Guna2Button();
             this.gunaWinSwitch1 = new Guna.UI.WinForms.GunaWinSwitch();
             this.lbUserName = new Guna.UI.WinForms.GunaLabel();
@@ -65,6 +68,7 @@ namespace _20521587_TH03_Music_Online
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.pbAddToPlayList = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2ProgressBar1 = new Guna.UI2.WinForms.Guna2ProgressBar();
             this.pictureBox26 = new System.Windows.Forms.PictureBox();
             this.guna2RatingStar1 = new Guna.UI2.WinForms.Guna2RatingStar();
@@ -72,7 +76,6 @@ namespace _20521587_TH03_Music_Online
             this.pictureBox23 = new System.Windows.Forms.PictureBox();
             this.pictureBox21 = new System.Windows.Forms.PictureBox();
             this.guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.pbAddToPlayList = new Guna.UI2.WinForms.Guna2PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.s2 = new System.Windows.Forms.PictureBox();
             this.s5 = new System.Windows.Forms.PictureBox();
@@ -151,9 +154,6 @@ namespace _20521587_TH03_Music_Online
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
-            this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
-            this.guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
-            this.guna2ControlBox3 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.gunaGradient2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -172,11 +172,11 @@ namespace _20521587_TH03_Music_Online
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAddToPlayList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox24)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox23)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbAddToPlayList)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.s2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.s5)).BeginInit();
@@ -408,6 +408,47 @@ namespace _20521587_TH03_Music_Online
             this.panel4.Size = new System.Drawing.Size(889, 42);
             this.panel4.TabIndex = 3;
             // 
+            // guna2ControlBox3
+            // 
+            this.guna2ControlBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.guna2ControlBox3.BackColor = System.Drawing.SystemColors.Control;
+            this.guna2ControlBox3.FillColor = System.Drawing.SystemColors.Control;
+            this.guna2ControlBox3.HoverState.Parent = this.guna2ControlBox3;
+            this.guna2ControlBox3.IconColor = System.Drawing.Color.Black;
+            this.guna2ControlBox3.Location = new System.Drawing.Point(830, 5);
+            this.guna2ControlBox3.Name = "guna2ControlBox3";
+            this.guna2ControlBox3.ShadowDecoration.Parent = this.guna2ControlBox3;
+            this.guna2ControlBox3.Size = new System.Drawing.Size(44, 34);
+            this.guna2ControlBox3.TabIndex = 7;
+            // 
+            // guna2ControlBox2
+            // 
+            this.guna2ControlBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.guna2ControlBox2.BackColor = System.Drawing.SystemColors.Control;
+            this.guna2ControlBox2.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MaximizeBox;
+            this.guna2ControlBox2.FillColor = System.Drawing.SystemColors.Control;
+            this.guna2ControlBox2.HoverState.Parent = this.guna2ControlBox2;
+            this.guna2ControlBox2.IconColor = System.Drawing.Color.Black;
+            this.guna2ControlBox2.Location = new System.Drawing.Point(786, 5);
+            this.guna2ControlBox2.Name = "guna2ControlBox2";
+            this.guna2ControlBox2.ShadowDecoration.Parent = this.guna2ControlBox2;
+            this.guna2ControlBox2.Size = new System.Drawing.Size(44, 34);
+            this.guna2ControlBox2.TabIndex = 6;
+            // 
+            // guna2ControlBox1
+            // 
+            this.guna2ControlBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.guna2ControlBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.guna2ControlBox1.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
+            this.guna2ControlBox1.FillColor = System.Drawing.SystemColors.Control;
+            this.guna2ControlBox1.HoverState.Parent = this.guna2ControlBox1;
+            this.guna2ControlBox1.IconColor = System.Drawing.Color.Black;
+            this.guna2ControlBox1.Location = new System.Drawing.Point(742, 5);
+            this.guna2ControlBox1.Name = "guna2ControlBox1";
+            this.guna2ControlBox1.ShadowDecoration.Parent = this.guna2ControlBox1;
+            this.guna2ControlBox1.Size = new System.Drawing.Size(44, 34);
+            this.guna2ControlBox1.TabIndex = 5;
+            // 
             // btsongtitle
             // 
             this.btsongtitle.CheckedState.Parent = this.btsongtitle;
@@ -423,7 +464,6 @@ namespace _20521587_TH03_Music_Online
             this.btsongtitle.ShadowDecoration.Parent = this.btsongtitle;
             this.btsongtitle.Size = new System.Drawing.Size(607, 36);
             this.btsongtitle.TabIndex = 4;
-            this.btsongtitle.Text = "guna2Button15";
             // 
             // gunaWinSwitch1
             // 
@@ -725,6 +765,19 @@ namespace _20521587_TH03_Music_Online
             this.tabPage1.Text = "     ";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // pbAddToPlayList
+            // 
+            this.pbAddToPlayList.Image = global::_20521587_TH03_Music_Online.Properties.Resources.to_do_list;
+            this.pbAddToPlayList.Location = new System.Drawing.Point(739, 223);
+            this.pbAddToPlayList.Name = "pbAddToPlayList";
+            this.pbAddToPlayList.ShadowDecoration.Parent = this.pbAddToPlayList;
+            this.pbAddToPlayList.Size = new System.Drawing.Size(59, 54);
+            this.pbAddToPlayList.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbAddToPlayList.TabIndex = 74;
+            this.pbAddToPlayList.TabStop = false;
+            this.pbAddToPlayList.Click += new System.EventHandler(this.pbAddToPlayList_Click);
+            this.pbAddToPlayList.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pbAddToPlayList_MouseClick);
+            // 
             // guna2ProgressBar1
             // 
             this.guna2ProgressBar1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
@@ -806,19 +859,6 @@ namespace _20521587_TH03_Music_Online
             this.guna2HtmlLabel5.TabIndex = 75;
             this.guna2HtmlLabel5.Text = "Thêm vào danh sách phát";
             this.guna2HtmlLabel5.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pbAddToPlayList
-            // 
-            this.pbAddToPlayList.Image = global::_20521587_TH03_Music_Online.Properties.Resources.to_do_list;
-            this.pbAddToPlayList.Location = new System.Drawing.Point(739, 223);
-            this.pbAddToPlayList.Name = "pbAddToPlayList";
-            this.pbAddToPlayList.ShadowDecoration.Parent = this.pbAddToPlayList;
-            this.pbAddToPlayList.Size = new System.Drawing.Size(59, 54);
-            this.pbAddToPlayList.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbAddToPlayList.TabIndex = 74;
-            this.pbAddToPlayList.TabStop = false;
-            this.pbAddToPlayList.Click += new System.EventHandler(this.pbAddToPlayList_Click);
-            this.pbAddToPlayList.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pbAddToPlayList_MouseClick);
             // 
             // panel2
             // 
@@ -1065,7 +1105,7 @@ namespace _20521587_TH03_Music_Online
             this.tabPage2.Location = new System.Drawing.Point(4, 4);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(879, 581);
+            this.tabPage2.Size = new System.Drawing.Size(879, 574);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
@@ -1401,7 +1441,7 @@ namespace _20521587_TH03_Music_Online
             this.tabPage3.Location = new System.Drawing.Point(4, 4);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(879, 581);
+            this.tabPage3.Size = new System.Drawing.Size(879, 574);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
@@ -1538,7 +1578,7 @@ namespace _20521587_TH03_Music_Online
             this.tabPage4.Location = new System.Drawing.Point(4, 4);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(879, 581);
+            this.tabPage4.Size = new System.Drawing.Size(879, 574);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
@@ -1656,7 +1696,7 @@ namespace _20521587_TH03_Music_Online
             this.tabPage5.Location = new System.Drawing.Point(4, 4);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(879, 581);
+            this.tabPage5.Size = new System.Drawing.Size(879, 574);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
@@ -1798,47 +1838,6 @@ namespace _20521587_TH03_Music_Online
             this.guna2Elipse1.BorderRadius = 20;
             this.guna2Elipse1.TargetControl = this;
             // 
-            // guna2ControlBox1
-            // 
-            this.guna2ControlBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.guna2ControlBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.guna2ControlBox1.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
-            this.guna2ControlBox1.FillColor = System.Drawing.SystemColors.Control;
-            this.guna2ControlBox1.HoverState.Parent = this.guna2ControlBox1;
-            this.guna2ControlBox1.IconColor = System.Drawing.Color.Black;
-            this.guna2ControlBox1.Location = new System.Drawing.Point(742, 5);
-            this.guna2ControlBox1.Name = "guna2ControlBox1";
-            this.guna2ControlBox1.ShadowDecoration.Parent = this.guna2ControlBox1;
-            this.guna2ControlBox1.Size = new System.Drawing.Size(44, 34);
-            this.guna2ControlBox1.TabIndex = 5;
-            // 
-            // guna2ControlBox2
-            // 
-            this.guna2ControlBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.guna2ControlBox2.BackColor = System.Drawing.SystemColors.Control;
-            this.guna2ControlBox2.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MaximizeBox;
-            this.guna2ControlBox2.FillColor = System.Drawing.SystemColors.Control;
-            this.guna2ControlBox2.HoverState.Parent = this.guna2ControlBox2;
-            this.guna2ControlBox2.IconColor = System.Drawing.Color.Black;
-            this.guna2ControlBox2.Location = new System.Drawing.Point(786, 5);
-            this.guna2ControlBox2.Name = "guna2ControlBox2";
-            this.guna2ControlBox2.ShadowDecoration.Parent = this.guna2ControlBox2;
-            this.guna2ControlBox2.Size = new System.Drawing.Size(44, 34);
-            this.guna2ControlBox2.TabIndex = 6;
-            // 
-            // guna2ControlBox3
-            // 
-            this.guna2ControlBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.guna2ControlBox3.BackColor = System.Drawing.SystemColors.Control;
-            this.guna2ControlBox3.FillColor = System.Drawing.SystemColors.Control;
-            this.guna2ControlBox3.HoverState.Parent = this.guna2ControlBox3;
-            this.guna2ControlBox3.IconColor = System.Drawing.Color.Black;
-            this.guna2ControlBox3.Location = new System.Drawing.Point(830, 5);
-            this.guna2ControlBox3.Name = "guna2ControlBox3";
-            this.guna2ControlBox3.ShadowDecoration.Parent = this.guna2ControlBox3;
-            this.guna2ControlBox3.Size = new System.Drawing.Size(44, 34);
-            this.guna2ControlBox3.TabIndex = 7;
-            // 
             // fMusic
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1876,11 +1875,11 @@ namespace _20521587_TH03_Music_Online
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAddToPlayList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox24)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox23)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbAddToPlayList)).EndInit();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.s2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.s5)).EndInit();
