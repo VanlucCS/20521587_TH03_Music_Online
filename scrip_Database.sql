@@ -3,7 +3,7 @@
 CREATE DATABASE MUSIC
 
 USE [MUSIC]
-
+GO
 -- drop table Thongtin
 CREATE TABLE THONGTIN(
 	MABH		char(4),
@@ -14,8 +14,6 @@ CREATE TABLE THONGTIN(
 	QUOCGIA		nvarchar(30),
 	THOILUONG	time,
 );
-
-
 INSERT INTO THONGTIN VALUES('BH01',N'Tết Nhà Mình',N'Huỳnh Hiền Năng',N'Hòa Minzy',N'Nhạc Trẻ',N'Việt Nam','00:03:55');
 INSERT INTO THONGTIN VALUES('BH02',N'Ai cần ai',N'Hứa Kim Tuyền',N'Bảo Anh',N'Nhạc Trẻ',N'Việt Nam','00:03:24');
 INSERT INTO THONGTIN VALUES('BH03',N'Cứ Thở Đi',N'Hứa Kim Tuyền',N'Đức Phúc & Juky San',N'Nhạc Trẻ',N'Việt Nam','00:03:45');
@@ -47,9 +45,7 @@ INSERT INTO THONGTIN VALUES('BH28',N'Drive My Car',N'Artemii Besedin',N'Deamn',N
 INSERT INTO THONGTIN VALUES('BH29',N'So Far Away',N'David Guetta, Jamie Scott',N'Martin Garrix, David Guetta',N'Electronica/Dance',N'Âu Mỹ','00:03:04');
 INSERT INTO THONGTIN VALUES('BH30',N'Something Just Like This',N' Andrew Taggart, Guy Berryman',N'The Chainsmokers, Coldplay',N'Electronica/Dance',N'Âu Mỹ','00:04:07');
 
-delete from THONGTIN where MABH ='BH26'
-
-drop table  DANHGIA
+--drop table  DANHGIA
 CREATE TABLE DANHGIA(
 	MABH		char(4),
 	SODG		int,
@@ -60,19 +56,15 @@ CREATE TABLE DANHGIA(
 	THICH		int,
 	KOTHICH		int,
 );
-SET DATEFORMAT DMY;
 
+SET DATEFORMAT DMY;
 INSERT INTO DANHGIA VALUES('BH01','1',N'Nguyễn Tuân',N'Tuiyt zời','5','28/11/2022','12','1');
 INSERT INTO DANHGIA VALUES('BH01','2',N'Thúy Kiều',N'Muốn Zề nhà ăn tết ghê','5','25/11/2022','7','1');
 INSERT INTO DANHGIA VALUES('BH01','3',N'Thúy Vân',N'Nhớ Tết Quớ','5','20/11/2022','5','1');
 INSERT INTO DANHGIA VALUES('BH02','4',N'Nguyễn Du',N'Từ lúc sáng tác truyện kiều chưa thấy bài nào hay như bài này','5','27/11/2022','4','1');
 INSERT INTO DANHGIA VALUES('BH06','5',N'Đoán Xem',N'good','4.3','27/11/2022','4','1');
 
-delete from DANHGIA where SODG ='1'
-
-UPDATE DANHGIA SET THICH = 1,KOTHICH = 0 WHERE SODG = @SODG;
-
-
+--UPDATE DANHGIA SET THICH = 1,KOTHICH = 0 WHERE SODG = @SODG;
 -- drop table PLAYLIST
 
 CREATE TABLE PLAYLIST(
@@ -83,15 +75,13 @@ CREATE TABLE PLAYLIST(
 );
 INSERT INTO PLAYLIST VALUES('1',N'Playlist của lực','BH01','28/11/2022');
 
-drop TABLE USERINFO
-
+--drop TABLE USERINFO
 CREATE TABLE USERINFO(
 	MAUSER			char(4),
 	TEN				nvarchar(50),
 	USERNAME		nvarchar(50),
 	USERPASSWORD	nvarchar(50),
 	NGAYTAOTK		smalldatetime,
-	--THOIGIANTAO smalldatetime,
 );
 SET DATEFORMAT DMY;
 INSERT INTO USERINFO VALUES('US00',N'Đoán Xem','user','user','28/11/2022');
@@ -107,19 +97,18 @@ CREATE TABLE FAVORITESONG(
 INSERT INTO FAVORITESONG VALUES('BH04');
 INSERT INTO FAVORITESONG VALUES('BH03');
 INSERT INTO FAVORITESONG VALUES('BH06');
-IF NOT EXISTS(SELECT 1 FROM FAVORITESONG WHERE MABH='BH01')
-INSERT INTO FAVORITESONG VALUES('BH01');
-delete from DANHGIA where MABH ='1'
+
+--IF NOT EXISTS(SELECT 1 FROM FAVORITESONG WHERE MABH='BH01')
+--INSERT INTO FAVORITESONG VALUES('BH01');
+--delete from DANHGIA where MABH ='1'
 
 CREATE TABLE LISTENHIS(
 	MABH			char(4),
 	SOLAN			int,
 	THOIGIAN		smalldatetime,
 );
-SET DATEFORMAT DMY;
 
+SET DATEFORMAT DMY;
 INSERT INTO LISTENHIS VALUES('BH04','2','12/11/2022');
 INSERT INTO LISTENHIS VALUES('BH01','7','12/11/2022');
 INSERT INTO LISTENHIS VALUES('BH02','4','12/11/2022');
-
-delete from LISTENHIS where MABH ='BH04'
