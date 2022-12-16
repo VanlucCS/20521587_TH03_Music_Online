@@ -6,8 +6,7 @@
 [Trần Văn Lực](https://github.com/VanlucCS)      - MSSV: 20521587
 
 ## Preview App !
-[UI](https://user-images.githubusercontent.com/61135648/111136432-b7428a00-85b8-11eb-8e45-863bc9f7d5e8.png)
-
+![UI](https://github.com/VanlucCS/20521587_TH03_Music_Online/blob/master/Image/1.jpg)
 ## Packages requirement
 > Guna.UI.WinForms 1.9.0.1
 > Guna.UI2.WinForms 2.0.0.6
