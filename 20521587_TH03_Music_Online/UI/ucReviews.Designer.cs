@@ -88,14 +88,14 @@ namespace _20521587_TH03_Music_Online.UI
             // 
             this.tbCommand.BorderRadius = 5;
             this.tbCommand.BorderThickness = 2;
-            this.tbCommand.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbCommand.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.tbCommand.DefaultText = "Hay quá 😁";
             this.tbCommand.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.tbCommand.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.tbCommand.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.tbCommand.DisabledState.Parent = this.tbCommand;
             this.tbCommand.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbCommand.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbCommand.FocusedState.BorderColor = System.Drawing.Color.Transparent;
             this.tbCommand.FocusedState.Parent = this.tbCommand;
             this.tbCommand.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.tbCommand.ForeColor = System.Drawing.Color.Black;

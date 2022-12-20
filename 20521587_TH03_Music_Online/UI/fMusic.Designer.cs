@@ -784,13 +784,13 @@ namespace _20521587_TH03_Music_Online
             this.guna2ProgressBar1.BorderRadius = 10;
             this.guna2ProgressBar1.BorderThickness = 1;
             this.guna2ProgressBar1.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
-            this.guna2ProgressBar1.Location = new System.Drawing.Point(636, 70);
+            this.guna2ProgressBar1.Location = new System.Drawing.Point(659, 66);
             this.guna2ProgressBar1.Name = "guna2ProgressBar1";
             this.guna2ProgressBar1.ProgressColor = System.Drawing.Color.Lime;
             this.guna2ProgressBar1.ProgressColor2 = System.Drawing.Color.Cyan;
             this.guna2ProgressBar1.ShadowDecoration.Parent = this.guna2ProgressBar1;
             this.guna2ProgressBar1.ShowPercentage = true;
-            this.guna2ProgressBar1.Size = new System.Drawing.Size(220, 21);
+            this.guna2ProgressBar1.Size = new System.Drawing.Size(183, 21);
             this.guna2ProgressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.guna2ProgressBar1.TabIndex = 56;
             this.guna2ProgressBar1.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
@@ -998,7 +998,7 @@ namespace _20521587_TH03_Music_Online
             // pictureBox9
             // 
             this.pictureBox9.Image = global::_20521587_TH03_Music_Online.Properties.Resources.music__1_;
-            this.pictureBox9.Location = new System.Drawing.Point(368, 65);
+            this.pictureBox9.Location = new System.Drawing.Point(350, 34);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(45, 45);
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1008,7 +1008,7 @@ namespace _20521587_TH03_Music_Online
             // pictureBox11
             // 
             this.pictureBox11.Image = global::_20521587_TH03_Music_Online.Properties.Resources.microphone;
-            this.pictureBox11.Location = new System.Drawing.Point(367, 232);
+            this.pictureBox11.Location = new System.Drawing.Point(345, 232);
             this.pictureBox11.Name = "pictureBox11";
             this.pictureBox11.Size = new System.Drawing.Size(45, 45);
             this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1018,7 +1018,7 @@ namespace _20521587_TH03_Music_Online
             // pictureBox10
             // 
             this.pictureBox10.Image = global::_20521587_TH03_Music_Online.Properties.Resources.writer;
-            this.pictureBox10.Location = new System.Drawing.Point(368, 146);
+            this.pictureBox10.Location = new System.Drawing.Point(350, 137);
             this.pictureBox10.Name = "pictureBox10";
             this.pictureBox10.Size = new System.Drawing.Size(45, 45);
             this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1029,7 +1029,7 @@ namespace _20521587_TH03_Music_Online
             // 
             this.lbAuthorMain.BackColor = System.Drawing.Color.Transparent;
             this.lbAuthorMain.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbAuthorMain.Location = new System.Drawing.Point(444, 155);
+            this.lbAuthorMain.Location = new System.Drawing.Point(405, 146);
             this.lbAuthorMain.Name = "lbAuthorMain";
             this.lbAuthorMain.Size = new System.Drawing.Size(59, 27);
             this.lbAuthorMain.TabIndex = 57;
@@ -1039,7 +1039,7 @@ namespace _20521587_TH03_Music_Online
             // 
             this.lbSingerMain.BackColor = System.Drawing.Color.Transparent;
             this.lbSingerMain.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSingerMain.Location = new System.Drawing.Point(445, 241);
+            this.lbSingerMain.Location = new System.Drawing.Point(402, 241);
             this.lbSingerMain.Name = "lbSingerMain";
             this.lbSingerMain.Size = new System.Drawing.Size(57, 27);
             this.lbSingerMain.TabIndex = 56;
@@ -1047,11 +1047,12 @@ namespace _20521587_TH03_Music_Online
             // 
             // lbSongTitleMain
             // 
+            this.lbSongTitleMain.AutoSize = false;
             this.lbSongTitleMain.BackColor = System.Drawing.Color.Transparent;
             this.lbSongTitleMain.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSongTitleMain.Location = new System.Drawing.Point(444, 70);
+            this.lbSongTitleMain.Location = new System.Drawing.Point(405, 39);
             this.lbSongTitleMain.Name = "lbSongTitleMain";
-            this.lbSongTitleMain.Size = new System.Drawing.Size(113, 34);
+            this.lbSongTitleMain.Size = new System.Drawing.Size(238, 90);
             this.lbSongTitleMain.TabIndex = 54;
             this.lbSongTitleMain.Text = "Song title ";
             // 
@@ -1070,7 +1071,7 @@ namespace _20521587_TH03_Music_Online
             // 
             this.guna2HtmlLabel7.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel7.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel7.Location = new System.Drawing.Point(686, 91);
+            this.guna2HtmlLabel7.Location = new System.Drawing.Point(690, 91);
             this.guna2HtmlLabel7.Name = "guna2HtmlLabel7";
             this.guna2HtmlLabel7.Size = new System.Drawing.Size(121, 22);
             this.guna2HtmlLabel7.TabIndex = 81;

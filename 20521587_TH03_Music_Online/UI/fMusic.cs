@@ -240,10 +240,8 @@ namespace _20521587_TH03_Music_Online
             }
             if (countSongRate != 0)
                 everageRate = everageRate / countSongRate;
-            //if(everageRate)
-            //rate((int)everageRate);
+            rating = (float)(Math.Round(everageRate * 2, MidpointRounding.AwayFromZero) / 2);
             guna2RatingStar1.Value = (float)(Math.Round(everageRate * 2, MidpointRounding.AwayFromZero) / 2);
-            rating = guna2RatingStar1.Value;
 
         //guna2RatingStar1.Enabled = false;
     }
@@ -462,7 +460,7 @@ namespace _20521587_TH03_Music_Online
             string lyricUrl = @".\" + mabh + ".txt";
             string[] lines = System.IO.File.ReadAllLines(lyricUrl);
             //MessageBox.Show(lines.Length.ToString());
-            richTextBox1.Size = new Size(500, lines.Length * 24);
+            richTextBox1.Size = new Size(500, lines.Length * 22);
             foreach (string line in lines)
             {
                 // Use a tab to indent each line of the file.
@@ -1047,7 +1045,7 @@ namespace _20521587_TH03_Music_Online
                 guna2ProgressBar1.Value = i;
                 guna2ProgressBar1.Update();
                 //guna2ProgressBar1.PerformLayout();
-                Thread.Sleep(100);
+                Thread.Sleep(20);
             }
             guna2HtmlLabel7.Text = "Tải thành công";
             Thread.Sleep(1000);
