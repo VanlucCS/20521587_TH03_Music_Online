@@ -105,7 +105,7 @@ namespace _20521587_TH03_Music_Online.DAL
 
             try
             {
-                String sql = @"UPDATE LISTENHIS SET SOLAN = @SOLAN WHERE MABH = @MABH; ";
+                String sql = @"UPDATE LISTENHIS SET SOLAN = @SOLAN,THOIGIAN = @THOIGIAN WHERE MABH = @MABH; ";
 
                 //Creating SQL Command to pass the values
                 SqlCommand cmd = new SqlCommand(sql, conn);
@@ -113,6 +113,7 @@ namespace _20521587_TH03_Music_Online.DAL
                 //Passign the values through parameters
                 cmd.Parameters.AddWithValue("@SOLAN", soLan);
                 cmd.Parameters.AddWithValue("@MABH", mabh);
+                cmd.Parameters.AddWithValue("@THOIGIAN", DateTime.Now);
 
                 //Opening the Database connection
                 conn.Open();

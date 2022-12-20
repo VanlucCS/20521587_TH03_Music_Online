@@ -491,7 +491,9 @@ namespace _20521587_TH03_Music_Online
 
         private void loadListenHis()
         {
+
             flowLayoutPanel5.Controls.Clear();
+            flowLayoutPanel6.Controls.Clear();
 
             listSongData = ldal.Select();
             favorData = fvordal.Select();
@@ -694,7 +696,7 @@ namespace _20521587_TH03_Music_Online
             //}
             toolStrip.LayoutStyle = ToolStripLayoutStyle.VerticalStackWithOverflow;
             toolStrip.Items.Add("-");
-            toolStrip.Items.Add("New playlist");
+            toolStrip.Items.Add("Tạo Playlist mới");
             int Y = 400;
 
             toolStrip.Location = new Point(pbAddToPlayList.Location.X + 70, pbAddToPlayList.Location.Y + Y);
@@ -745,7 +747,24 @@ namespace _20521587_TH03_Music_Online
             }
             else
             {
+                // kiem tra ton tai
                 PlaylistDAL pdal = new PlaylistDAL();
+                DataTable dt = new DataTable();
+                dt = pdal.Select();
+                foreach (DataRow dr in dt.Rows)
+                {
+                    if (dr[1].ToString() == e.ClickedItem.Text)
+                    {
+                        if(dr[2].ToString() == Playing)
+                        {
+                            fMessShow t = new fMessShow("Bài hát có trong PlayList");
+                            t.Show();
+                            return;
+                        }
+
+                    }
+                }
+
                 pdal.Insert(1, e.ClickedItem.Text, Playing);
                 fMessShow d = new fMessShow("Thêm Thành công");
                 d.Show();
