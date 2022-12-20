@@ -99,7 +99,7 @@ namespace _20521587_TH03_Music_Online.UI
             this.tbCommand.FocusedState.Parent = this.tbCommand;
             this.tbCommand.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.tbCommand.ForeColor = System.Drawing.Color.Black;
-            this.tbCommand.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbCommand.HoverState.BorderColor = System.Drawing.Color.Transparent;
             this.tbCommand.HoverState.Parent = this.tbCommand;
             this.tbCommand.Location = new System.Drawing.Point(135, 43);
             this.tbCommand.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);

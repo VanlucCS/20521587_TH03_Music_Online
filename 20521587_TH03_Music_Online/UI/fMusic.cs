@@ -319,7 +319,8 @@ namespace _20521587_TH03_Music_Online
         {
             if (media.playState != WMPLib.WMPPlayState.wmppsPlaying)
                 pictureBox6.Visible = false;
-            
+            else
+                pictureBox6.Visible = true;
             // update trackbar
             if (media.currentMedia.duration != 0)
                 gunaTrackBar1.Value = (int)(100.0 * (media.Ctlcontrols.currentPosition / media.currentMedia.duration));
@@ -355,7 +356,14 @@ namespace _20521587_TH03_Music_Online
 
         private void gunaTrackBar1_Scroll(object sender, ScrollEventArgs e)
         {
-            media.Ctlcontrols.currentPosition = (double)gunaTrackBar1.Value * media.currentMedia.duration / 100.0;
+            try
+            {
+                media.Ctlcontrols.currentPosition = (double)gunaTrackBar1.Value * media.currentMedia.duration / 101.0;
+
+            }
+            catch (Exception)
+            {
+            }
         }
 
         private void guna2Button1_Click_1(object sender, EventArgs e)
@@ -459,21 +467,18 @@ namespace _20521587_TH03_Music_Online
             lbSingerMain.Text = dr[3].ToString();
             string lyricUrl = @".\" + mabh + ".txt";
             string[] lines = System.IO.File.ReadAllLines(lyricUrl);
-            //MessageBox.Show(lines.Length.ToString());
             richTextBox1.Size = new Size(500, lines.Length * 22);
             foreach (string line in lines)
             {
-                // Use a tab to indent each line of the file.
-                //Console.WriteLine("\t" + line);
                 richTextBox1.AppendText(line + "\n");
             }
             //lbAuthorMain.Text = dr[2].ToString();
-            guna2HtmlLabel1.Top = richTextBox1.Top + richTextBox1.Height;
-            panel2.Top = richTextBox1.Top + richTextBox1.Height - 5;
-            guna2RatingStar1.Top = richTextBox1.Top + richTextBox1.Height - 5;
-            guna2HtmlLabel2.Top = guna2HtmlLabel1.Top + 40;
-            pictureBox14.Top = guna2HtmlLabel2.Top + 40;
-            flowLayoutPanel2.Top = pictureBox14.Top + 40;
+            guna2HtmlLabel1.Top = richTextBox1.Top + richTextBox1.Height+5;
+            panel2.Top = richTextBox1.Top + richTextBox1.Height;
+            guna2RatingStar1.Top = richTextBox1.Top + richTextBox1.Height ;
+            guna2HtmlLabel2.Top = guna2HtmlLabel1.Top + 45;
+            pictureBox14.Top = guna2HtmlLabel2.Top + 45;
+            flowLayoutPanel2.Top = pictureBox14.Top + 45;
 
         }
 
@@ -1110,11 +1115,6 @@ namespace _20521587_TH03_Music_Online
         private void guna2RatingStar1_ValueChanged(object sender, EventArgs e)
         {
             guna2RatingStar1.Value = rating;
-        }
-
-        private void timer2_Tick(object sender, EventArgs e)
-        {
-            
         }
     }
 }
