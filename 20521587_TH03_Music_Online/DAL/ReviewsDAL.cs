@@ -17,7 +17,7 @@ namespace _20521587_TH03_Music_Online.DAL
         #region Select method
         public DataTable Select()
         {
-            DataTable dt = new DataTable();
+            DataTable dt = new DataTable(); 
             try
             {
                 using (SqlConnection cnn = new SqlConnection(ConfigurationManager.ConnectionStrings["connstrng"].ConnectionString))
